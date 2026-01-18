@@ -1,5 +1,11 @@
+import NewsSection from "./components/ui/news/newsSection";
+
 function App() {
-  return <div></div>;
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <NewsSection />
+    </div>
+  );
 }
 
 export default App;
