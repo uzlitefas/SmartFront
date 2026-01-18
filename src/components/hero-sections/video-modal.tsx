@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { PlayIcon } from "lucide-react";
@@ -15,7 +13,11 @@ export function VideoModal({ videoUrl }: VideoModalProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="secondary" className="size-12 rounded-full lg:size-16" size="icon-lg">
+        <Button
+          variant="secondary"
+          className="size-12 rounded-full lg:size-16"
+          size="icon-lg"
+        >
           <PlayIcon className="size-4 lg:size-6" />
         </Button>
       </DialogTrigger>
@@ -27,7 +29,8 @@ export function VideoModal({ videoUrl }: VideoModalProps) {
             controls
             controlsList="nodownload"
             playsInline
-            autoPlay>
+            autoPlay
+          >
             <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>

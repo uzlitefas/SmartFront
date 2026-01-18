@@ -1,10 +1,10 @@
 import { footerData } from "@/constants";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -12,7 +12,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
@@ -47,7 +47,6 @@ export default function Footer() {
           py-10 sm:py-14
         "
       >
-        {/* CONTENT */}
         <div
           className="
             max-w-7xl mx-auto
@@ -58,7 +57,6 @@ export default function Footer() {
             text-center sm:text-left
           "
         >
-          {/* ABOUT */}
           <motion.div variants={item}>
             <h3 className="text-lg font-semibold mb-3">{about.title}</h3>
             <p className="text-white/70 text-sm mb-5 leading-relaxed">
@@ -81,8 +79,6 @@ export default function Footer() {
               {about.buttonText}
             </motion.button>
           </motion.div>
-
-          {/* PORTFOLIO */}
           <motion.div variants={item}>
             <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-4">
               {portfolio.title}
@@ -100,8 +96,6 @@ export default function Footer() {
               ))}
             </ul>
           </motion.div>
-
-          {/* SOCIAL */}
           <motion.div variants={item}>
             <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-4">
               {social.title}
@@ -121,8 +115,6 @@ export default function Footer() {
               ))}
             </ul>
           </motion.div>
-
-          {/* CONTACT */}
           <motion.div variants={item}>
             <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-4">
               {contact.title}
@@ -132,8 +124,6 @@ export default function Footer() {
             <p className="text-xs text-white/50 mt-2">{contact.location}</p>
           </motion.div>
         </div>
-
-        {/* BOTTOM */}
         <motion.div
           variants={item}
           className="
@@ -147,7 +137,6 @@ export default function Footer() {
           "
         >
           <span>{footerBottom.copyright}</span>
-
           <div className="flex gap-5">
             <Link to="/terms" className="hover:text-white transition">
               {footerBottom.terms}
@@ -158,8 +147,6 @@ export default function Footer() {
           </div>
         </motion.div>
       </motion.footer>
-
-      {/* SCROLL TO TOP */}
       <AnimatePresence>
         {showTop && (
           <motion.button

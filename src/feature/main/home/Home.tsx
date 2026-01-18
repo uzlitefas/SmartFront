@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import About from "./About";
 import DownloadSection from "@/components/shared/OurApp";
 import { VideoModal } from "@/components/hero-sections/video-modal";
+import { banner, video } from "@/constants";
 
 export function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -133,10 +134,9 @@ export function Home() {
               >
                 <div
                   style={{
-                    backgroundImage:
-                      "url('https://t4.ftcdn.net/jpg/15/12/04/11/360_F_1512041110_c0NFJDcHLmUJiwfDowzcKUgsPALmbjdD.jpg')",
+                    backgroundImage: `url('${banner}')`,
                   }}
-                  className="aspect-video bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center"
+                  className="bg-cover aspect-video bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center"
                 >
                   <Button
                     variant="outline"
@@ -145,7 +145,7 @@ export function Home() {
                     aria-label="Play video"
                   >
                     <div className="absolute text-blue-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-                      <VideoModal videoUrl="https://media.istockphoto.com/id/1708107733/video/teacher-providing-quality-education-to-attentive-school-children-in-classroom.mp4?s=mp4-640x640-is&k=20&c=36XIb6DXvv413u2bn3F7zVBR7z8lfITQ80WXi19TyR0=" />
+                      <VideoModal videoUrl={video} />
                     </div>
                   </Button>
                 </div>

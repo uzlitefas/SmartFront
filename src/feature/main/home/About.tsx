@@ -1,3 +1,4 @@
+import { leadership, stats } from "@/constants";
 import { motion } from "framer-motion";
 
 const fadeUp = {
@@ -5,23 +6,9 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-const stats = [
-  { value: "1200+", label: "O‘quvchilar" },
-  { value: "85+", label: "O‘qituvchilar" },
-  { value: "50+", label: "Sinf xonalari" },
-  { value: "100%", label: "Natija" },
-];
-
-const leadership = [
-  "Direktor",
-  "O‘quv ishlari bo‘yicha direktor o‘rinbosari",
-  "Ma’naviy-ma’rifiy ishlar bo‘yicha direktor o‘rinbosari",
-];
-
 const About = () => {
   return (
     <div className="py-14 px-4 md:px-10 mt-11 bg-[#F8FAFC] dark:bg-[#0F172A] transition-colors">
-      {/* About school */}
       <section className="max-w-6xl mx-auto mb-20 grid md:grid-cols-2 gap-10 items-center">
         <motion.div
           variants={fadeUp}
@@ -33,18 +20,15 @@ const About = () => {
           <h1 className="text-4xl font-bold mb-4 text-[#2563EB] dark:text-white">
             Bizning maktabimiz
           </h1>
-
           <p className="mb-4 text-lg text-slate-700 dark:text-slate-300">
             Maktabimiz o‘quvchilarga sifatli ta’lim berish va ularning
             bilimlarini rivojlantirishni asosiy maqsad qilib olgan.
           </p>
-
           <p className="text-slate-600 dark:text-slate-400">
             Tajribali ustozlar, zamonaviy o‘quv dasturlari va qulay muhit orqali
             har bir o‘quvchining salohiyatini ochishga harakat qilamiz.
           </p>
         </motion.div>
-
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -60,8 +44,6 @@ const About = () => {
           />
         </motion.div>
       </section>
-
-      {/* Statistics */}
       <section className="max-w-6xl mx-auto mb-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((item, index) => (
@@ -84,8 +66,6 @@ const About = () => {
           ))}
         </div>
       </section>
-
-      {/* Leadership */}
       <section className="max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -96,7 +76,6 @@ const About = () => {
         >
           Maktab rahbariyati
         </motion.h2>
-
         <div className="grid gap-8 md:grid-cols-3">
           {leadership.map((role, index) => (
             <motion.div

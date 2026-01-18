@@ -5,6 +5,9 @@ import Footer from "./components/shared/Footer";
 import CoursesSection from "./feature/main/course/CourseSection";
 import { useEffect, useState } from "react";
 import Loader from "./components/shared/Loader";
+import NewsSection from "./feature/main/news/NewSection";
+import Gallery from "./feature/main/gallery/Gallery";
+import Contact from "./feature/main/contact/Contact";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,9 +34,9 @@ function App() {
         >
           <Route path="" element={<Home />} />
           <Route path="courses" element={<CoursesSection />} />
-          <Route path="gallery" element={"gallery"} />
-          <Route path="news" element={"news"} />
-          <Route path="contact" element={"contact"} />
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="news" element={<NewsSection />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </div>
