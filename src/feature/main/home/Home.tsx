@@ -139,7 +139,7 @@ export function Home() {
                   className="bg-cover aspect-video bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center"
                 >
                   <Button
-                    variant="outline"
+                    variant="secondary"
                     onClick={() => setIsPlaying(!isPlaying)}
                     className="w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-xl"
                     aria-label="Play video"

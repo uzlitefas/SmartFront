@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { PlayIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface VideoModalProps {
   videoUrl: string;
@@ -12,14 +11,8 @@ export function VideoModal({ videoUrl }: VideoModalProps) {
 
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button
-          variant="secondary"
-          className="size-12 rounded-full lg:size-16"
-          size="icon-lg"
-        >
-          <PlayIcon className="size-4 lg:size-6" />
-        </Button>
+      <DialogTrigger asChild className="size-10 rounded-full">
+        <PlayIcon className="size-4" />
       </DialogTrigger>
       <DialogContent className="overflow-hidden p-0 lg:max-w-5xl">
         <div className="relative aspect-video w-full">
