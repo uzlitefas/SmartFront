@@ -138,16 +138,12 @@ export function Home() {
                   }}
                   className="bg-cover aspect-video bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center"
                 >
-                  <Button
-                    variant="secondary"
+                  <div
                     onClick={() => setIsPlaying(!isPlaying)}
-                    className="w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-xl"
-                    aria-label="Play video"
+                    className="bg-card absolute text-blue-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-xl"
                   >
-                    <div className="absolute text-blue-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-                      <VideoModal videoUrl={video} />
-                    </div>
-                  </Button>
+                    <VideoModal videoUrl={video} />
+                  </div>
                 </div>
               </motion.div>
               <motion.div

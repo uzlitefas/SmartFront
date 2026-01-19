@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { PlayIcon } from "lucide-react";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 interface VideoModalProps {
   videoUrl: string;
@@ -14,7 +15,11 @@ export function VideoModal({ videoUrl }: VideoModalProps) {
       <DialogTrigger asChild className="size-10 rounded-full">
         <PlayIcon className="size-4" />
       </DialogTrigger>
-      <DialogContent className="overflow-hidden p-0 lg:max-w-5xl">
+      <DialogContent
+        aria-describedby={undefined}
+        className="overflow-hidden p-0 lg:max-w-5xl"
+      >
+        <DialogTitle className="hidden" />
         <div className="relative aspect-video w-full">
           <video
             ref={videoRef}
