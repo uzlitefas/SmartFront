@@ -1,0 +1,32 @@
+{
+  "home": "home",
+  "new": "news",
+  "courses": "courses",
+  "gallery": "gallery",
+  "contact": "contact",
+  "hero": {
+    "tagline": "Modern Online Education",
+    "titleLine1": "Learn Future Professions",
+    "titleLine2": "With Us",
+    "description": "Learn programming, design, and IT from scratch to professional level through our online school. Experienced mentors and real projects await you.",
+    "startCourse": "Start Course",
+    "learnMore": "Learn More",
+    "stats": {
+      "students": "Students",
+      "courses": "Courses",
+      "employment": "Employment Rate"
+    }
+  },
+  "news": {
+    "title": "School News",
+    "description": "Explore the latest news, events, and announcements from our school",
+    "all": "All News",
+    "readMore": "Read more",
+    "categories": {
+        "Yangilik": "News",
+        "E'lon": "Announcement",
+        "Tadbir": "Event"
+      }
+  }
+  
+}
