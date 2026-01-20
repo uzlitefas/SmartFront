@@ -1,0 +1,20 @@
+{
+  "home": "bosh sahifa",
+  "news": "yangiliklar",
+  "courses": "kurslar",
+  "gallery": "galereya",
+  "contact": "aloqa",
+  "hero": {
+    "tagline": "Zamonaviy Onlayn Ta'lim",
+    "titleLine1": "Kelajak Kasblarini O‘rganing",
+    "titleLine2": "Biz bilan",
+    "description": "Dasturlash, dizayn va IT sohalarini nol darajadan professional darajagacha o‘rganing. Tajribali mentorlar va real loyihalar sizni kutmoqda.",
+    "startCourse": "Kursni Boshlash",
+    "learnMore": "Batafsil O‘rganish",
+    "stats": {
+      "students": "Talabalar",
+      "courses": "Kurslar",
+      "employment": "Bandlik Darajasi"
+    }
+  }
+}
