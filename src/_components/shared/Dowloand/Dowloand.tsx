@@ -2,9 +2,36 @@
 
 import { motion } from "framer-motion";
 
+const translations = {
+  uz: {
+    title: "Ilovani telefonga yuklab oling",
+    desc: "Ilovani yuklab oling va barcha xizmatlardan tez, qulay va xavfsiz foydalaning",
+    download: "Yuklab oling",
+    google: "Google Play",
+    apple: "App Store",
+  },
+  ru: {
+    title: "Скачайте приложение на телефон",
+    desc: "Скачайте приложение и пользуйтесь всеми услугами быстро, удобно и безопасно",
+    download: "Скачать в",
+    google: "Google Play",
+    apple: "App Store",
+  },
+  en: {
+    title: "Download the app to your phone",
+    desc: "Download the app and use all services quickly, conveniently, and securely",
+    download: "Download on",
+    google: "Google Play",
+    apple: "App Store",
+  },
+};
+
 export default function DownloadSection() {
+  const lang = "uz"; // 🔹 default til
+  const t = translations[lang];
+
   return (
-    <section className="relative w-full h-[480px] sm:h-[520px] overflow-hidden rounded-2xl">
+    <section className="relative w-full h-[480px] sm:h-[520px] overflow-hidden rounded-2xl bg-white">
       {/* Background */}
       <img
         src="https://storage.kun.uz/source/4/7M_FGzzvOGpx9r26ZHPjllLU94EfhJwW.jpg"
@@ -13,7 +40,7 @@ export default function DownloadSection() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/10" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
@@ -22,9 +49,9 @@ export default function DownloadSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight"
+            className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4"
           >
-            Ilovani telefonga yuklab oling
+            {t.title}
           </motion.h1>
 
           <motion.p
@@ -33,11 +60,9 @@ export default function DownloadSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-white/80 text-sm sm:text-base mb-8"
           >
-            Ilovani yuklab oling va barcha xizmatlardan tez, qulay va xavfsiz
-            foydalaning
+            {t.desc}
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,16 +75,15 @@ export default function DownloadSection() {
               whileTap={{ scale: 0.95 }}
               href="https://play.google.com/store"
               target="_blank"
-              className="bg-black/90 hover:bg-black transition rounded-xl px-6 py-4 flex items-center gap-4 shadow-xl backdrop-blur"
+              className="bg-black/90 hover:bg-black rounded-xl px-6 py-4 flex items-center gap-4 shadow-xl"
             >
               <img
                 src="https://cdn.vectorstock.com/i/500p/55/50/google-play-brand-logo-symbol-white-design-vector-46345550.jpg"
-                alt="Google Play"
-                className="h-8 w-8 object-contain"
+                className="h-8 w-8"
               />
-              <div className="text-left">
-                <p className="text-xs text-white/60">Download on</p>
-                <p className="text-sm font-semibold text-white">Google Play</p>
+              <div>
+                <p className="text-xs text-white/60">{t.download}</p>
+                <p className="text-sm font-semibold text-white">{t.google}</p>
               </div>
             </motion.a>
 
@@ -69,16 +93,15 @@ export default function DownloadSection() {
               whileTap={{ scale: 0.95 }}
               href="https://www.apple.com/app-store/"
               target="_blank"
-              className="bg-black/90 hover:bg-black transition rounded-xl px-6 py-4 flex items-center gap-4 shadow-xl backdrop-blur"
+              className="bg-black/90 hover:bg-black rounded-xl px-6 py-4 flex items-center gap-4 shadow-xl"
             >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                alt="App Store"
                 className="h-8 w-8 invert"
               />
-              <div className="text-left">
-                <p className="text-xs text-white/60">Download on</p>
-                <p className="text-sm font-semibold text-white">App Store</p>
+              <div>
+                <p className="text-xs text-white/60">{t.download}</p>
+                <p className="text-sm font-semibold text-white">{t.apple}</p>
               </div>
             </motion.a>
           </motion.div>
