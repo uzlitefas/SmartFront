@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import About from "./About";
-import DownloadSection from "@/components/shared/OurApp";
 import { VideoModal } from "@/components/hero-sections/video-modal";
 import { banner, video } from "@/constants";
+import AppBanner from "@/components/shared/AppBanner";
 
 export function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -146,30 +145,12 @@ export function Home() {
                   </div>
                 </div>
               </motion.div>
-              <motion.div
-                className="absolute -bottom-6 -left-6 w-32 h-32 rounded-2xl bg-blue-100 blur-2xl dark:bg-blue-900/30"
-                animate={{ rotate: [0, 15, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: "easeInOut",
-                }}
-              ></motion.div>
-              <motion.div
-                className="absolute -top-6 -right-6 w-32 h-32 rounded-2xl bg-cyan-100 blur-2xl dark:bg-cyan-900/30"
-                animate={{ rotate: [0, -15, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: "easeInOut",
-                }}
-              ></motion.div>
             </motion.figure>
           </div>
         </div>
       </motion.section>
       <About />
-      <DownloadSection />
+      <AppBanner />
     </>
   );
 }
