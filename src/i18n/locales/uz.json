@@ -17,17 +17,30 @@
       "employment": "Bandlik Darajasi"
     }
   },
-  "news": {
-    "title": "Maktab yangiliklari",
-    "description": "Maktabimizning so‘nggi yangiliklari, tadbirlari va e’lonlari bilan tanishing",
-    "all": "Barcha yangiliklar",
-    "readMore": "Batafsil",
-    "categories": {
-        "Yangilik": "Yangilik",
-        "E'lon": "E'lon",
-        "Tadbir": "Tadbir"
-      }
-  }
+  "newsCard": {
+    "date": "Sana",
+    "author": "Muallif"
+  },
+  
+  "newsPage": {
+    "title": "Maktab Yangiliklari",
+    "subtitle": "So‘nggi yangiliklardan xabardor bo‘ling",
+    "categoriesTitle": "Toifalar",
+    "all": "Hammasi",
+    "achievements": "Yutuqlar",
+    "events": "Tadbirlar",
+    "announcements": "E’lonlar",
+    "general": "Umumiy",
+    "featured": "Asosiy yangiliklar",
+    "allNews": "Barcha yangiliklar",
+    "empty": "Hozircha yangiliklar yo‘q",
+    "loading": "Yuklanmoqda..."
+  
+}
+
+
+
+
   
 }
 

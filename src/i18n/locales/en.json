@@ -17,16 +17,31 @@
       "employment": "Employment Rate"
     }
   },
-  "news": {
-    "title": "School News",
-    "description": "Explore the latest news, events, and announcements from our school",
-    "all": "All News",
-    "readMore": "Read more",
-    "categories": {
-        "Yangilik": "News",
-        "E'lon": "Announcement",
-        "Tadbir": "Event"
-      }
-  }
+
+  "newsCard": {
+    "date": "Date",
+    "author": "Author"
+  },
   
+  "newsPage": {
+    "title": "School News",
+    "subtitle": "Stay updated with the latest news",
+    "categoriesTitle": "Categories",
+    "all": "All",
+    "achievements": "Achievements",
+    "events": "Events",
+    "announcements": "Announcements",
+    "general": "General",
+    "featured": "Featured News",
+    "allNews": "All News",
+    "empty": "No news available",
+    "loading": "Loading..."
+  }
+
+
+
+
+
 }
+
+  
