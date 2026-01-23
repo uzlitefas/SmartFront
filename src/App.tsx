@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import Loader from "./components/shared/Loader";
 import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
+import LoginPage from "./feature/auth/login";
+import Teacher from "./feature/teacher/teacher";
 import { NewsPage } from "./feature/main/news/NewsPage";
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
   return (
     <div>
       <Routes>
+        <Route path="/login" element={<LoginPage />} />
         <Route
           path="/"
           element={
@@ -37,6 +40,21 @@ function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="news" element={<NewsPage/>} />
           <Route path="contact" element={<Contact />} />
+        </Route>
+        <Route
+          path="/teacher"
+          element={
+            <>
+              <div className="flex w-full">
+                "navbar"
+                <div className="m-3 p-8 rounded-md bg-accent w-full">
+                  <Outlet />
+                </div>
+              </div>
+            </>
+          }
+        >
+          <Route path="" element={<Teacher />} />
         </Route>
       </Routes>
     </div>

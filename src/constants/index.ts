@@ -13,16 +13,7 @@ export const categories = [
   "general",
 ]
 
-export type News = {
-  id: number
-  title: string
-  content: string
-  category_key: string
-  is_featured: boolean
-  published_date: string
-  image_url?: string
-  author?: string
-}
+
 export type NewsCard = {
   id: number
   title: string
@@ -137,6 +128,16 @@ export type NewsCard = {
     author: "Admin",
   },
 ]
+export type News = {
+  id: number
+  title: string
+  content: string
+  category_key: string
+  is_featured: boolean
+  published_date: string
+  image_url?: string
+  author?: string
+}
 
 export const newsData: News[] = [
   {

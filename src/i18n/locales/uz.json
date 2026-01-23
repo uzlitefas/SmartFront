@@ -17,30 +17,33 @@
       "employment": "Bandlik Darajasi"
     }
   },
-  "newsCard": {
-    "date": "Sana",
-    "author": "Muallif"
+  "footer": {
+    "aboutText": "Zamonaviy ta'lim texnologiyalari asosida ishlaydigan online ta'lim platformasi. Sifatli bilim olish uchun eng yaxshi tanlov.",
+    "about": "Maktab haqida",
+    "useful": "Foydali havolalar",
+    "contact": "Aloqa",
+    "phone": "Telefon",
+    "email": "Email",
+    "address": "Manzil",
+    "addressText": "Toshkent sh., Amir Temur ko'chasi 108",
+    "rights": "© 2026 Online Maktab. Barcha huquqlar himoyalangan Sigma."
   },
-  
-  "newsPage": {
-    "title": "Maktab Yangiliklari",
-    "subtitle": "So‘nggi yangiliklardan xabardor bo‘ling",
-    "categoriesTitle": "Toifalar",
-    "all": "Hammasi",
-    "achievements": "Yutuqlar",
-    "events": "Tadbirlar",
-    "announcements": "E’lonlar",
-    "general": "Umumiy",
-    "featured": "Asosiy yangiliklar",
-    "allNews": "Barcha yangiliklar",
-    "empty": "Hozircha yangiliklar yo‘q",
-    "loading": "Yuklanmoqda..."
-  
+  "links": {
+    "aboutUs": "Biz haqimizda",
+    "teachers": "O'qituvchilar",
+    "courses": "Kurslar",
+    "results": "Natijalar",
+    "news": "Yangiliklar",
+    "guide": "Yo'riqnoma",
+    "faq": "Savollar va javoblar",
+    "support": "Qo'llab-quvvatlash",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari",
+    "cookies": "Cookie"
+  },
+  "app": {
+    "title": "Maktabimiz ilovasini yuklab oling",
+    "desc": "O'qituvchilar, o'quvchilar va ota-onalar uchun qulay mobil ilova",
+    "download": "Yuklab olish"
+  }
 }
-
-
-
-
-  
-}
-

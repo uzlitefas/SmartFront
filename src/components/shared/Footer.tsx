@@ -1,178 +1,172 @@
-import { footerData } from "@/constants";
+import {
+  GraduationCap,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Youtube,
+  Linkedin,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
-import { ArrowUp } from "lucide-react";
-import { useEffect, useState } from "react";
-
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
-  const { about, portfolio, social, contact, footerBottom } = footerData;
-  const [showTop, setShowTop] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 300);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const { t } = useTranslation();
 
   return (
-    <>
-      <motion.footer
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="
-          relative
-          bg-gradient-to-br from-[#05071A] to-[#0B0F2E]
-          text-white
-          rounded-2xl
-          px-4 sm:px-8 lg:px-14
-          py-10 sm:py-14
-        "
+    <footer
+      style={{
+        backgroundImage: "url('https://i.redd.it/vkow06xz617a1.jpg')",
+      }}
+      className="flex items-center justify-center bg-fixed top-1 z-10 bg-cover min-h-160 py-5 bg-bottom"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="bg-card border border-border rounded-2xl max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12"
       >
-        <div
-          className="
-            max-w-7xl mx-auto
-            grid grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-4
-            gap-10
-            text-center sm:text-left
-          "
-        >
-          <motion.div variants={item}>
-            <h3 className="text-lg font-semibold mb-3">{about.title}</h3>
-            <p className="text-white/70 text-sm mb-5 leading-relaxed">
-              {about.description}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-8 text-center md:text-left">
+          <div className="space-y-4 flex flex-col items-center md:items-start">
+            <div className="flex items-center gap-2">
+              <div className="p-2 rounded-lg bg-primary">
+                <GraduationCap className="w-7 h-7 text-primary-foreground" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+                Online Maktab
+              </h3>
+            </div>
+            <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground max-w-xs">
+              {t("footer.aboutText")}
             </p>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="
-                inline-flex
-                bg-white text-black
-                px-5 py-2.5
-                rounded-lg
-                text-sm font-medium
-                hover:bg-gray-200
-                transition
-              "
-            >
-              {about.buttonText}
-            </motion.button>
-          </motion.div>
-          <motion.div variants={item}>
-            <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-4">
-              {portfolio.title}
-            </h4>
-            <ul className="space-y-3">
-              {portfolio.links.map((link, i) => (
-                <motion.li key={i} whileHover={{ x: 6 }}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-white/70 hover:text-white transition"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.li>
+            <div className="flex gap-3 pt-2">
+              {[Facebook, Instagram, Youtube, Linkedin].map((Icon, i) => (
+                <button
+                  key={i}
+                  className="p-2 rounded-lg bg-accent transition-all hover:scale-110 hover:shadow-lg"
+                >
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-accent-foreground" />
+                </button>
               ))}
-            </ul>
-          </motion.div>
-          <motion.div variants={item}>
-            <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-4">
-              {social.title}
-            </h4>
-            <ul className="space-y-3">
-              {social.links.map((link, i) => (
-                <motion.li key={i} whileHover={{ x: 6 }}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-white/70 hover:text-white transition"
-                  >
-                    {link.label}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-          <motion.div variants={item}>
-            <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-4">
-              {contact.title}
-            </h4>
-            <p className="text-sm text-white/70">{contact.phone}</p>
-            <p className="text-sm text-white/70">{contact.email}</p>
-            <p className="text-xs text-white/50 mt-2">{contact.location}</p>
-          </motion.div>
-        </div>
-        <motion.div
-          variants={item}
-          className="
-            mt-10 pt-6
-            border-t border-white/10
-            flex flex-col sm:flex-row
-            gap-3
-            items-center justify-between
-            text-xs sm:text-sm
-            text-white/60
-          "
-        >
-          <span>{footerBottom.copyright}</span>
-          <div className="flex gap-5">
-            <Link to="/terms" className="hover:text-white transition">
-              {footerBottom.terms}
-            </Link>
-            <Link to="/privacy" className="hover:text-white transition">
-              {footerBottom.privacy}
-            </Link>
+            </div>
           </div>
-        </motion.div>
-      </motion.footer>
-      <AnimatePresence>
-        {showTop && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.85 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="
-              fixed bottom-5 right-5 sm:bottom-6 sm:right-6
-              z-50
-              bg-white text-black
-              w-10 h-10 sm:w-11 sm:h-11
-              rounded-full
-              flex items-center justify-center
-              shadow-xl
-              hover:bg-gray-200
-              transition
-            "
-            aria-label="Scroll to top"
-          >
-            <ArrowUp size={18} />
-          </motion.button>
-        )}
-      </AnimatePresence>
-    </>
+
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="font-bold text-base sm:text-lg mb-4 text-foreground">
+              {t("footer.about")}
+            </h4>
+            <ul className="space-y-2 sm:space-y-3">
+              {["aboutUs", "teachers", "courses", "results", "news"].map(
+                (k) => (
+                  <li key={k}>
+                    <Link
+                      to="/"
+                      className="text-xs sm:text-sm text-muted-foreground hover:underline"
+                    >
+                      {t(`links.${k}`)}
+                    </Link>
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
+
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="font-bold text-base sm:text-lg mb-4 text-foreground">
+              {t("footer.useful")}
+            </h4>
+            <ul className="space-y-2 sm:space-y-3">
+              {["guide", "faq", "support", "privacy", "terms"].map((k) => (
+                <li key={k}>
+                  <Link
+                    to="/"
+                    className="text-xs sm:text-sm text-muted-foreground hover:underline"
+                  >
+                    {t(`links.${k}`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="font-bold text-base sm:text-lg mb-4 text-foreground">
+              {t("footer.contact")}
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex gap-3 items-start">
+                <div className="p-2 rounded-lg bg-accent">
+                  <Phone className="w-4 h-4 text-accent-foreground" />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-muted-foreground">
+                    {t("footer.phone")}
+                  </p>
+                  <a
+                    href="tel:+998901234567"
+                    className="text-sm font-semibold text-foreground hover:underline"
+                  >
+                    +998 (90) 123-45-67
+                  </a>
+                </div>
+              </li>
+
+              <li className="flex gap-3 items-start">
+                <div className="p-2 rounded-lg bg-accent">
+                  <Mail className="w-4 h-4 text-accent-foreground" />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-muted-foreground">
+                    {t("footer.email")}
+                  </p>
+                  <a
+                    href="mailto:info@onlinemaktab.uz"
+                    className="text-sm font-semibold text-foreground hover:underline"
+                  >
+                    info@onlinemaktab.uz
+                  </a>
+                </div>
+              </li>
+
+              <li className="flex gap-3 items-start">
+                <div className="p-2 rounded-lg bg-accent">
+                  <MapPin className="w-4 h-4 text-accent-foreground" />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-muted-foreground">
+                    {t("footer.address")}
+                  </p>
+                  <p className="text-sm font-semibold text-foreground">
+                    {t("footer.addressText")}
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pt-6 border-t border-border">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              {t("footer.rights")}
+            </p>
+            <div className="flex gap-4 sm:gap-6">
+              {["privacy", "terms", "cookies"].map((k) => (
+                <Link
+                  key={k}
+                  to="/"
+                  className="text-xs sm:text-sm text-muted-foreground hover:underline"
+                >
+                  {t(`links.${k}`)}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </footer>
   );
 }

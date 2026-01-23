@@ -2,9 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import About from "./About";
-import DownloadSection from "@/components/shared/OurApp";
 import { VideoModal } from "@/components/hero-sections/video-modal";
 import { banner, video } from "@/constants";
+import AppBanner from "@/components/shared/AppBanner";
+import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 export function Home() {
@@ -85,15 +86,16 @@ export function Home() {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                 variants={item}
               >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-semibold flex items-center justify-center space-x-1 sm:space-x-2 hover:shadow-lg transition-all duration-200"
-                >
-                  <span>{t("hero.startCourse")}</span>
-                  <FaArrowRight size={16} />
-                </motion.button>
-
+                <Link to="/login">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-semibold flex items-center justify-center space-x-1 sm:space-x-2 hover:shadow-lg transition-all duration-200"
+                  >
+                    <span>{t("hero.startCourse")}</span>
+                    <FaArrowRight size={16} />
+                  </motion.button>{" "}
+                </Link>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -145,30 +147,12 @@ export function Home() {
                   </div>
                 </div>
               </motion.div>
-              <motion.div
-                className="absolute -bottom-6 -left-6 w-32 h-32 rounded-2xl bg-blue-100 blur-2xl dark:bg-blue-900/30"
-                animate={{ rotate: [0, 15, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: "easeInOut",
-                }}
-              ></motion.div>
-              <motion.div
-                className="absolute -top-6 -right-6 w-32 h-32 rounded-2xl bg-cyan-100 blur-2xl dark:bg-cyan-900/30"
-                animate={{ rotate: [0, -15, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: "easeInOut",
-                }}
-              ></motion.div>
             </motion.figure>
           </div>
         </div>
       </motion.section>
       <About />
-      <DownloadSection />
+      <AppBanner />
     </>
   );
 }

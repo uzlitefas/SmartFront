@@ -17,36 +17,33 @@
       "employment": "Employment Rate"
     }
   },
-
-  "newsCard": {
-    "date": "Date",
-    "author": "Author"
+  "footer": {
+    "aboutText": "An online education platform based on modern learning technologies. The best choice for quality education.",
+    "about": "About School",
+    "useful": "Useful Links",
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "addressText": "Tashkent, Amir Temur street 108",
+    "rights": "© 2026 Online School. All rights reserved Sigma."
   },
- 
-  
-  
-  "newsPage": {
-    "title": "School News",
-    "subtitle": "Stay updated with the latest news",
-    "categoriesTitle": "Categories",
-    "all": "All",
-    "achievements": "Achievements",
-    "events": "Events",
-    "announcements": "Announcements",
-    "general": "General",
-    "featured": "Featured News",
-    "allNews": "All News",
-    "empty": "No news available",
-    "loading": "Loading..."
+  "links": {
+    "aboutUs": "About Us",
+    "teachers": "Teachers",
+    "courses": "Courses",
+    "results": "Results",
+    "news": "News",
+    "guide": "Guide",
+    "faq": "FAQ",
+    "support": "Support",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "cookies": "Cookies"
+  },
+  "app": {
+    "title": "Download our school app",
+    "desc": "A convenient mobile app for teachers, students and parents",
+    "download": "Download"
   }
-
-
-
-
-
-
-
-
 }
-
-  
