@@ -22,6 +22,8 @@
     "date": "Date",
     "author": "Author"
   },
+ 
+  
   
   "newsPage": {
     "title": "School News",
@@ -37,6 +39,9 @@
     "empty": "No news available",
     "loading": "Loading..."
   }
+
+
+
 
 
 

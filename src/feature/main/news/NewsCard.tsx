@@ -1,14 +1,14 @@
-import type { News } from "@/lib/supabase"
 import { FaCalendar, FaUser } from "react-icons/fa"
 import { useTranslation } from "react-i18next"
+import type {NewsCard } from "@/constants"
 
 interface NewsCardProps {
-  news: News
+  news: NewsCard
   featured?: boolean
 }
 
 export function NewsCard({ news, featured = false }: NewsCardProps) {
-  const { i18n, t } = useTranslation()
+  const { i18n } = useTranslation()
 
   const date = new Date(news.published_date)
   const formattedDate = date.toLocaleDateString(
@@ -46,11 +46,7 @@ export function NewsCard({ news, featured = false }: NewsCardProps) {
                 featured ? "h-full min-h-[300px]" : "h-48"
               }`}
             />
-            <div className="absolute top-4 left-4">
-              <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-[var(--primary)] text-[var(--primary-foreground)]">
-                {news.category}
-              </span>
-            </div>
+           
           </div>
         )}
 

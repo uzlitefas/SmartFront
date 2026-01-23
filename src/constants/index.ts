@@ -13,7 +13,233 @@ export const categories = [
   "general",
 ]
 
+export type News = {
+  id: number
+  title: string
+  content: string
+  category_key: string
+  is_featured: boolean
+  published_date: string
+  image_url?: string
+  author?: string
+}
+export type NewsCard = {
+  id: number
+  title: string
+  content: string
+  category_key: "events" | "achievements" | "announcements" | "general"
+  is_featured: boolean
+  published_date: string
+  image_url?: string
+  author?: string
+}
 
+
+  export const NewsCardsData: NewsCard[] = [
+  {
+    id: 1,
+    title: "Yangi sport zali ochildi",
+    content: "Maktabimizda zamonaviy sport zali foydalanishga topshirildi.",
+    category_key: "events",
+    is_featured: true,
+    published_date: "2026-01-15",
+    image_url: "/images/news/sport-hall.jpg",
+    author: "Admin",
+  },
+  {
+    id: 2,
+    title: "Olimpiada g‘alabasi",
+    content: "O‘quvchilarimiz viloyat bosqichida 1-o‘rinni egalladi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2026-01-10",
+    image_url: "/images/news/olympiad-win.jpg",
+    author: "Admin",
+  },
+  {
+    id: 3,
+    title: "Yangi IT sinfxona ishga tushdi",
+    content: "Kompyuterlar bilan jihozlangan zamonaviy IT xonasi ochildi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-08",
+    image_url: "/images/news/it-classroom.jpg",
+    author: "Admin",
+  },
+  {
+    id: 4,
+    title: "Fan haftaligi boshlandi",
+    content: "Maktabda matematika va fizika fan haftaligi o‘tkazilmoqda.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-06",
+    image_url: "/images/news/science-week.jpg",
+    author: "Admin",
+  },
+  {
+    id: 5,
+    title: "Yangi kurslar e’lon qilindi",
+    content: "2026-yil uchun yangi IT va dizayn kurslari ochildi.",
+    category_key: "announcements",
+    is_featured: false,
+    published_date: "2026-01-05",
+    image_url: "/images/news/it-courses.jpg",
+    author: "Admin",
+  },
+  {
+    id: 6,
+    title: "O‘quvchilar shahmat musobaqasida g‘olib bo‘ldi",
+    content: "Maktab jamoasi tuman bosqichida 1-o‘rinni oldi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2026-01-03",
+    image_url: "/images/news/chess-win.jpg",
+    author: "Admin",
+  },
+  {
+    id: 7,
+    title: "Ota-onalar yig‘ilishi bo‘lib o‘tdi",
+    content: "Yangi o‘quv rejalar muhokama qilindi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-02",
+    image_url: "/images/news/parents-meeting.jpg",
+    author: "Admin",
+  },
+  {
+    id: 8,
+    title: "Kutubxona yangilandi",
+    content: "Maktab kutubxonasi yangi kitoblar bilan boyitildi.",
+    category_key: "general",
+    is_featured: false,
+    published_date: "2025-12-30",
+    image_url: "/images/news/library.jpg",
+    author: "Admin",
+  },
+  {
+    id: 9,
+    title: "Yangi yil bayrami tashkil etildi",
+    content: "O‘quvchilar uchun bayramona tadbir o‘tkazildi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2025-12-28",
+    image_url: "/images/news/new-year.jpg",
+    author: "Admin",
+  },
+  {
+    id: 10,
+    title: "Ingliz tili tanlovi yakunlandi",
+    content: "Eng faol o‘quvchilar diplom bilan taqdirlandi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2025-12-25",
+    image_url: "/images/news/english-contest.jpg",
+    author: "Admin",
+  },
+]
+
+export const newsData: News[] = [
+  {
+    id: 1,
+    title: "Yangi sport zali ochildi",
+    content: "Maktabimizda zamonaviy sport zali foydalanishga topshirildi.",
+    category_key: "events",
+    is_featured: true,
+    published_date: "2026-01-15",
+    image_url: "/images/news/sport-hall.jpg",
+    author: "Admin",
+  },
+  {
+    id: 2,
+    title: "Olimpiada g‘alabasi",
+    content: "O‘quvchilarimiz viloyat bosqichida 1-o‘rinni egalladi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2026-01-10",
+    image_url: "/images/news/olympiad-win.jpg",
+    author: "Admin",
+  },
+  {
+    id: 3,
+    title: "Yangi kurslar e’lon qilindi",
+    content: "2026-yil uchun yangi IT kurslar ochildi.",
+    category_key: "announcements",
+    is_featured: false,
+    published_date: "2026-01-05",
+    image_url: "/images/news/it-courses.jpg",
+    author: "Admin",
+  },
+  {
+    id: 4,
+    title: "IT sinfxonasi yangilandi",
+    content: "Kompyuterlar va texnikalar bilan jihozlangan yangi IT xonasi ishga tushdi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-03",
+    image_url: "/images/news/it-classroom.jpg",
+    author: "Admin",
+  },
+  {
+    id: 5,
+    title: "Fan olimpiadasiga tayyorgarlik boshlandi",
+    content: "Iqtidorli o‘quvchilar bilan maxsus mashg‘ulotlar o‘tkazilmoqda.",
+    category_key: "general",
+    is_featured: false,
+    published_date: "2026-01-01",
+    image_url: "/images/news/preparation.jpg",
+    author: "Admin",
+  },
+  {
+    id: 6,
+    title: "Shahmat musobaqasida g‘alaba",
+    content: "Maktab jamoasi tuman bosqichida faxrli 1-o‘rinni qo‘lga kiritdi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2025-12-30",
+    image_url: "/images/news/chess-win.jpg",
+    author: "Admin",
+  },
+  {
+    id: 7,
+    title: "Ota-onalar yig‘ilishi bo‘lib o‘tdi",
+    content: "Ta’lim sifati va yangi rejalar muhokama qilindi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2025-12-28",
+    image_url: "/images/news/parents-meeting.jpg",
+    author: "Admin",
+  },
+  {
+    id: 8,
+    title: "Kutubxona fondi kengaytirildi",
+    content: "Yangi darsliklar va badiiy kitoblar olib kelindi.",
+    category_key: "general",
+    is_featured: false,
+    published_date: "2025-12-26",
+    image_url: "/images/news/library.jpg",
+    author: "Admin",
+  },
+  {
+    id: 9,
+    title: "Yangi yil bayram tadbiri o‘tkazildi",
+    content: "O‘quvchilar uchun bayramona dastur tashkil etildi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2025-12-25",
+    image_url: "/images/news/new-year.jpg",
+    author: "Admin",
+  },
+  {
+    id: 10,
+    title: "Ingliz tili tanlovi yakunlandi",
+    content: "Eng faol ishtirokchilar diplom va sovg‘alar bilan taqdirlandi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2025-12-23",
+    image_url: "/images/news/english-contest.jpg",
+    author: "Admin",
+  },
+]
 
 
 

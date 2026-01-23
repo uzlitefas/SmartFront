@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { NewsCard } from "./NewsCard"
-import { supabase, type News } from "@/lib/supabase"
 import { FaFilter, FaNewspaper } from "react-icons/fa"
 import { useTranslation } from "react-i18next"
+import { newsData } from "@/constants"
 
 export function NewsPage() {
   const { t } = useTranslation()
-  const [news, setNews] = useState<News[]>([])
-  const [loading, setLoading] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState("all")
 
   const categories = [
@@ -18,37 +16,13 @@ export function NewsPage() {
     "general",
   ]
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      const { data } = await supabase
-        .from("news")
-        .select("*")
-        .order("published_date", { ascending: false })
-
-      setNews(data || [])
-      setLoading(false)
-    }
-
-    fetchNews()
-  }, [])
-
   const filteredNews =
     selectedCategory === "all"
-      ? news
-      : news.filter(item => item.category_key === selectedCategory)
+      ? newsData
+      : newsData.filter(item => item.category_key === selectedCategory)
 
   const featuredNews = filteredNews.filter(item => item.is_featured)
   const regularNews = filteredNews.filter(item => !item.is_featured)
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-[var(--muted-foreground)]">
-          {t("newsPage.loading")}
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
@@ -87,7 +61,7 @@ export function NewsPage() {
                 className={`px-5 py-2.5 rounded-[var(--radius)] font-medium transition-all duration-300 ${
                   selectedCategory === key
                     ? "bg-[var(--primary)] text-[var(--primary-foreground)] shadow-md"
-                    : "bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:bg-[var(--z-[var(--accent)]"
+                    : "bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:bg-[var(--accent)]"
                 }`}
               >
                 {t(`newsPage.${key}`)}
