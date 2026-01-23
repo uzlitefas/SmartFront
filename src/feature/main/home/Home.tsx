@@ -6,6 +6,7 @@ import About from "./About";
 import { VideoModal } from "@/components/hero-sections/video-modal";
 import { banner, video } from "@/constants";
 import AppBanner from "@/components/shared/AppBanner";
+import { Link } from "react-router-dom";
 
 export function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -85,15 +86,16 @@ export function Home() {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                 variants={item}
               >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-semibold flex items-center justify-center space-x-1 sm:space-x-2 hover:shadow-lg transition-all duration-200"
-                >
-                  <span>{t("hero.startCourse")}</span>
-                  <ArrowRight size={16} />
-                </motion.button>
-
+                <Link to="/login">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-semibold flex items-center justify-center space-x-1 sm:space-x-2 hover:shadow-lg transition-all duration-200"
+                  >
+                    <span>{t("hero.startCourse")}</span>
+                    <ArrowRight size={16} />
+                  </motion.button>{" "}
+                </Link>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
