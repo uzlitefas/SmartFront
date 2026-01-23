@@ -451,3 +451,44 @@ export const leadership = [
   "O‘quv ishlari bo‘yicha direktor o‘rinbosari",
   "Ma’naviy-ma’rifiy ishlar bo‘yicha direktor o‘rinbosari",
 ];
+
+// src/constants/index.ts
+
+export interface TeacherProfile {
+  name: string
+  age: string
+  phone: string
+  email: string
+  gender: string
+  address: string
+  workExperience: string
+  qualification: string
+  university: string
+  diplomaNumber: string
+  subject: string
+  school: string
+  notes: string
+  avatar: string
+  coverImage: string
+}
+
+export const teacherProfileData: TeacherProfile = {
+  name: "Alisher Karimov",
+  age: "35",
+  phone: "+998 90 123 45 67",
+  email: "alisher.karimov@maktab.uz",
+  gender: "Erkak",
+  address: "Toshkent shahar, Mirzo Ulug'bek tumani",
+  workExperience: "12",
+  qualification: "Oliy toifa",
+  university: "Toshkent Davlat Pedagogika Universiteti",
+  diplomaNumber: "PDU-2010-12345",
+  subject: "Matematika",
+  school: "45-son umumta'lim maktabi",
+  notes:
+    "Xalqaro olimpiadalarga tayyorlovchi ustoz. Tajribali pedagog.",
+  avatar:
+    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+  coverImage:
+    "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+}
