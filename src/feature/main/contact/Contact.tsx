@@ -11,7 +11,7 @@ const fadeUp = {
 };
 
 const Contact = () => {
-  const { t } = useTranslation();
+ const { t } = useTranslation("", { keyPrefix: "contactPage" });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
