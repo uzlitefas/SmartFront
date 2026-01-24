@@ -1,57 +1,91 @@
-import type { NewsItem } from "@/types/main";
+import { FaCalendar, FaUser } from "react-icons/fa"
+import { useTranslation } from "react-i18next"
+import type {NewsCard } from "@/constants"
 
 interface NewsCardProps {
-  news: NewsItem;
+  news: NewsCard
+  featured?: boolean
 }
 
-function NewsCard({ news }: NewsCardProps) {
-  const categoryColors = {
-    Yangilik: "from-blue-500 to-blue-600",
-    "E'lon": "from-yellow-500 to-orange-500",
-    Tadbir: "from-green-500 to-teal-600",
-  };
+export function NewsCard({ news, featured = false }: NewsCardProps) {
+  const { i18n } = useTranslation()
+
+  const date = new Date(news.published_date)
+  const formattedDate = date.toLocaleDateString(
+    i18n.language === "ru"
+      ? "ru-RU"
+      : i18n.language === "en"
+      ? "en-US"
+      : "uz-UZ",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  )
 
   return (
-    <article className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group">
-      <div className="relative h-56 overflow-hidden">
-        <img
-          src={news.image}
-          alt={news.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+    <article
+      className={`group relative overflow-hidden rounded-[var(--radius)] transition-all duration-300 hover:shadow-lg ${
+        featured
+          ? "bg-[var(--card)] border border-[var(--border)] col-span-full md:col-span-2"
+          : "bg-[var(--card)] border border-[var(--border)]"
+      }`}
+    >
+      <div className={`${featured ? "md:flex md:gap-6" : ""}`}>
+        {news.image_url && (
+          <div
+            className={`relative overflow-hidden ${
+              featured ? "md:w-1/2" : "w-full h-48"
+            }`}
+          >
+            <img
+              src={news.image_url}
+              alt={news.title}
+              className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
+                featured ? "h-full min-h-[300px]" : "h-48"
+              }`}
+            />
+           
+          </div>
+        )}
+
         <div
-          className={`absolute top-4 left-4 bg-gradient-to-r ${categoryColors[news.category]} text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-md`}
+          className={`p-6 ${
+            featured ? "md:w-1/2 md:flex md:flex-col md:justify-center" : ""
+          }`}
         >
-          {news.category}
+          <h3
+            className={`font-bold text-[var(--card-foreground)] mb-3 line-clamp-2 transition-colors group-hover:text-[var(--primary)] ${
+              featured ? "text-2xl md:text-3xl" : "text-xl"
+            }`}
+          >
+            {news.title}
+          </h3>
+
+          <p
+            className={`text-[var(--muted-foreground)] mb-4 leading-relaxed ${
+              featured ? "text-base line-clamp-4" : "text-sm line-clamp-3"
+            }`}
+          >
+            {news.content}
+          </p>
+
+          <div className="flex items-center gap-4 text-sm text-[var(--muted-foreground)]">
+            <div className="flex items-center gap-1.5">
+              <FaCalendar className="w-4 h-4" />
+              <span>{formattedDate}</span>
+            </div>
+
+            {news.author && (
+              <div className="flex items-center gap-1.5">
+                <FaUser className="w-4 h-4" />
+                <span>{news.author}</span>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-
-      <div className="p-6">
-        <div className="flex items-center gap-2 text-gray-500 text-sm mb-3">
-          <span className="size='16'" />
-          <time dateTime={news.date}>
-            {new Date(news.date).toLocaleDateString("uz-UZ", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </time>
-        </div>
-
-        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-          {news.title}
-        </h3>
-
-        <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
-          {news.description}
-        </p>
-
-        <button className="w-full bg-blue-600 text-white py-2.5 px-4 rounded-lg font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg active:scale-95">
-          Batafsil
-        </button>
       </div>
     </article>
-  );
+  )
 }
-
-export default NewsCard;

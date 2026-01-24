@@ -5,11 +5,11 @@ import Footer from "./components/shared/Footer";
 import CoursesSection from "./feature/main/course/CourseSection";
 import { useEffect, useState } from "react";
 import Loader from "./components/shared/Loader";
-import NewsSection from "./feature/main/news/NewSection";
 import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
 import Teacher from "./feature/teacher/teacher";
+import { NewsPage } from "./feature/main/news/NewsPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,7 +38,7 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="courses" element={<CoursesSection />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="news" element={<NewsSection />} />
+          <Route path="news" element={<NewsPage/>} />
           <Route path="contact" element={<Contact />} />
         </Route>
         <Route

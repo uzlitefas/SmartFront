@@ -1,4 +1,4 @@
-import type { Course, NewsItem } from "@/types/main";
+import type { Course,} from "@/types/main";
 
 export const banner: string =
   "https://t4.ftcdn.net/jpg/15/12/04/11/360_F_1512041110_c0NFJDcHLmUJiwfDowzcKUgsPALmbjdD.jpg";
@@ -6,74 +6,244 @@ export const banner: string =
 export const video: string =
   "https://media.istockphoto.com/id/1708107733/video/teacher-providing-quality-education-to-attentive-school-children-in-classroom.mp4?s=mp4-640x640-is&k=20&c=36XIb6DXvv413u2bn3F7zVBR7z8lfITQ80WXi19TyR0=";
 
-export const newsData: NewsItem[] = [
+export const categories = [
+  "all",
+  "achievements",
+  "events",
+  "announcements",
+  "general",
+]
+
+
+export type NewsCard = {
+  id: number
+  title: string
+  content: string
+  category_key: "events" | "achievements" | "announcements" | "general"
+  is_featured: boolean
+  published_date: string
+  image_url?: string
+  author?: string
+}
+
+
+  export const NewsCardsData: NewsCard[] = [
   {
     id: 1,
     title: "Yangi sport zali ochildi",
-    description:
-      "Maktabimizda zamonaviy sport zali foydalanishga topshirildi. O'quvchilar uchun barcha sharoit yaratildi.",
-    date: "2026-01-15",
-    image:
-      "https://images.pexels.com/photos/260447/pexels-photo-260447.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Yangilik",
+    content: "Maktabimizda zamonaviy sport zali foydalanishga topshirildi.",
+    category_key: "events",
+    is_featured: true,
+    published_date: "2026-01-15",
+    image_url: "/images/news/sport-hall.jpg",
+    author: "Admin",
   },
   {
     id: 2,
-    title: "Fan olimpiadasi g'oliblari",
-    description:
-      "O'quvchilarimiz viloyat bosqichida g'olib bo'lishdi. Matematika va fizika fanlaridan yuqori natijalar.",
-    date: "2026-01-10",
-    image:
-      "https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Tadbir",
+    title: "Olimpiada g‘alabasi",
+    content: "O‘quvchilarimiz viloyat bosqichida 1-o‘rinni egalladi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2026-01-10",
+    image_url: "/images/news/olympiad-win.jpg",
+    author: "Admin",
   },
   {
     id: 3,
-    title: "Ota-onalar yig'ilishi",
-    description:
-      "2026-yil yanvar oyining 25-kuni barcha sinf ota-onalari yig'ilishi bo'lib o'tadi. Davomatli bo'ling.",
-    date: "2026-01-08",
-    image:
-      "https://images.pexels.com/photos/8364026/pexels-photo-8364026.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "E'lon",
+    title: "Yangi IT sinfxona ishga tushdi",
+    content: "Kompyuterlar bilan jihozlangan zamonaviy IT xonasi ochildi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-08",
+    image_url: "/images/news/it-classroom.jpg",
+    author: "Admin",
   },
   {
     id: 4,
-    title: "Kitob o'qish marafoni",
-    description:
-      "Maktabimizda kitobxonlik marafoni e'lon qilinadi. Ishtirok etishni istagan o'quvchilar kutubxonaga murojaat qilsin.",
-    date: "2026-01-05",
-    image:
-      "https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Tadbir",
+    title: "Fan haftaligi boshlandi",
+    content: "Maktabda matematika va fizika fan haftaligi o‘tkazilmoqda.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-06",
+    image_url: "/images/news/science-week.jpg",
+    author: "Admin",
   },
   {
     id: 5,
-    title: "Raqamli kutubxona ishga tushirildi",
-    description:
-      "O'quvchilar endi elektron kitoblardan foydalanishlari mumkin. Zamonaviy ta'lim texnologiyalari joriy etilmoqda.",
-    date: "2026-01-03",
-    image:
-      "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Yangilik",
+    title: "Yangi kurslar e’lon qilindi",
+    content: "2026-yil uchun yangi IT va dizayn kurslari ochildi.",
+    category_key: "announcements",
+    is_featured: false,
+    published_date: "2026-01-05",
+    image_url: "/images/news/it-courses.jpg",
+    author: "Admin",
   },
   {
     id: 6,
-    title: "Yangi o'quv yili ariza qabuli",
-    description:
-      "2026-2027 o'quv yili uchun 1-sinf o'quvchilarini qabul qilish boshlandi. Hujjatlar qabuli mart oyigacha.",
-    date: "2026-01-01",
-    image:
-      "https://images.pexels.com/photos/5212320/pexels-photo-5212320.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "E'lon",
+    title: "O‘quvchilar shahmat musobaqasida g‘olib bo‘ldi",
+    content: "Maktab jamoasi tuman bosqichida 1-o‘rinni oldi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2026-01-03",
+    image_url: "/images/news/chess-win.jpg",
+    author: "Admin",
   },
-];
+  {
+    id: 7,
+    title: "Ota-onalar yig‘ilishi bo‘lib o‘tdi",
+    content: "Yangi o‘quv rejalar muhokama qilindi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-02",
+    image_url: "/images/news/parents-meeting.jpg",
+    author: "Admin",
+  },
+  {
+    id: 8,
+    title: "Kutubxona yangilandi",
+    content: "Maktab kutubxonasi yangi kitoblar bilan boyitildi.",
+    category_key: "general",
+    is_featured: false,
+    published_date: "2025-12-30",
+    image_url: "/images/news/library.jpg",
+    author: "Admin",
+  },
+  {
+    id: 9,
+    title: "Yangi yil bayrami tashkil etildi",
+    content: "O‘quvchilar uchun bayramona tadbir o‘tkazildi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2025-12-28",
+    image_url: "/images/news/new-year.jpg",
+    author: "Admin",
+  },
+  {
+    id: 10,
+    title: "Ingliz tili tanlovi yakunlandi",
+    content: "Eng faol o‘quvchilar diplom bilan taqdirlandi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2025-12-25",
+    image_url: "/images/news/english-contest.jpg",
+    author: "Admin",
+  },
+]
+export type News = {
+  id: number
+  title: string
+  content: string
+  category_key: string
+  is_featured: boolean
+  published_date: string
+  image_url?: string
+  author?: string
+}
 
-export const categories = [
-  { key: "english", label: "English" },
-  { key: "russian", label: "Russian" },
-  { key: "math", label: "Math" },
-] as const;
+export const newsData: News[] = [
+  {
+    id: 1,
+    title: "Yangi sport zali ochildi",
+    content: "Maktabimizda zamonaviy sport zali foydalanishga topshirildi.",
+    category_key: "events",
+    is_featured: true,
+    published_date: "2026-01-15",
+    image_url: "/images/news/sport-hall.jpg",
+    author: "Admin",
+  },
+  {
+    id: 2,
+    title: "Olimpiada g‘alabasi",
+    content: "O‘quvchilarimiz viloyat bosqichida 1-o‘rinni egalladi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2026-01-10",
+    image_url: "/images/news/olympiad-win.jpg",
+    author: "Admin",
+  },
+  {
+    id: 3,
+    title: "Yangi kurslar e’lon qilindi",
+    content: "2026-yil uchun yangi IT kurslar ochildi.",
+    category_key: "announcements",
+    is_featured: false,
+    published_date: "2026-01-05",
+    image_url: "/images/news/it-courses.jpg",
+    author: "Admin",
+  },
+  {
+    id: 4,
+    title: "IT sinfxonasi yangilandi",
+    content: "Kompyuterlar va texnikalar bilan jihozlangan yangi IT xonasi ishga tushdi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2026-01-03",
+    image_url: "/images/news/it-classroom.jpg",
+    author: "Admin",
+  },
+  {
+    id: 5,
+    title: "Fan olimpiadasiga tayyorgarlik boshlandi",
+    content: "Iqtidorli o‘quvchilar bilan maxsus mashg‘ulotlar o‘tkazilmoqda.",
+    category_key: "general",
+    is_featured: false,
+    published_date: "2026-01-01",
+    image_url: "/images/news/preparation.jpg",
+    author: "Admin",
+  },
+  {
+    id: 6,
+    title: "Shahmat musobaqasida g‘alaba",
+    content: "Maktab jamoasi tuman bosqichida faxrli 1-o‘rinni qo‘lga kiritdi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2025-12-30",
+    image_url: "/images/news/chess-win.jpg",
+    author: "Admin",
+  },
+  {
+    id: 7,
+    title: "Ota-onalar yig‘ilishi bo‘lib o‘tdi",
+    content: "Ta’lim sifati va yangi rejalar muhokama qilindi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2025-12-28",
+    image_url: "/images/news/parents-meeting.jpg",
+    author: "Admin",
+  },
+  {
+    id: 8,
+    title: "Kutubxona fondi kengaytirildi",
+    content: "Yangi darsliklar va badiiy kitoblar olib kelindi.",
+    category_key: "general",
+    is_featured: false,
+    published_date: "2025-12-26",
+    image_url: "/images/news/library.jpg",
+    author: "Admin",
+  },
+  {
+    id: 9,
+    title: "Yangi yil bayram tadbiri o‘tkazildi",
+    content: "O‘quvchilar uchun bayramona dastur tashkil etildi.",
+    category_key: "events",
+    is_featured: false,
+    published_date: "2025-12-25",
+    image_url: "/images/news/new-year.jpg",
+    author: "Admin",
+  },
+  {
+    id: 10,
+    title: "Ingliz tili tanlovi yakunlandi",
+    content: "Eng faol ishtirokchilar diplom va sovg‘alar bilan taqdirlandi.",
+    category_key: "achievements",
+    is_featured: false,
+    published_date: "2025-12-23",
+    image_url: "/images/news/english-contest.jpg",
+    author: "Admin",
+  },
+]
+
+
 
 export const courses: Course[] = [
   {
@@ -166,7 +336,7 @@ export const footerData = {
 
 export const navItems = [
   { key: "home", href: "/" },
-  { key: "news", href: "/news" },
+  { key: "new", href: "/news" },
   { key: "courses", href: "/courses" },
   { key: "gallery", href: "/gallery" },
   { key: "contact", href: "/contact" },
@@ -272,3 +442,44 @@ export const leadership = [
   "O‘quv ishlari bo‘yicha direktor o‘rinbosari",
   "Ma’naviy-ma’rifiy ishlar bo‘yicha direktor o‘rinbosari",
 ];
+
+// src/constants/index.ts
+
+export interface TeacherProfile {
+  name: string
+  age: string
+  phone: string
+  email: string
+  gender: string
+  address: string
+  workExperience: string
+  qualification: string
+  university: string
+  diplomaNumber: string
+  subject: string
+  school: string
+  notes: string
+  avatar: string
+  coverImage: string
+}
+
+export const teacherProfileData: TeacherProfile = {
+  name: "Alisher Karimov",
+  age: "35",
+  phone: "+998 90 123 45 67",
+  email: "alisher.karimov@maktab.uz",
+  gender: "Erkak",
+  address: "Toshkent shahar, Mirzo Ulug'bek tumani",
+  workExperience: "12",
+  qualification: "Oliy toifa",
+  university: "Toshkent Davlat Pedagogika Universiteti",
+  diplomaNumber: "PDU-2010-12345",
+  subject: "Matematika",
+  school: "45-son umumta'lim maktabi",
+  notes:
+    "Xalqaro olimpiadalarga tayyorlovchi ustoz. Tajribali pedagog.",
+  avatar:
+    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+  coverImage:
+    "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+}
