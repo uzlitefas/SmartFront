@@ -5,16 +5,15 @@ import Footer from "./components/shared/Footer";
 import CoursesSection from "./feature/main/course/CourseSection";
 import { useEffect, useState } from "react";
 import Loader from "./components/shared/Loader";
-import NewsSection from "./feature/main/news/NewSection";
 import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
-import Teacher from "./feature/teacher/teacher";
 import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
+import { Teacher } from "./feature/teacher/teacher";
+import CreateVideos from "./feature/teacher/addVideos/createVideos";
 
 function App() {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
@@ -39,7 +38,6 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="courses" element={<CoursesSection />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="news" element={<NewsSection />} />
           <Route path="contact" element={<Contact />} />
         </Route>
         <Route
@@ -55,9 +53,9 @@ function App() {
             </>
           }
         >
-          <Route path="/teacher" element={<Teacher />} >
-          <Route path="/teacher/createTasks" element={<CreateTasks/>}/>
-          </Route>
+          <Route path="" element={<Teacher />} />
+          <Route path="createTasks" element={<CreateTasks />} />
+          <Route path="createVideos" element={<CreateVideos/>}/>
         </Route>
       </Routes>
     </div>

@@ -1,5 +1,9 @@
-function Teacher() {
-  return <div>teacher panel</div>;
-}
+import { Outlet } from "react-router-dom";
 
-export default Teacher;
+export function Teacher() {
+  return (
+    <div className="min-h-screen flex flex-col">
+        <Outlet />
+    </div>
+  );
+}
