@@ -10,6 +10,7 @@ import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
 import Teacher from "./feature/teacher/teacher";
+import TeacherLayout from "./feature/teacher/Layout";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,7 +47,7 @@ function App() {
           element={
             <>
               <div className="flex w-full">
-                "navbar"
+                <TeacherLayout />
                 <div className="m-3 p-8 rounded-md bg-accent w-full">
                   <Outlet />
                 </div>
