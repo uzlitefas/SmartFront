@@ -11,6 +11,7 @@ import LoginPage from "./feature/auth/login";
 import Teacher from "./feature/teacher/teacher";
 import { NewsPage } from "./feature/main/news/NewsPage";
 import TeacherProfileEditPage from "./feature/teacher/teacherProfile";
+import TeacherStudents from "./feature/teacher/teacherStudents";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -56,7 +57,8 @@ function App() {
           }
         >
           <Route path="" element={<Teacher />} />
-          <Route path="/teacher/profile" element={<TeacherProfileEditPage />} />
+          <Route path="profile" element={<TeacherProfileEditPage />} />
+          <Route path="students" element={<TeacherStudents />} />
         </Route>
       </Routes>
     </div>
