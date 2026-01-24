@@ -242,58 +242,66 @@ export const newsData: News[] = [
   },
 ];
 
+
 export const courses: Course[] = [
   {
     id: 1,
-    title: "Matematika Asoslari",
-    description: "Algebra va geometriya kursi.",
-    features: ["Algebra", "Geometriya", "Testlar"],
-    link: "/courses/math",
-    category: "math",
-    teacher: { id: 1, name: "Bahrom ustoz", subject: "Matematika" },
-    views: 1240,
+    title: "English for Beginners",
+    description: "Basic English speaking and grammar",
+    features: ["Speaking", "Grammar", "Vocabulary"],
+    link: "/courses/english-for-beginners", // 🔴 QOLDI
+    category: "english",
+    views: 15200,
+    teacher: {
+      id: 1,
+      name: "Anna Smith",
+      subject: "English",
+    },
+    video: {
+      url: "https://www.youtube.com/embed/_CL6n0FJZpk",
+      poster: "/images/english.jpg",
+      duration: "18:40",
+    },
   },
   {
     id: 2,
-    title: "English Grammar",
-    description: "Grammar va vocabulary.",
-    features: ["Beginner", "IELTS base", "Practice"],
-    link: "/courses/english",
-    category: "english",
-    teacher: { id: 2, name: "Humoyun ustoz", subject: "English" },
-    views: 980,
+    title: "Mathematics 101",
+    description: "Algebra and basic math logic",
+    features: ["Algebra", "Logic", "Practice"],
+    link: "/courses/mathematics-101", 
+    category: "math",
+    views: 9800,
+    teacher: {
+      id: 2,
+      name: "Ali Karimov",
+      subject: "Mathematics",
+    },
+    video: {
+      url: "https://www.youtube.com/embed/8H6E2sq6L9M",
+      duration: "22:10",
+    },
   },
-  {
+    {
     id: 3,
-    title: "English Speaking",
-    description: "Speaking mashg‘ulotlari.",
-    features: ["Live speaking", "Pronunciation", "Confidence"],
-    link: "/courses/english-speaking",
-    category: "english",
-    teacher: { id: 2, name: "Humoyun ustoz", subject: "English" },
-    views: 1560,
-  },
-  {
-    id: 4,
-    title: "Russian Grammar",
-    description: "Rus tili grammatikasi asoslari.",
-    features: ["A1–B1", "Grammatika", "Mashqlar"],
-    link: "/courses/russian-grammar",
+    title: "Russian for Beginners",
+    description: "Basic Russian speaking and grammar",
+    features: ["Speaking", "Grammar", "Vocabulary"],
+    link: "/courses/russian-for-beginners", // 🔴 QOLDI
     category: "russian",
-    teacher: { id: 3, name: "Ozoda ustoz", subject: "Russian" },
-    views: 870,
-  },
-  {
-    id: 5,
-    title: "Russian Speaking",
-    description: "Rus tilida gapirish ko‘nikmalari.",
-    features: ["Dialoglar", "So‘zlashuv", "Listening"],
-    link: "/courses/russian-speaking",
-    category: "russian",
-    teacher: { id: 3, name: "Ozoda ustoz", subject: "Russian" },
-    views: 1120,
+    views: 15200,
+    teacher: {
+      id: 1,
+      name: "Victoriya",
+      subject: "Russian",
+    },
+    video: {
+      url: "https://www.youtube.com/embed/YhhFK55Tkbg",
+      poster: "/images/russian.jpg",
+      duration: "18:40",
+    },
   },
 ];
+
 
 export const footerData = {
   about: {
