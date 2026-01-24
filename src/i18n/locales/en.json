@@ -4,11 +4,12 @@
   "courses": "courses",
   "gallery": "gallery",
   "contact": "contact",
+
   "hero": {
     "tagline": "Modern Online Education",
     "titleLine1": "Learn Future Professions",
     "titleLine2": "With Us",
-    "description": "Learn programming, design, and IT from scratch to professional level through our online school. Experienced mentors and real projects await you.",
+    "description": "Learn programming, design and IT from scratch to professional level.",
     "startCourse": "Start Course",
     "learnMore": "Learn More",
     "stats": {
@@ -17,8 +18,34 @@
       "employment": "Employment Rate"
     }
   },
+
+  "contactPage": {
+    "ourContacts": "Contact Us",
+    "contactFormDescription": "Fill out the form below and we’ll get back to you.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message...",
+    "submitButton": "Send",
+    "messageSentSuccess": "Message sent successfully!",
+    "messageSentError": "Failed to send message.",
+    "networkError": "Network error. Try again.",
+    "schoolLogoAlt": "School logo",
+
+    "addressTitle": "Address",
+  "addressText": "Tashkent, Amir Temur street 108",
+
+  "phoneTitle": "Phone",
+  "phoneNumber": "+998 90 123 45 67",
+
+  "emailTitle": "Email",
+  "emailAddress": "info@example.com"
+  },
+
   "footer": {
-    "aboutText": "An online education platform based on modern learning technologies. The best choice for quality education.",
+    "aboutText": "An online education platform based on modern technologies.",
     "about": "About School",
     "useful": "Useful Links",
     "contact": "Contact",
@@ -28,6 +55,7 @@
     "addressText": "Tashkent, Amir Temur street 108",
     "rights": "© 2026 Online School. All rights reserved Sigma."
   },
+
   "links": {
     "aboutUs": "About Us",
     "teachers": "Teachers",
@@ -41,9 +69,10 @@
     "terms": "Terms of Use",
     "cookies": "Cookies"
   },
+
   "app": {
-    "title": "Download our school app",
-    "desc": "A convenient mobile app for teachers, students and parents",
+    "title": "Download our app",
+    "desc": "A mobile app for students, teachers and parents",
     "download": "Download"
   },
 

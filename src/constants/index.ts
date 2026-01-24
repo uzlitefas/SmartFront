@@ -1,4 +1,4 @@
-import type { Course,} from "@/types/main";
+import type { Course } from "@/types/main";
 
 export const banner: string =
   "https://t4.ftcdn.net/jpg/15/12/04/11/360_F_1512041110_c0NFJDcHLmUJiwfDowzcKUgsPALmbjdD.jpg";
@@ -12,22 +12,20 @@ export const categories = [
   "events",
   "announcements",
   "general",
-]
-
+];
 
 export type NewsCard = {
-  id: number
-  title: string
-  content: string
-  category_key: "events" | "achievements" | "announcements" | "general"
-  is_featured: boolean
-  published_date: string
-  image_url?: string
-  author?: string
-}
+  id: number;
+  title: string;
+  content: string;
+  category_key: "events" | "achievements" | "announcements" | "general";
+  is_featured: boolean;
+  published_date: string;
+  image_url?: string;
+  author?: string;
+};
 
-
-  export const NewsCardsData: NewsCard[] = [
+export const NewsCardsData: NewsCard[] = [
   {
     id: 1,
     title: "Yangi sport zali ochildi",
@@ -128,17 +126,17 @@ export type NewsCard = {
     image_url: "/images/news/english-contest.jpg",
     author: "Admin",
   },
-]
+];
 export type News = {
-  id: number
-  title: string
-  content: string
-  category_key: string
-  is_featured: boolean
-  published_date: string
-  image_url?: string
-  author?: string
-}
+  id: number;
+  title: string;
+  content: string;
+  category_key: string;
+  is_featured: boolean;
+  published_date: string;
+  image_url?: string;
+  author?: string;
+};
 
 export const newsData: News[] = [
   {
@@ -174,7 +172,8 @@ export const newsData: News[] = [
   {
     id: 4,
     title: "IT sinfxonasi yangilandi",
-    content: "Kompyuterlar va texnikalar bilan jihozlangan yangi IT xonasi ishga tushdi.",
+    content:
+      "Kompyuterlar va texnikalar bilan jihozlangan yangi IT xonasi ishga tushdi.",
     category_key: "events",
     is_featured: false,
     published_date: "2026-01-03",
@@ -241,9 +240,7 @@ export const newsData: News[] = [
     image_url: "/images/news/english-contest.jpg",
     author: "Admin",
   },
-]
-
-
+];
 
 export const courses: Course[] = [
   {
@@ -446,21 +443,21 @@ export const leadership = [
 // src/constants/index.ts
 
 export interface TeacherProfile {
-  name: string
-  age: string
-  phone: string
-  email: string
-  gender: string
-  address: string
-  workExperience: string
-  qualification: string
-  university: string
-  diplomaNumber: string
-  subject: string
-  school: string
-  notes: string
-  avatar: string
-  coverImage: string
+  name: string;
+  age: string;
+  phone: string;
+  email: string;
+  gender: string;
+  address: string;
+  workExperience: string;
+  qualification: string;
+  university: string;
+  diplomaNumber: string;
+  subject: string;
+  school: string;
+  notes: string;
+  avatar: string;
+  coverImage: string;
 }
 
 export const teacherProfileData: TeacherProfile = {
@@ -476,10 +473,176 @@ export const teacherProfileData: TeacherProfile = {
   diplomaNumber: "PDU-2010-12345",
   subject: "Matematika",
   school: "45-son umumta'lim maktabi",
-  notes:
-    "Xalqaro olimpiadalarga tayyorlovchi ustoz. Tajribali pedagog.",
-  avatar:
-    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+  notes: "Xalqaro olimpiadalarga tayyorlovchi ustoz. Tajribali pedagog.",
+  avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
   coverImage:
     "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+};
+
+export interface Student {
+  id: string;
+  ismi: string;
+  familiyasi: string;
+  otasiningIsmi: string;
+  tugilganSana: string;
+  yoshi: number;
+  jinsi: "Erkak" | "Ayol";
+  telefonRaqami: string;
+  ortachaBall: number;
+  sinfi: string;
+  fan: string;
+  lastExamScore: number;
+  maxScore: number;
+  examType: "Class Exam" | "Online Exam" | "Missed Exam";
+  onlineStatus: boolean;
+  avatar: string;
 }
+
+export interface Teacher {
+  ismi: string;
+  familiyasi: string;
+  maktab: string;
+  shahar: string;
+  studentsCount: number;
+  projectsCount: number;
+  examsCount: number;
+  avatar: string;
+}
+
+export const teacherData: Teacher = {
+  ismi: "Jaspreet Kaur",
+  familiyasi: "Ahuja",
+  maktab: "Orchid International School",
+  shahar: "Nasik",
+  studentsCount: 150,
+  projectsCount: 5,
+  examsCount: 84,
+  avatar:
+    "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+};
+
+export const studentsData: Student[] = [
+  {
+    id: "1",
+    ismi: "Kajal",
+    familiyasi: "Sharma",
+    otasiningIsmi: "Rajesh Sharma",
+    tugilganSana: "2008-03-15",
+    yoshi: 16,
+    jinsi: "Ayol",
+    telefonRaqami: "+998 91 234 56 78",
+    ortachaBall: 89,
+    sinfi: "Grade 7",
+    fan: "Science",
+    lastExamScore: 85,
+    maxScore: 100,
+    examType: "Online Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "2",
+    ismi: "Neeta",
+    familiyasi: "Rathod",
+    otasiningIsmi: "Sunil Rathod",
+    tugilganSana: "2009-07-22",
+    yoshi: 15,
+    jinsi: "Ayol",
+    telefonRaqami: "+998 91 345 67 89",
+    ortachaBall: 83,
+    sinfi: "Grade 5",
+    fan: "Maths",
+    lastExamScore: 83,
+    maxScore: 100,
+    examType: "Missed Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "3",
+    ismi: "Amey",
+    familiyasi: "Gupta",
+    otasiningIsmi: "Anil Gupta",
+    tugilganSana: "2008-11-10",
+    yoshi: 16,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 456 78 90",
+    ortachaBall: 56,
+    sinfi: "Grade 9",
+    fan: "English Literature",
+    lastExamScore: 56,
+    maxScore: 100,
+    examType: "Class Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "4",
+    ismi: "Sharman",
+    familiyasi: "Doshi",
+    otasiningIsmi: "Ramesh Doshi",
+    tugilganSana: "2009-05-18",
+    yoshi: 15,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 567 89 01",
+    ortachaBall: 76,
+    sinfi: "Grade 8",
+    fan: "English Grammar",
+    lastExamScore: 76,
+    maxScore: 100,
+    examType: "Class Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "5",
+    ismi: "Amey",
+    familiyasi: "Gupta",
+    otasiningIsmi: "Anil Gupta",
+    tugilganSana: "2008-09-25",
+    yoshi: 16,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 678 90 12",
+    ortachaBall: 63,
+    sinfi: "Grade 9",
+    fan: "Environmental Studies",
+    lastExamScore: 63,
+    maxScore: 100,
+    examType: "Online Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "6",
+    ismi: "Sharman",
+    familiyasi: "Doshi",
+    otasiningIsmi: "Ramesh Doshi",
+    tugilganSana: "2009-01-30",
+    yoshi: 15,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 789 01 23",
+    ortachaBall: 100,
+    sinfi: "Grade 8",
+    fan: "Hindi",
+    lastExamScore: 54,
+    maxScore: 100,
+    examType: "Class Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+];
+
+export type ExamFilter = "All" | "Class Exam" | "Online Exam" | "Missed Exam";
+export type RankType = "A" | "B" | "C" | "D";
+export const COURSE_SUMMARY = {
+  courseName: "Grade 9",
+  subject: "English",
+  totalScore: 365,
+  rank: "B" as "A" | "B" | "C" | "D",
+};

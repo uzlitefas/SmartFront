@@ -4,6 +4,7 @@
   "courses": "kurslar",
   "gallery": "galereya",
   "contact": "aloqa",
+
   "hero": {
     "tagline": "Zamonaviy Onlayn Ta'lim",
     "titleLine1": "Kelajak Kasblarini O‘rganing",
@@ -17,8 +18,34 @@
       "employment": "Bandlik Darajasi"
     }
   },
+
+  "contactPage": {
+    "ourContacts": "Biz bilan bog‘laning",
+    "contactFormDescription": "Savollaringiz bo‘lsa yoki biz bilan bog‘lanmoqchi bo‘lsangiz, formani to‘ldiring.",
+    "nameLabel": "Ismingiz",
+    "namePlaceholder": "Ismingizni kiriting",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email manzilingizni kiriting",
+    "messageLabel": "Xabar",
+    "messagePlaceholder": "Xabaringizni yozing...",
+    "submitButton": "Yuborish",
+    "messageSentSuccess": "Xabaringiz muvaffaqiyatli yuborildi!",
+    "messageSentError": "Xabar yuborishda xatolik yuz berdi.",
+    "networkError": "Tarmoq xatosi. Qayta urinib ko‘ring.",
+    "schoolLogoAlt": "Maktab logotipi",
+
+    "addressTitle": "Manzil",
+  "addressText": "Toshkent sh., Amir Temur ko‘chasi 108",
+
+  "phoneTitle": "Telefon",
+  "phoneNumber": "+998 90 123 45 67",
+
+  "emailTitle": "Elektron pochta",
+  "emailAddress": "aloqa@misol.uz"
+  },
+
   "footer": {
-    "aboutText": "Zamonaviy ta'lim texnologiyalari asosida ishlaydigan online ta'lim platformasi. Sifatli bilim olish uchun eng yaxshi tanlov.",
+    "aboutText": "Zamonaviy ta'lim texnologiyalari asosida ishlaydigan online ta'lim platformasi.",
     "about": "Maktab haqida",
     "useful": "Foydali havolalar",
     "contact": "Aloqa",
@@ -28,6 +55,7 @@
     "addressText": "Toshkent sh., Amir Temur ko'chasi 108",
     "rights": "© 2026 Online Maktab. Barcha huquqlar himoyalangan Sigma."
   },
+
   "links": {
     "aboutUs": "Biz haqimizda",
     "teachers": "O'qituvchilar",
@@ -41,9 +69,10 @@
     "terms": "Foydalanish shartlari",
     "cookies": "Cookie"
   },
+
   "app": {
     "title": "Maktabimiz ilovasini yuklab oling",
-    "desc": "O'qituvchilar, o'quvchilar va ota-onalar uchun qulay mobil ilova",
+    "desc": "O‘qituvchilar, o‘quvchilar va ota-onalar uchun qulay ilova",
     "download": "Yuklab olish"
   },
 
