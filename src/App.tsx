@@ -9,13 +9,13 @@ import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
 import Teacher from "./feature/teacher/teacher";
-import { NewsPage } from "./feature/main/news/NewsPage";
 import TeacherProfileEditPage from "./feature/teacher/teacherProfile";
 import TeacherStudents from "./feature/teacher/teacherStudents";
+import { NewsPage } from "./feature/main/news/NewsPage";
+import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
 
 function App() {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
@@ -59,6 +59,7 @@ function App() {
           <Route path="" element={<Teacher />} />
           <Route path="profile" element={<TeacherProfileEditPage />} />
           <Route path="students" element={<TeacherStudents />} />
+          <Route path="createTasks" element={<CreateTasks />} />
         </Route>
       </Routes>
     </div>
