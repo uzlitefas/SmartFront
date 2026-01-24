@@ -10,6 +10,7 @@ import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
 import Teacher from "./feature/teacher/teacher";
+import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -54,7 +55,9 @@ function App() {
             </>
           }
         >
-          <Route path="" element={<Teacher />} />
+          <Route path="/teacher" element={<Teacher />} >
+          <Route path="/teacher/createTasks" element={<CreateTasks/>}/>
+          </Route>
         </Route>
       </Routes>
     </div>
