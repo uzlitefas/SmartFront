@@ -1,5 +1,4 @@
 import GalleryHero from "./GalleryHero";
-import GalleryCarusel from "./GelleryCarusel";
 import GalleryList from "./GelleryList";
 
 function Gallery() {
@@ -7,7 +6,6 @@ function Gallery() {
     <div>
       <GalleryHero />
       <GalleryList />
-      <GalleryCarusel />
     </div>
   );
 }
