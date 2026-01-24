@@ -1,8 +1,9 @@
 import type { Course, NewsItem } from "@/types/main";
 
-export const banner =
+export const banner: string =
   "https://t4.ftcdn.net/jpg/15/12/04/11/360_F_1512041110_c0NFJDcHLmUJiwfDowzcKUgsPALmbjdD.jpg";
-export const video =
+
+export const video: string =
   "https://media.istockphoto.com/id/1708107733/video/teacher-providing-quality-education-to-attentive-school-children-in-classroom.mp4?s=mp4-640x640-is&k=20&c=36XIb6DXvv413u2bn3F7zVBR7z8lfITQ80WXi19TyR0=";
 
 export const newsData: NewsItem[] = [
@@ -134,7 +135,6 @@ export const footerData = {
       "I'm passionate about creating beautiful, functional components that make your projects shine. Let's work together to bring your vision to life.",
     buttonText: "Schedule a call",
   },
-
   portfolio: {
     title: "PORTFOLIO",
     links: [
@@ -143,7 +143,6 @@ export const footerData = {
       { label: "About", to: "/about" },
     ],
   },
-
   social: {
     title: "SOCIAL",
     links: [
@@ -152,14 +151,12 @@ export const footerData = {
       { label: "LinkedIn", url: "https://linkedin.com" },
     ],
   },
-
   contact: {
     title: "CONTACT",
     phone: "+1 (555) 123-4567",
     email: "hello@artiststudio.com",
     location: "NYC • EST",
   },
-
   footerBottom: {
     copyright: "© 2025 YourProject. All rights reserved.",
     terms: "Terms & Conditions",
@@ -181,46 +178,40 @@ export const languages = [
   { code: "ru", label: "Русский" },
 ];
 
-export const galleryData = [
+export const galleryData1 = [
   {
     id: 1,
-    title: "1-sinf xonasi",
-    description: "Zamonaviy jihozlangan, yorug‘ va qulay sinf xonasi.",
+    key: "class1",
     image:
       "https://storage.kun.uz/source/7/p_7t6kn_xUtvWJ4eFaIpvdMJ6TStLej1.jpg",
   },
   {
     id: 2,
-    title: "Maktab kutubxonasi",
-    description: "O‘quvchilar uchun boy adabiyotlar va tinch muhit.",
+    key: "library",
     image:
       "https://arm.navoiy-uni.uz/wp-content/uploads/2020/08/eSYwKe5vcf9-jdQDLCxP4fC4Vjhch8vA-e1598937476763.jpg",
   },
   {
     id: 3,
-    title: "Sport zali",
-    description: "Jismoniy tarbiya mashg‘ulotlari uchun katta sport zali.",
+    key: "gym",
     image:
       "https://storage.kun.uz/source/8/OkUtquyxI7fscIyox-tiMDhS9ieqKKw7.jpg",
   },
   {
     id: 4,
-    title: "Maktab tashqi ko‘rinishi",
-    description: "Zamonaviy arxitekturaga ega maktab binosi.",
+    key: "exterior",
     image:
       "https://data.daryo.uz/media/2023/17.022023/Otabek/photo_2023-03-16_23-57-59%20(2).jpg",
   },
   {
     id: 5,
-    title: "Boshlang‘ich sinf",
-    description: "Kichik yoshdagi bolalar uchun qulay va xavfsiz xona.",
+    key: "primary",
     image:
       "https://storage.kun.uz/source/9/mc9uUXdzsof1zSxGCSOkeodNbsZHhriF.jpg",
   },
   {
     id: 6,
-    title: "Tadbirlar zali",
-    description: "Bayram va tadbirlar o‘tkaziladigan katta zal.",
+    key: "hall",
     image:
       "https://avatars.mds.yandex.net/get-altay/5584339/2a0000017c8408bd9e1fa0727ec3f22c1ae9/XL",
   },

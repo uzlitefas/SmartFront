@@ -45,5 +45,56 @@
     "title": "Download our school app",
     "desc": "A convenient mobile app for teachers, students and parents",
     "download": "Download"
+  },
+
+  "gallery": {
+    "title": "School Gallery",
+    "subtitle": "Best moments from our school life",
+    "items": {
+      "class1": {
+        "title": "Grade 1 Classroom",
+        "desc": "A modern, bright and comfortable classroom."
+      },
+      "library": {
+        "title": "School Library",
+        "desc": "Rich collection of books and a quiet environment."
+      },
+      "gym": {
+        "title": "Gym Hall",
+        "desc": "A large hall for physical education classes."
+      },
+      "exterior": {
+        "title": "School Exterior",
+        "desc": "School building with modern architecture."
+      },
+      "primary": {
+        "title": "Primary Class",
+        "desc": "A safe and comfortable room for young students."
+      },
+      "hall": {
+        "title": "Event Hall",
+        "desc": "A large hall for celebrations and events."
+      }
+    }
+  },
+
+  "galleryHero": {
+    "title": "We build the future with",
+    "highlight": "knowledge",
+    "subtitle": "Our school is a modern learning center where quality education, experienced teachers, and a supportive environment come together.",
+    "features": {
+      "education": {
+        "title": "Quality Education",
+        "text": "Modern programs focused on strong knowledge and student growth."
+      },
+      "teachers": {
+        "title": "Experienced Teachers",
+        "text": "Professional educators with many years of experience."
+      },
+      "environment": {
+        "title": "Comfortable Environment",
+        "text": "A safe and friendly atmosphere for every student."
+      }
+    }
   }
 }
