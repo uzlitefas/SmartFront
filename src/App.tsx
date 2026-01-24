@@ -10,6 +10,7 @@ import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
 import Teacher from "./feature/teacher/teacher";
 import { NewsPage } from "./feature/main/news/NewsPage";
+import TeacherProfileEditPage from "./feature/teacher/teacherProfile";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,7 +39,7 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="courses" element={<CoursesSection />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="news" element={<NewsPage/>} />
+          <Route path="news" element={<NewsPage />} />
           <Route path="contact" element={<Contact />} />
         </Route>
         <Route
@@ -55,6 +56,7 @@ function App() {
           }
         >
           <Route path="" element={<Teacher />} />
+          <Route path="/teacher/profile" element={<TeacherProfileEditPage />} />
         </Route>
       </Routes>
     </div>
