@@ -14,6 +14,7 @@ import { NewsPage } from "./feature/main/news/NewsPage";
 import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
 import CreateVideos from "./feature/teacher/addVideos/createVideos";
 import TeacherHome from "./feature/teacher/teacher";
+import TeacherNavbar from "./feature/teacher/Navbar/Navbar";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -49,7 +50,7 @@ function App() {
           element={
             <>
               <div className="flex w-full">
-                <TeacherLayout />
+                <TeacherNavbar />
                 <div className="m-3 p-8 rounded-md bg-accent w-full">
                   <Outlet />
                 </div>
