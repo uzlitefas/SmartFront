@@ -13,6 +13,8 @@ import TeacherProfileEditPage from "./feature/teacher/teacherProfile";
 import TeacherStudents from "./feature/teacher/teacherStudents";
 import { NewsPage } from "./feature/main/news/NewsPage";
 import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
+import { Teacher } from "./feature/teacher/teacher";
+import CreateVideos from "./feature/teacher/addVideos/createVideos";
 
 function App() {
   const [loading, setLoading] = useState(true);
