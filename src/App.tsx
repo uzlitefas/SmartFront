@@ -8,13 +8,12 @@ import Loader from "./components/shared/Loader";
 import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
-import Teacher from "./feature/teacher/teacher";
 import TeacherProfileEditPage from "./feature/teacher/teacherProfile";
 import TeacherStudents from "./feature/teacher/teacherStudents";
 import { NewsPage } from "./feature/main/news/NewsPage";
 import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
-import { Teacher } from "./feature/teacher/teacher";
 import CreateVideos from "./feature/teacher/addVideos/createVideos";
+import TeacherHome from "./feature/teacher/teacher";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -58,10 +57,11 @@ function App() {
             </>
           }
         >
-          <Route path="" element={<Teacher />} />
+          <Route path="" element={<TeacherHome />} />
           <Route path="profile" element={<TeacherProfileEditPage />} />
           <Route path="students" element={<TeacherStudents />} />
           <Route path="createTasks" element={<CreateTasks />} />
+          <Route path="createVideos" element={<CreateVideos />} />
         </Route>
       </Routes>
     </div>
