@@ -47,54 +47,44 @@
     "download": "Yuklab olish"
   },
 
-  "gallery": {
-    "title": "Maktab galereyasi",
-    "subtitle": "Maktabimiz hayotidan eng yaxshi lavhalar",
-    "items": {
-      "class1": {
-        "title": "1-sinf xonasi",
-        "desc": "Zamonaviy jihozlangan, yorug‘ va qulay sinf xonasi."
-      },
-      "library": {
-        "title": "Maktab kutubxonasi",
-        "desc": "O‘quvchilar uchun boy adabiyotlar va tinch muhit."
-      },
-      "gym": {
-        "title": "Sport zali",
-        "desc": "Jismoniy tarbiya mashg‘ulotlari uchun katta sport zali."
-      },
-      "exterior": {
-        "title": "Maktab tashqi ko‘rinishi",
-        "desc": "Zamonaviy arxitekturaga ega maktab binosi."
-      },
-      "primary": {
-        "title": "Boshlang‘ich sinf",
-        "desc": "Kichik yoshdagi bolalar uchun qulay va xavfsiz xona."
-      },
-      "hall": {
-        "title": "Tadbirlar zali",
-        "desc": "Bayram va tadbirlar o‘tkaziladigan katta zal."
-      }
-    }
-  },
+  "galleryTitle": "Maktab galereyasi",
+  "gallerySubtitle": "Maktabimiz hayotidan eng yaxshi lavhalar",
+
+  "galleryItemClass1Title": "1-sinf xonasi",
+  "galleryItemClass1Desc": "Zamonaviy jihozlangan, yorug‘ va qulay sinf xonasi.",
+
+  "galleryItemLibraryTitle": "Maktab kutubxonasi",
+  "galleryItemLibraryDesc": "O‘quvchilar uchun boy adabiyotlar va tinch muhit.",
+
+  "galleryItemGymTitle": "Sport zali",
+  "galleryItemGymDesc": "Jismoniy tarbiya mashg‘ulotlari uchun katta sport zali.",
+
+  "galleryItemExteriorTitle": "Maktab tashqi ko‘rinishi",
+  "galleryItemExteriorDesc": "Zamonaviy arxitekturaga ega maktab binosi.",
+
+  "galleryItemPrimaryTitle": "Boshlang‘ich sinf",
+  "galleryItemPrimaryDesc": "Kichik yoshdagi bolalar uchun qulay va xavfsiz xona.",
+
+  "galleryItemHallTitle": "Tadbirlar zali",
+  "galleryItemHallDesc": "Bayram va tadbirlar o‘tkaziladigan katta zal.",
 
   "galleryHero": {
     "title": "Kelajakni",
     "highlight": "bilim",
     "subtitle": "Maktabimiz — sifatli ta’lim, tajribali ustozlar va qulay muhit uyg‘unlashgan zamonaviy bilim maskani. Har bir o‘quvchi uchun kelajak sari mustahkam poydevor.",
-    "features": {
-      "education": {
+    "features": [
+      {
         "title": "Sifatli ta’lim",
         "text": "Zamonaviy dasturlar asosida chuqur va puxta bilim beriladi."
       },
-      "teachers": {
+      {
         "title": "Tajribali ustozlar",
         "text": "Ko‘p yillik tajribaga ega malakali pedagoglar."
       },
-      "environment": {
+      {
         "title": "Qulay muhit",
         "text": "Har bir o‘quvchi uchun xavfsiz va do‘stona muhit."
       }
-    }
+    ]
   }
 }

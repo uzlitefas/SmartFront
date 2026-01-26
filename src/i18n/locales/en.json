@@ -47,54 +47,44 @@
     "download": "Download"
   },
 
-  "gallery": {
-    "title": "School Gallery",
-    "subtitle": "Best moments from our school life",
-    "items": {
-      "class1": {
-        "title": "Grade 1 Classroom",
-        "desc": "A modern, bright and comfortable classroom."
-      },
-      "library": {
-        "title": "School Library",
-        "desc": "Rich collection of books and a quiet environment."
-      },
-      "gym": {
-        "title": "Gym Hall",
-        "desc": "A large hall for physical education classes."
-      },
-      "exterior": {
-        "title": "School Exterior",
-        "desc": "School building with modern architecture."
-      },
-      "primary": {
-        "title": "Primary Class",
-        "desc": "A safe and comfortable room for young students."
-      },
-      "hall": {
-        "title": "Event Hall",
-        "desc": "A large hall for celebrations and events."
-      }
-    }
-  },
+  "galleryTitle": "School Gallery",
+  "gallerySubtitle": "Best moments from our school life",
+
+  "galleryItemClass1Title": "1st Grade Classroom",
+  "galleryItemClass1Desc": "A modern, bright, and comfortable classroom.",
+
+  "galleryItemLibraryTitle": "School Library",
+  "galleryItemLibraryDesc": "A quiet place with a rich collection of books.",
+
+  "galleryItemGymTitle": "Gym Hall",
+  "galleryItemGymDesc": "A large gym for physical education activities.",
+
+  "galleryItemExteriorTitle": "School Exterior",
+  "galleryItemExteriorDesc": "A modern school building with contemporary architecture.",
+
+  "galleryItemPrimaryTitle": "Primary Class",
+  "galleryItemPrimaryDesc": "A safe and comfortable room for young children.",
+
+  "galleryItemHallTitle": "Event Hall",
+  "galleryItemHallDesc": "A large hall for celebrations and school events.",
 
   "galleryHero": {
-    "title": "We build the future with",
+    "title": "Future",
     "highlight": "knowledge",
-    "subtitle": "Our school is a modern learning center where quality education, experienced teachers, and a supportive environment come together.",
-    "features": {
-      "education": {
+    "subtitle": "Our school — a modern center of learning combining quality education, experienced teachers, and a comfortable environment. A solid foundation for every student’s future.",
+    "features": [
+      {
         "title": "Quality Education",
-        "text": "Modern programs focused on strong knowledge and student growth."
+        "text": "In-depth knowledge is provided based on modern programs."
       },
-      "teachers": {
+      {
         "title": "Experienced Teachers",
-        "text": "Professional educators with many years of experience."
+        "text": "Qualified teachers with many years of experience."
       },
-      "environment": {
+      {
         "title": "Comfortable Environment",
-        "text": "A safe and friendly atmosphere for every student."
+        "text": "A safe and friendly environment for every student."
       }
-    }
+    ]
   }
 }

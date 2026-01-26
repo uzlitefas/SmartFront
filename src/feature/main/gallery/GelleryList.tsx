@@ -5,6 +5,10 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { galleryData1 } from "@/constants";
 
+/* 🔑 FLAT key helper */
+const galleryKey = (key: string, type: "Title" | "Desc") =>
+  `galleryItem${key.charAt(0).toUpperCase()}${key.slice(1)}${type}`;
+
 export default function GalleryList() {
   const { t } = useTranslation();
   const [active, setActive] = useState<(typeof galleryData1)[0] | null>(null);
@@ -34,10 +38,10 @@ export default function GalleryList() {
         className="max-w-4xl mx-auto text-center mb-12"
       >
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
-          {t("gallery.title")}
+          {t("galleryTitle")}
         </h1>
         <p className="text-xs sm:text-sm text-muted-foreground">
-          {t("gallery.subtitle")}
+          {t("gallerySubtitle")}
         </p>
       </motion.div>
 
@@ -60,16 +64,16 @@ export default function GalleryList() {
             <div className="relative flex-1 overflow-hidden rounded-3xl">
               <img
                 src={item.image}
-                alt={t(`gallery.items.${item.key}.title`)}
+                alt={t(galleryKey(item.key, "Title"))}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
 
               <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent">
                 <h3 className="text-white font-semibold text-sm sm:text-base">
-                  {t(`gallery.items.${item.key}.title`)}
+                  {t(galleryKey(item.key, "Title"))}
                 </h3>
                 <p className="text-white/80 text-xs sm:text-sm line-clamp-2">
-                  {t(`gallery.items.${item.key}.desc`)}
+                  {t(galleryKey(item.key, "Desc"))}
                 </p>
               </div>
             </div>
@@ -104,16 +108,16 @@ export default function GalleryList() {
 
               <img
                 src={active.image}
-                alt={t(`gallery.items.${active.key}.title`)}
+                alt={t(galleryKey(active.key, "Title"))}
                 className="w-full h-64 sm:h-72 object-cover"
               />
 
               <div className="p-5">
                 <h3 className="text-lg font-bold mb-1">
-                  {t(`gallery.items.${active.key}.title`)}
+                  {t(galleryKey(active.key, "Title"))}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {t(`gallery.items.${active.key}.desc`)}
+                  {t(galleryKey(active.key, "Desc"))}
                 </p>
               </div>
             </motion.div>

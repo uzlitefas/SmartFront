@@ -7,7 +7,7 @@ export default function TeacherLayout({ children }) {
       <TeacherNavbar />
 
       {/* Content area */}
-      <div className="flex-1 flex items-start justify-center p-6 overflow-hidden">
+      <div className="flex-1 flex items-start justify-center  overflow-hidden">
         {children}
       </div>
     </div>

@@ -66,7 +66,7 @@ export default function Navbar() {
             <div className="hidden md:flex space-x-8">
               {navItems.map((item, index) => (
                 <motion.div
-                  key={item.key}
+                  key={item.id}
                   custom={index}
                   initial="hidden"
                   animate="visible"
@@ -76,7 +76,7 @@ export default function Navbar() {
                     to={item.href}
                     className="text-muted-foreground transition-colors hover:text-foreground font-medium"
                   >
-                    {t(item.key)}
+                    {t(item.id)}
                   </Link>
                 </motion.div>
               ))}
@@ -134,7 +134,7 @@ export default function Navbar() {
               <nav className="flex-1 overflow-y-auto p-5 space-y-4">
                 {navItems.map((item, index) => (
                   <motion.div
-                    key={item.key}
+                    key={item.id}
                     custom={index}
                     initial={{ x: 20, opacity: 0 }}
                     animate={{
@@ -148,7 +148,7 @@ export default function Navbar() {
                       onClick={() => setOpen(false)}
                       className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-blue-50 hover:text-blue-600 transition-colors"
                     >
-                      {t(item.key)}
+                      {t(item.id)}
                     </Link>
                   </motion.div>
                 ))}

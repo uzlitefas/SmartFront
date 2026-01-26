@@ -165,11 +165,11 @@ export const footerData = {
 };
 
 export const navItems = [
-  { key: "home", href: "/" },
-  { key: "news", href: "/news" },
-  { key: "courses", href: "/courses" },
-  { key: "gallery", href: "/gallery" },
-  { key: "contact", href: "/contact" },
+  { id: "home", href: "/" },
+  { id: "news", href: "/news" },
+  { id: "courses", href: "/courses" },
+  { id: "gallery", href: "/gallery" }, // faqat key/string
+  { id: "contact", href: "/contact" },
 ];
 
 export const languages = [
@@ -214,21 +214,6 @@ export const galleryData1 = [
     key: "hall",
     image:
       "https://avatars.mds.yandex.net/get-altay/5584339/2a0000017c8408bd9e1fa0727ec3f22c1ae9/XL",
-  },
-];
-
-export const feature5 = [
-  {
-    title: "Sifatli ta’lim",
-    text: "Zamonaviy dasturlar va metodikalar asosida.",
-  },
-  {
-    title: "Tajribali ustozlar",
-    text: "Yuqori malakali va fidoyi o‘qituvchilar.",
-  },
-  {
-    title: "Qulay muhit",
-    text: "Har bir o‘quvchi uchun xavfsiz va qulay sharoit.",
   },
 ];
 
