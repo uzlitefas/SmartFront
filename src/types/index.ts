@@ -1,3 +1,14 @@
+export interface LoginDto {
+  phone: string;
+  password: string;
+}
+
+export interface AcceptInviteDto {
+  token: string;
+  phone: string;
+  password: string;
+}
+
 export interface Teacher {
   id: string;
   full_name: string;

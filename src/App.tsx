@@ -15,6 +15,8 @@ import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
 import CreateVideos from "./feature/teacher/addVideos/createVideos";
 import TeacherHome from "./feature/teacher/teacher";
 import TeacherNavbar from "./feature/teacher/Navbar/Navbar";
+import CreateSchoolForm from "./feature/admin/school/createSchoolForm";
+import DirectorCreatePage from "./feature/director/createCreate/directorCreatePage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +47,30 @@ function App() {
           <Route path="news" element={<NewsPage />} />
           <Route path="contact" element={<Contact />} />
         </Route>
+        <Route
+          path="/admin"
+          element={
+            <>
+              <Outlet />
+            </>
+          }
+        >
+          <Route path="" element={"admin"} />
+          <Route path="schools/create" element={<CreateSchoolForm />} />
+        </Route>
+        <Route
+          path="/director"
+          element={
+            <>
+              "director"
+              <Outlet />
+            </>
+          }
+        >
+          <Route path="create/:invite-token" element={<DirectorCreatePage />} />
+          <Route path="" element={"director"} />
+        </Route>
+
         <Route
           path="/teacher"
           element={
