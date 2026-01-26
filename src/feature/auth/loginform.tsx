@@ -15,7 +15,6 @@ import { loginformSchema } from "@/lib/validation";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useAuth } from "@/stores/auth.store";
-import { authApi } from "@/service/auth.api";
 import { useNavigate } from "react-router-dom";
 
 type LoginFormValues = z.infer<typeof loginformSchema>;
@@ -24,7 +23,7 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
-  const { login } = useAuth();
+  const { loginRequest } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const nav = useNavigate();
@@ -46,12 +45,8 @@ export function LoginForm({
     setError(null);
 
     try {
-      const res = await authApi.login({
-        phone: data.number,
-        password: data.password,
-      });
+      const res = await loginRequest(data.number, data.password);
 
-      login(res.accessToken, res.userId, res.role, res.mustChangePassword);
       switch (res.role) {
         case "SUPER_ADMIN":
           nav("/admin");
@@ -70,11 +65,8 @@ export function LoginForm({
           break;
         default:
           nav("/login");
-          break;
       }
-      console.log(res.role);
     } catch (err: any) {
-      console.error("Login xatolik tafsilotlari:", err);
       setError(
         err.response?.data?.message ||
           "Login muvaffaqiyatsiz, qayta urinib ko‘ring",
