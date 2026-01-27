@@ -45,5 +45,41 @@
     "title": "Maktabimiz ilovasini yuklab oling",
     "desc": "O'qituvchilar, o'quvchilar va ota-onalar uchun qulay mobil ilova",
     "download": "Yuklab olish"
+  },
+
+  "createVideo": {
+    "title": "Video kurs qo‘shish",
+    "courseTitle": "Kurs nomi",
+    "description": "Qisqacha tavsif",
+    "features": "Imkoniyatlar",
+    "featurePlaceholder": "Masalan: Speakingni rivojlantirish",
+    "main": "Asosiy",
+    "repeat": "Takrorlash",
+    "add": "Qo‘shish",
+    "thumbnail": "Rasm",
+    "video": "Video fayl",
+    "save": "Saqlash",
+    "previewTitle": "Kurs nomi",
+    "previewDescription": "Kurs tavsifi"
+  },
+  "courseHero": {
+    "title1": "Kelajagingni",
+    "title2": "o‘zgartiradigan bilimlar",
+    "subtitle": "Amaliy kurslar orqali real ko‘nikmalarni rivojlantir.",
+    "explore": "Kurslarni ko‘rish",
+    "how": "Qanday ishlaydi",
+    "stats": {
+      "courses": "Kurslar",
+      "students": "Talabalar",
+      "satisfaction": "Qoniqish"
+    },
+    "demo": {
+      "title": "English for Beginners",
+      "desc": "Speaking va grammatikani ishonch bilan o‘rganish.",
+      "tag1": "Speaking",
+      "tag2": "Amaliyot"
+    }
   }
+
+
 }
