@@ -75,6 +75,42 @@
     "desc": "Мобильное приложение для учеников и родителей",
     "download": "Скачать"
   },
+  "createVideo": {
+    "title": "Добавить видео курс",
+    "courseTitle": "Название курса",
+    "description": "Краткое описание",
+    "features": "Возможности",
+    "featurePlaceholder": "Например: Развитие speaking",
+    "main": "Основное",
+    "repeat": "Повторение",
+    "add": "Добавить",
+    "thumbnail": "Изображение",
+    "video": "Видео файл",
+    "save": "Сохранить",
+    "previewTitle": "Название курса",
+    "previewDescription": "Описание курса"
+  },
+  "courseHero": {
+    "title1": "Навыки, которые",
+    "title2": "меняют будущее",
+    "subtitle": "Практические курсы для развития реальных навыков.",
+    "explore": "Смотреть курсы",
+    "how": "Как это работает",
+    "stats": {
+      "courses": "Курсы",
+      "students": "Студенты",
+      "satisfaction": "Довольство"
+    },
+    "demo": {
+      "title": "English for Beginners",
+      "desc": "Уверенное развитие speaking и грамматики.",
+      "tag1": "Speaking",
+      "tag2": "Практика"
+    }
+  }
+
+
+  },
 
   "gallery": {
     "title": "Галерея школы",
