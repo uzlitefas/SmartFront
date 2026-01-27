@@ -7,14 +7,10 @@ import { banner, video } from "@/constants";
 import AppBanner from "@/components/shared/AppBanner";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import { useTheme } from "@/hooks/hooks";
-import { StarsBackground } from "@/components/animate-ui/components/backgrounds/stars";
-import { cn } from "@/lib/utils";
 
 export function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const { t } = useTranslation();
-  const { theme } = useTheme();
 
   const container = {
     hidden: { opacity: 0, y: 20 },

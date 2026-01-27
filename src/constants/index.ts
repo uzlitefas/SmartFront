@@ -446,7 +446,7 @@ export const leadership = [
   "Direktor",
   "O‘quv ishlari bo‘yicha direktor o‘rinbosari",
   "Ma’naviy-ma’rifiy ishlar bo‘yicha direktor o‘rinbosari",
-]
+];
 // src/constants/index.ts
 
 export type Lang = "uz" | "ru" | "en";
@@ -500,7 +500,6 @@ export const createVideoText: Record<Lang, any> = {
     previewDescription: "Course description",
   },
 };
-];
 
 // src/constants/index.ts
 
