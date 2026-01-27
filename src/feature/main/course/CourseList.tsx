@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CourseCard } from "./CourseCard";
 import { useTranslation } from "react-i18next";
 import { CourseDetail } from "./CourseDetail";
 
