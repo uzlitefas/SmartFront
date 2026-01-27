@@ -342,3 +342,65 @@ export const createVideoText: Record<Lang, any> = {
     previewDescription: "Course description",
   },
 };
+
+export const courseHeroText: Record<Lang, any> = {
+  uz: {
+    title1: "Kelajagingni",
+    title2: "o‘zgartiradigan bilimlar",
+    subtitle:
+      "Amaliy kurslar orqali real ko‘nikmalarni rivojlantir. Tezroq o‘rgan, aqlliroq mashq qil va maqsadlaringga yaqinlash.",
+    explore: "Kurslarni ko‘rish",
+    how: "Qanday ishlaydi",
+    stats: {
+      courses: "Kurslar",
+      students: "Talabalar",
+      satisfaction: "Qoniqish",
+    },
+    demo: {
+      title: "English for Beginners",
+      desc: "Speaking, listening va kundalik grammatikani ishonch bilan o‘rganish.",
+      tag1: "Speaking",
+      tag2: "Amaliyot",
+    },
+  },
+
+  ru: {
+    title1: "Навыки, которые",
+    title2: "меняют будущее",
+    subtitle:
+      "Практические курсы для развития реальных навыков. Учись быстрее, тренируйся умнее и приближайся к своим целям.",
+    explore: "Смотреть курсы",
+    how: "Как это работает",
+    stats: {
+      courses: "Курсы",
+      students: "Студенты",
+      satisfaction: "Довольство",
+    },
+    demo: {
+      title: "English for Beginners",
+      desc: "Уверенное развитие speaking, listening и базовой грамматики.",
+      tag1: "Speaking",
+      tag2: "Практика",
+    },
+  },
+
+  en: {
+    title1: "Skills that",
+    title2: "change your future",
+    subtitle:
+      "Practical courses to build real skills. Learn faster, practice smarter, and move closer to your goals.",
+    explore: "Explore courses",
+    how: "How it works",
+    stats: {
+      courses: "Courses",
+      students: "Students",
+      satisfaction: "Satisfaction",
+    },
+    demo: {
+      title: "English for Beginners",
+      desc: "Build confidence in speaking, listening, and everyday grammar.",
+      tag1: "Speaking",
+      tag2: "Practice",
+    },
+  },
+};
