@@ -7,11 +7,10 @@ export const video: string =
   "https://media.istockphoto.com/id/1708107733/video/teacher-providing-quality-education-to-attentive-school-children-in-classroom.mp4?s=mp4-640x640-is&k=20&c=36XIb6DXvv413u2bn3F7zVBR7z8lfITQ80WXi19TyR0=";
 
 export const categories = [
-  "all",
-  "achievements",
-  "events",
-  "announcements",
-  "general",
+  { key: "all", label: "All" },
+  { key: "english", label: "English" },
+  { key: "math", label: "Mathematics" },
+  { key: "russian", label: "Russian" },
 ];
 
 export type NewsCard = {
@@ -24,6 +23,69 @@ export type NewsCard = {
   image_url?: string;
   author?: string;
 };
+
+export const COURSES = [
+  {
+    id: 1,
+    title: "English for Beginners",
+    description: "Basic English speaking and grammar",
+    category: "english",
+    rank: "D",
+    students: 120,
+    level: { course: { level: "Beginner" } },
+    image: "/images/courses/english.jpg",
+  },
+  {
+    id: 2,
+    title: "Mathematics 101",
+    description: "Algebra and basic math logic",
+    category: "math",
+    rank: "B",
+    students: 95,
+    level: { course: { level: "Intermediate" } },
+    image: "/images/courses/math.jpg",
+  },
+  {
+    id: 3,
+    title: "Russian for Beginners",
+    description: "Basic Russian speaking and grammar",
+    category: "russian",
+    rank: "A",
+    students: 80,
+    level: { course: { level: "Beginner" } },
+    image: "/images/courses/russian.jpg",
+  },
+  {
+    id: 4,
+    title: "Advanced English Grammar",
+    description: "Complex grammar rules and usage",
+    category: "english",
+    rank: "C",
+    students: 60,
+    level: { course: { level: "Advanced" } },
+    image: "/images/courses/english-advanced.jpg",
+  },
+  {
+    id: 5,
+    title: "Geometry Basics",
+    description: "Shapes, theorems, and problem solving",
+    category: "math",
+    rank: "B",
+    students: 110,
+    level: { course: { level: "Beginner" } },
+    image: "/images/courses/geometry.jpg",
+  },
+  {
+    id: 6,
+    title: "Russian Conversation",
+    description: "Improve speaking and listening skills",
+    category: "russian",
+    rank: "A",
+    students: 45,
+    level: { course: { level: "Intermediate" } },
+    image: "/images/courses/russian-conversation.jpg",
+  },
+];
 
 export const NewsCardsData: NewsCard[] = [
   {

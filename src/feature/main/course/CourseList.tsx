@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CourseCard } from "./CourseCard";
 import { useTranslation } from "react-i18next";
+import { CourseDetail } from "./CourseDetail";
 
 interface Props {
   courses: any[];
@@ -31,7 +32,7 @@ export function CourseList({ courses, activeCategory }: Props) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCourses.map((course) => (
-          <CourseCard key={course.id} course={course} />
+          <CourseDetail key={course.id} course={course} />
         ))}
       </div>
 
