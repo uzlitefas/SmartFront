@@ -1,4 +1,3 @@
-// CourseHero.tsx
 import { useTranslation } from "react-i18next";
 
 export default function CourseHero() {
@@ -11,13 +10,11 @@ export default function CourseHero() {
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-accent/30 blur-3xl" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto py-10 pb-20 grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
             {t("courseHero.title1")}
-            <span className="block text-primary">
-              {t("courseHero.title2")}
-            </span>
+            <span className="block text-primary">{t("courseHero.title2")}</span>
           </h1>
 
           <p className="text-muted-foreground text-base md:text-lg max-w-xl">
