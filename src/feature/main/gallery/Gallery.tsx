@@ -1,10 +1,10 @@
-import GalleryHero from "./GalleryHero";
+import Header from "@/components/shared/Header";
 import GalleryList from "./GelleryList";
 
 function Gallery() {
   return (
     <div>
-      <GalleryHero />
+      <Header type={"gallery"} />
       <GalleryList />
     </div>
   );

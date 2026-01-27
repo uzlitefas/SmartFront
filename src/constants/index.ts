@@ -241,15 +241,13 @@ export const newsData: News[] = [
     author: "Admin",
   },
 ];
-
-
 export const courses: Course[] = [
   {
     id: 1,
     title: "English for Beginners",
     description: "Basic English speaking and grammar",
     features: ["Speaking", "Grammar", "Vocabulary"],
-    link: "/courses/english-for-beginners", // 🔴 QOLDI
+    slug: "english-for-beginners",
     category: "english",
     views: 15200,
     teacher: {
@@ -263,12 +261,13 @@ export const courses: Course[] = [
       duration: "18:40",
     },
   },
+
   {
     id: 2,
     title: "Mathematics 101",
     description: "Algebra and basic math logic",
     features: ["Algebra", "Logic", "Practice"],
-    link: "/courses/mathematics-101", 
+    slug: "mathematics-101",
     category: "math",
     views: 9800,
     teacher: {
@@ -278,19 +277,21 @@ export const courses: Course[] = [
     },
     video: {
       url: "https://www.youtube.com/embed/8H6E2sq6L9M",
+      poster: "/images/math.jpg",
       duration: "22:10",
     },
   },
-    {
+
+  {
     id: 3,
     title: "Russian for Beginners",
     description: "Basic Russian speaking and grammar",
     features: ["Speaking", "Grammar", "Vocabulary"],
-    link: "/courses/russian-for-beginners", // 🔴 QOLDI
+    slug: "russian-for-beginners",
     category: "russian",
     views: 15200,
     teacher: {
-      id: 1,
+      id: 3,
       name: "Victoriya",
       subject: "Russian",
     },
@@ -301,7 +302,6 @@ export const courses: Course[] = [
     },
   },
 ];
-
 
 export const footerData = {
   about: {
@@ -340,11 +340,11 @@ export const footerData = {
 };
 
 export const navItems = [
-  { key: "home", href: "/" },
-  { key: "new", href: "/news" },
-  { key: "courses", href: "/courses" },
-  { key: "gallery", href: "/gallery" },
-  { key: "contact", href: "/contact" },
+  { key: "nav-home", href: "/" },
+  { key: "nav-new", href: "/news" },
+  { key: "nav-courses", href: "/courses" },
+  { key: "nav-gallery", href: "/gallery" },
+  { key: "nav-contact", href: "/contact" },
 ];
 
 export const languages = [

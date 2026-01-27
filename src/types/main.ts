@@ -7,9 +7,9 @@ export interface Teacher {
 }
 
 export interface Video {
-  url: string;        // youtube / vimeo / mp4
-  poster?: string;    // thumbnail (ixtiyoriy)
-  duration?: string;  // 12:30 kabi (ixtiyoriy)
+  url: string;
+  poster?: string;
+  duration?: string;
 }
 
 export interface Course {
@@ -17,14 +17,13 @@ export interface Course {
   title: string;
   description: string;
   features: string[];
-  slug: string;        // 🔥 routing uchun (/courses/:slug)
+  slug: string;
   category: Category;
   teacher: Teacher;
   views: number;
-  video: Video;        // 🔥 BARCHA CARDLARDA VIDEO BOR
+  video: Video;
 }
 
-/* Qolganlari alohida qoladi – bu to‘g‘ri arxitektura */
 export interface NewsItem {
   id: number;
   title: string;

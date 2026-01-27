@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
-import { MdPlayCircleOutline } from "react-icons/md";
+import { MdPlayArrow } from "react-icons/md";
 
 interface VideoModalProps {
   videoUrl: string;
@@ -13,7 +13,7 @@ export function VideoModal({ videoUrl }: VideoModalProps) {
   return (
     <Dialog>
       <DialogTrigger asChild className="size-10 rounded-full">
-        <MdPlayCircleOutline className="size-4" />
+        <MdPlayArrow />
       </DialogTrigger>
       <DialogContent
         aria-describedby={undefined}

@@ -1,9 +1,9 @@
 {
-  "home": "home",
-  "new": "news",
-  "courses": "courses",
-  "gallery": "gallery",
-  "contact": "contact",
+  "nav-home": "Home",
+  "nav-new": "News",
+  "nav-courses": "Courses",
+  "nav-gallery": "Gallery",
+  "nav-contact": "Contact",
 
   "hero": {
     "tagline": "Modern Online Education",
@@ -35,13 +35,13 @@
     "schoolLogoAlt": "School logo",
 
     "addressTitle": "Address",
-  "addressText": "Tashkent, Amir Temur street 108",
+    "addressText": "Tashkent, Amir Temur street 108",
 
-  "phoneTitle": "Phone",
-  "phoneNumber": "+998 90 123 45 67",
+    "phoneTitle": "Phone",
+    "phoneNumber": "+998 90 123 45 67",
 
-  "emailTitle": "Email",
-  "emailAddress": "info@example.com"
+    "emailTitle": "Email",
+    "emailAddress": "info@example.com"
   },
 
   "footer": {
@@ -103,26 +103,6 @@
       "hall": {
         "title": "Event Hall",
         "desc": "A large hall for celebrations and events."
-      }
-    }
-  },
-
-  "galleryHero": {
-    "title": "We build the future with",
-    "highlight": "knowledge",
-    "subtitle": "Our school is a modern learning center where quality education, experienced teachers, and a supportive environment come together.",
-    "features": {
-      "education": {
-        "title": "Quality Education",
-        "text": "Modern programs focused on strong knowledge and student growth."
-      },
-      "teachers": {
-        "title": "Experienced Teachers",
-        "text": "Professional educators with many years of experience."
-      },
-      "environment": {
-        "title": "Comfortable Environment",
-        "text": "A safe and friendly atmosphere for every student."
       }
     }
   }

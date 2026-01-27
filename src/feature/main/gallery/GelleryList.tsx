@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";

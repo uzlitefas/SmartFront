@@ -1,9 +1,9 @@
 {
-  "home": "bosh sahifa",
-  "new": "yangiliklar",
-  "courses": "kurslar",
-  "gallery": "galereya",
-  "contact": "aloqa",
+  "nav-home": "bosh sahifa",
+  "nav-new": "yangiliklar",
+  "nav-courses": "kurslar",
+  "nav-gallery": "galereya",
+  "nav-contact": "aloqa",
 
   "hero": {
     "tagline": "Zamonaviy Onlayn Ta'lim",
@@ -35,13 +35,13 @@
     "schoolLogoAlt": "Maktab logotipi",
 
     "addressTitle": "Manzil",
-  "addressText": "Toshkent sh., Amir Temur ko‘chasi 108",
+    "addressText": "Toshkent sh., Amir Temur ko‘chasi 108",
 
-  "phoneTitle": "Telefon",
-  "phoneNumber": "+998 90 123 45 67",
+    "phoneTitle": "Telefon",
+    "phoneNumber": "+998 90 123 45 67",
 
-  "emailTitle": "Elektron pochta",
-  "emailAddress": "aloqa@misol.uz"
+    "emailTitle": "Elektron pochta",
+    "emailAddress": "aloqa@misol.uz"
   },
 
   "footer": {
@@ -103,26 +103,6 @@
       "hall": {
         "title": "Tadbirlar zali",
         "desc": "Bayram va tadbirlar o‘tkaziladigan katta zal."
-      }
-    }
-  },
-
-  "galleryHero": {
-    "title": "Kelajakni",
-    "highlight": "bilim",
-    "subtitle": "Maktabimiz — sifatli ta’lim, tajribali ustozlar va qulay muhit uyg‘unlashgan zamonaviy bilim maskani. Har bir o‘quvchi uchun kelajak sari mustahkam poydevor.",
-    "features": {
-      "education": {
-        "title": "Sifatli ta’lim",
-        "text": "Zamonaviy dasturlar asosida chuqur va puxta bilim beriladi."
-      },
-      "teachers": {
-        "title": "Tajribali ustozlar",
-        "text": "Ko‘p yillik tajribaga ega malakali pedagoglar."
-      },
-      "environment": {
-        "title": "Qulay muhit",
-        "text": "Har bir o‘quvchi uchun xavfsiz va do‘stona muhit."
       }
     }
   }
