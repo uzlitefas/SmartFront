@@ -86,5 +86,53 @@
         "text": "Безопасная и дружелюбная среда для каждого ученика."
       }
     ]
+  },
+  "english": {
+    "title": "Курс английского языка",
+    "shortDescription": "Ученики уровня A",
+    "students": 240,
+    "averageScore": 92,
+    "details": {
+      "students": "Подготовка к IELTS и CEFR",
+      "score": "Стабильно высокие результаты",
+      "rank": "Сильная группа"
+    },
+    "overview": {
+      "teaching": "Интерактивные занятия",
+      "experience": "Преподаватели с опытом 5+ лет",
+      "format": "Онлайн и офлайн"
+    }
+  },
+  "math": {
+    "title": "Курс математики",
+    "shortDescription": "Ученики уровня A",
+    "students": 180,
+    "averageScore": 95,
+    "details": {
+      "students": "Подготовка к олимпиадам",
+      "score": "Самый высокий балл",
+      "rank": "Сильная логика"
+    },
+    "overview": {
+      "teaching": "Пошаговое объяснение",
+      "experience": "Методисты",
+      "format": "Малые группы"
+    }
+  },
+  "mother": {
+    "title": "Родной язык",
+    "shortDescription": "Ученики уровня A",
+    "students": 300,
+    "averageScore": 90,
+    "details": {
+      "students": "Грамотность и письмо",
+      "score": "Стабильные результаты",
+      "rank": "Широкая программа"
+    },
+    "overview": {
+      "teaching": "Анализ текстов",
+      "experience": "Филологи",
+      "format": "Постоянный контроль"
+    }
   }
 }

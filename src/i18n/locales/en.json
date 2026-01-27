@@ -86,5 +86,53 @@
         "text": "A safe and friendly environment for every student."
       }
     ]
+  },
+  "english": {
+    "title": "English Course",
+    "shortDescription": "A-rank English students",
+    "students": 240,
+    "averageScore": 92,
+    "details": {
+      "students": "IELTS & CEFR preparation",
+      "score": "Consistently high results",
+      "rank": "Top performing group"
+    },
+    "overview": {
+      "teaching": "Interactive lessons",
+      "experience": "5+ years experienced teachers",
+      "format": "Online & Offline"
+    }
+  },
+  "math": {
+    "title": "Mathematics Course",
+    "shortDescription": "A-rank math students",
+    "students": 180,
+    "averageScore": 95,
+    "details": {
+      "students": "Olympiad preparation",
+      "score": "Highest average score",
+      "rank": "Strong analytical thinking"
+    },
+    "overview": {
+      "teaching": "Step-by-step explanation",
+      "experience": "Professional mentors",
+      "format": "Small groups"
+    }
+  },
+  "mother": {
+    "title": "Mother Tongue",
+    "shortDescription": "A-rank native language students",
+    "students": 300,
+    "averageScore": 90,
+    "details": {
+      "students": "Writing and literacy skills",
+      "score": "Stable high results",
+      "rank": "Wide curriculum"
+    },
+    "overview": {
+      "teaching": "Text analysis & writing",
+      "experience": "Experienced philologists",
+      "format": "Continuous assessment"
+    }
   }
 }
