@@ -1,73 +1,55 @@
+"use client";
+
 import { useState, type CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
+import { coursesData } from "@/constants/courses.data";
 
 /* ================= TYPES ================= */
 
-type Course = "english" | "math" | "mother";
-type Stat = "students" | "score" | "rank";
-
-interface CourseData {
-  students: number;
-  averageScore: number;
-}
-
-/* ================= DATA (FAQAT RAQAMLAR) ================= */
-
-const courseData: Record<Course, CourseData> = {
-  english: {
-    students: 240,
-    averageScore: 92,
-  },
-  math: {
-    students: 180,
-    averageScore: 95,
-  },
-  mother: {
-    students: 300,
-    averageScore: 90,
-  },
-};
+type Course = keyof typeof coursesData.courses;
+type Stat = keyof typeof coursesData.statsLabel;
+type Lang = "uz" | "ru" | "en";
 
 /* ================= COMPONENT ================= */
 
 export default function ARankCourses() {
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+  const lang = i18n.language as Lang;
 
   const [activeCourse, setActiveCourse] = useState<Course>("english");
   const [activeStat, setActiveStat] = useState<Stat | null>(null);
 
-  const data = courseData[activeCourse];
+  const course = coursesData.courses[activeCourse];
 
   return (
     <section style={styles.page}>
       <div style={styles.card}>
-        {/* TOP GRID */}
+        {/* ================= TOP GRID ================= */}
         <div style={styles.topGrid}>
           {/* LEFT */}
           <div>
-            <h2 style={styles.heroTitle}>{t("hero.titleLine1")}</h2>
-            <p style={styles.heroDesc}>{t("hero.description")}</p>
+            <h2 style={styles.heroTitle}>{coursesData.hero.title[lang]}</h2>
 
-            <h3 style={styles.title}>{t(`${activeCourse}.title`)}</h3>
+            <p style={styles.heroDesc}>{coursesData.hero.description[lang]}</p>
 
-            <p style={styles.description}>
-              {t(`${activeCourse}.shortDescription`)}
-            </p>
+            <h3 style={styles.title}>{course.title[lang]}</h3>
 
-            {/* STATS */}
+            <p style={styles.description}>{course.shortDescription[lang]}</p>
+
+            {/* ================= STATS ================= */}
             <div style={styles.stats}>
-              {(["students", "score", "rank"] as Stat[]).map((stat) => (
+              {(Object.keys(coursesData.statsLabel) as Stat[]).map((stat) => (
                 <StatCard
                   key={stat}
-                  label={t(`stats.${stat}`)}
+                  label={coursesData.statsLabel[stat][lang]}
                   value={
                     stat === "students"
-                      ? `${data.students}+`
+                      ? `${course.students}+`
                       : stat === "score"
-                        ? `${data.averageScore}%`
+                        ? `${course.averageScore}%`
                         : "A"
                   }
-                  detail={t(`${activeCourse}.details.${stat}`)}
+                  detail={course.details[stat][lang]}
                   active={activeStat === stat}
                   onClick={() =>
                     setActiveStat(activeStat === stat ? null : stat)
@@ -81,44 +63,43 @@ export default function ARankCourses() {
           <div style={styles.imageBox}>Illustration / Logo</div>
         </div>
 
-        {/* OVERVIEW */}
+        {/* ================= OVERVIEW ================= */}
         <div style={styles.overview}>
-          <OverviewItem
-            title={t("overview.teaching")}
-            text={t(`${activeCourse}.overview.teaching`)}
-          />
-          <OverviewItem
-            title={t("overview.experience")}
-            text={t(`${activeCourse}.overview.experience`)}
-          />
-          <OverviewItem
-            title={t("overview.format")}
-            text={t(`${activeCourse}.overview.format`)}
-          />
+          {(
+            Object.keys(coursesData.overviewTitle) as Array<
+              keyof typeof coursesData.overviewTitle
+            >
+          ).map((key) => (
+            <OverviewItem
+              key={key}
+              title={coursesData.overviewTitle[key][lang]}
+              text={course.overview[key][lang]}
+            />
+          ))}
         </div>
 
-        {/* SWITCH */}
+        {/* ================= SWITCH ================= */}
         <div style={styles.switch}>
-          {(Object.keys(courseData) as Course[]).map((course) => (
+          {(Object.keys(coursesData.courses) as Course[]).map((courseKey) => (
             <button
-              key={course}
+              key={courseKey}
               onClick={() => {
-                setActiveCourse(course);
+                setActiveCourse(courseKey);
                 setActiveStat(null);
               }}
               style={{
                 ...styles.switchBtn,
                 background:
-                  activeCourse === course
+                  activeCourse === courseKey
                     ? "var(--primary)"
                     : "var(--secondary)",
                 color:
-                  activeCourse === course
+                  activeCourse === courseKey
                     ? "var(--primary-foreground)"
                     : "var(--secondary-foreground)",
               }}
             >
-              {t(`${course}.title`)}
+              {coursesData.courses[courseKey].title[lang]}
             </button>
           ))}
         </div>
