@@ -1,161 +1,183 @@
+import { createVideoText, type Lang } from "@/constants";
 import { useState } from "react";
 
+type FeatureType = "main" | "repeat";
+
+interface Feature {
+  id: number;
+  text: string;
+  type: FeatureType;
+}
+
 export default function CreateVideo() {
+  const [lang, setLang] = useState<Lang>("uz");
+  const t = createVideoText[lang];
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [features, setFeatures] = useState<string[]>([]);
+
+  const [features, setFeatures] = useState<Feature[]>([]);
   const [featureInput, setFeatureInput] = useState("");
+  const [featureType, setFeatureType] = useState<FeatureType>("main");
 
-  const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null);
-
-  const [video, setVideo] = useState<File | null>(null);
   const [videoPreview, setVideoPreview] = useState<string | null>(null);
 
   const addFeature = () => {
     if (!featureInput.trim()) return;
-    setFeatures((prev) => [...prev, featureInput]);
+    setFeatures((p) => [
+      ...p,
+      { id: Date.now(), text: featureInput, type: featureType },
+    ]);
     setFeatureInput("");
+    setFeatureType("main");
   };
 
-  const handleThumbnail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setThumbnail(file);
-    setThumbnailPreview(URL.createObjectURL(file));
-  };
-
-  const handleVideo = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setVideo(file);
-    setVideoPreview(URL.createObjectURL(file));
-  };
-
-  const handleSave = () => {
-    if (!title || !video || !thumbnail) return;
-
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("features", JSON.stringify(features));
-    formData.append("thumbnail", thumbnail);
-    formData.append("video", video);
-
-    console.log("READY:", {
-      title,
-      description,
-      features,
-      thumbnail,
-      video,
-    });
-
-    // backendga tayyor
+  const deleteFeature = (id: number) => {
+    setFeatures((p) => p.filter((f) => f.id !== id));
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12 space-y-10">
-      <h1 className="text-3xl font-bold">Add Video Course</h1>
+    <div className="max-w-5xl mx-auto px-4 py-12 space-y-10 bg-background text-foreground">
+      <div className="flex gap-2">
+        <button className="px-3 py-1 rounded-md border" onClick={() => setLang("uz")}>UZ</button>
+        <button className="px-3 py-1 rounded-md border" onClick={() => setLang("ru")}>RU</button>
+        <button className="px-3 py-1 rounded-md border" onClick={() => setLang("en")}>EN</button>
+      </div>
+
+      <h1 className="text-3xl font-bold">{t.title}</h1>
 
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-5">
           <input
-            type="text"
-            placeholder="Course title"
+            placeholder={t.courseTitle}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full border rounded-xl px-4 py-3"
+            className="w-full rounded-xl px-4 py-3 bg-card text-card-foreground border border-input focus:ring-2 ring-ring"
           />
 
           <textarea
-            placeholder="Short description"
+            placeholder={t.description}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={3}
-            className="w-full border rounded-xl px-4 py-3"
+            className="w-full rounded-xl px-4 py-3 bg-card text-card-foreground border border-input focus:ring-2 ring-ring"
           />
 
           <div className="space-y-2">
-            <label className="font-medium">Features</label>
+            <label className="font-medium">{t.features}</label>
+
             <div className="flex gap-2">
               <input
                 value={featureInput}
                 onChange={(e) => setFeatureInput(e.target.value)}
-                placeholder="e.g. Speaking"
-                className="flex-1 border rounded-xl px-4 py-2"
+                placeholder={t.featurePlaceholder}
+                className="flex-1 rounded-xl px-4 py-2 bg-card text-card-foreground border border-input"
               />
+
+              <select
+                value={featureType}
+                onChange={(e) => setFeatureType(e.target.value as FeatureType)}
+                className="rounded-xl px-3 bg-card text-card-foreground border border-input"
+              >
+                <option value="main">{t.main}</option>
+                <option value="repeat">{t.repeat}</option>
+              </select>
+
               <button
                 onClick={addFeature}
-                className="px-4 rounded-xl bg-black text-white"
+                className="px-4 rounded-xl bg-primary text-primary-foreground"
               >
-                Add
+                {t.add}
               </button>
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {features.map((f, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
+              {features.map((f) => (
+                <div
+                  key={f.id}
+                  className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm ${
+                    f.type === "main"
+                      ? "bg-[oklch(0.93_0.12_140)] text-[oklch(0.35_0.15_140)]"
+                      : "bg-[oklch(0.95_0.12_95)] text-[oklch(0.45_0.15_95)]"
+                  }`}
                 >
-                  ✓ {f}
-                </span>
+                  <span>✓ {f.text}</span>
+                  <button onClick={() => deleteFeature(f.id)}>✕</button>
+                </div>
               ))}
             </div>
           </div>
 
-          <div>
-            <label className="font-medium">Thumbnail image</label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleThumbnail}
-              className="w-full"
-            />
-          </div>
+          <input
+            type="file"
+            accept="image/*"
+            className="block w-full text-sm text-muted-foreground"
+            onChange={(e) =>
+              setThumbnailPreview(
+                e.target.files?.[0]
+                  ? URL.createObjectURL(e.target.files[0])
+                  : null
+              )
+            }
+          />
 
-          <div>
-            <label className="font-medium">Video file</label>
-            <input
-              type="file"
-              accept="video/*"
-              onChange={handleVideo}
-              className="w-full"
-            />
-          </div>
-
-          <button
-            onClick={handleSave}
-            className="w-full bg-black text-white py-3 rounded-xl"
-          >
-            Save course
-          </button>
+          <input
+            type="file"
+            accept="video/*"
+            className="block w-full text-sm text-muted-foreground"
+            onChange={(e) =>
+              setVideoPreview(
+                e.target.files?.[0]
+                  ? URL.createObjectURL(e.target.files[0])
+                  : null
+              )
+            }
+          />
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow space-y-4">
+        <div className="rounded-2xl p-6 shadow bg-card text-card-foreground space-y-4">
           {thumbnailPreview ? (
             <img
               src={thumbnailPreview}
               className="w-full h-48 object-cover rounded-xl"
             />
           ) : (
-            <div className="w-full h-48 bg-gray-100 rounded-xl flex items-center justify-center">
-              Thumbnail preview
+            <div className="w-full h-48 rounded-xl bg-muted flex items-center justify-center text-muted-foreground">
+              Thumbnail
             </div>
           )}
 
-          <h2 className="text-xl font-bold">{title || "Course title"}</h2>
-          <p className="text-gray-600 text-sm">
-            {description || "Course description"}
+          <h2 className="text-xl font-bold">
+            {title || t.previewTitle}
+          </h2>
+
+          <p className="text-sm text-muted-foreground">
+            {description || t.previewDescription}
           </p>
 
           <ul className="space-y-1">
-            {features.map((f, i) => (
-              <li key={i} className="text-sm text-green-600">
-                ✓ {f}
+            {features.map((f) => (
+              <li
+                key={f.id}
+                className={`text-sm ${
+                  f.type === "main"
+                    ? "text-[oklch(0.6_0.14_140)]"
+                    : "text-[oklch(0.7_0.14_95)]"
+                }`}
+              >
+                ✓ {f.text}
               </li>
             ))}
           </ul>
+
+          {videoPreview && (
+            <video
+              src={videoPreview}
+              controls
+              className="w-full rounded-xl border border-border"
+            />
+          )}
         </div>
       </div>
     </div>

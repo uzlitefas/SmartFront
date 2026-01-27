@@ -446,6 +446,60 @@ export const leadership = [
   "Direktor",
   "O‘quv ishlari bo‘yicha direktor o‘rinbosari",
   "Ma’naviy-ma’rifiy ishlar bo‘yicha direktor o‘rinbosari",
+]
+// src/constants/index.ts
+
+export type Lang = "uz" | "ru" | "en";
+
+export const createVideoText: Record<Lang, any> = {
+  uz: {
+    title: "Video kurs qo‘shish",
+    courseTitle: "Kurs nomi",
+    description: "Qisqacha tavsif",
+    features: "Imkoniyatlar",
+    featurePlaceholder: "Masalan: Speakingni rivojlantirish",
+    main: "Asosiy",
+    repeat: "Takrorlash",
+    add: "Qo‘shish",
+    thumbnail: "Rasm (thumbnail)",
+    video: "Video fayl",
+    save: "Saqlash",
+    previewTitle: "Kurs nomi",
+    previewDescription: "Kurs tavsifi",
+  },
+
+  ru: {
+    title: "Добавить видео курс",
+    courseTitle: "Название курса",
+    description: "Краткое описание",
+    features: "Возможности",
+    featurePlaceholder: "Например: Развитие speaking",
+    main: "Основное",
+    repeat: "Повторение",
+    add: "Добавить",
+    thumbnail: "Изображение (thumbnail)",
+    video: "Видео файл",
+    save: "Сохранить",
+    previewTitle: "Название курса",
+    previewDescription: "Описание курса",
+  },
+
+  en: {
+    title: "Add Video Course",
+    courseTitle: "Course title",
+    description: "Short description",
+    features: "Features",
+    featurePlaceholder: "e.g. Improve speaking",
+    main: "Main",
+    repeat: "Repeat",
+    add: "Add",
+    thumbnail: "Thumbnail image",
+    video: "Video file",
+    save: "Save",
+    previewTitle: "Course title",
+    previewDescription: "Course description",
+  },
+};
 ];
 
 // src/constants/index.ts
