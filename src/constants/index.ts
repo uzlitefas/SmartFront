@@ -492,3 +492,4 @@ export const teacherProfileData: TeacherProfile = {
   coverImage:
     "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
 }
+
