@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import About from "./About";
 import { VideoModal } from "@/components/hero-sections/video-modal";
 import { banner, video } from "@/constants";
-import AppBanner from "@/components/shared/AppBanner";
+import AppBanner from "@/components/shared/main/AppBanner";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 

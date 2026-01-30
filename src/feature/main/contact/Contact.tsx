@@ -4,7 +4,7 @@ import { FaHotel, FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import Header from "@/components/shared/Header";
+import Header from "@/components/shared/main/Header";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

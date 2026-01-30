@@ -1,4 +1,16 @@
 import type { Course } from "@/types/main";
+import { Home, Users, Book, BookOpen } from "lucide-react";
+
+export const DirectorNav = [
+  { icon: Home, label: "Home", route: "/" },
+  { icon: Users, label: "Teachers", route: "/teachers" },
+  { icon: Book, label: "MySchool", route: "/my-school" },
+];
+export const TeacherNav = [
+  { icon: Home, label: "Home", route: "/" },
+  { icon: Users, label: "Students", route: "/students" },
+  { icon: BookOpen, label: "Courses", route: "/courses" },
+];
 
 export const banner: string =
   "https://t4.ftcdn.net/jpg/15/12/04/11/360_F_1512041110_c0NFJDcHLmUJiwfDowzcKUgsPALmbjdD.jpg";

@@ -3,30 +3,39 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useSchool } from "@/stores/school.store";
+import { Check, ClipboardCopy } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function CreateSchoolForm() {
   const { createSchool } = useSchool();
   const [name, setName] = useState("");
   const [slug, setSlug] = useState("");
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [inviteToken, setInviteToken] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError(null);
     setInviteToken(null);
 
     try {
       const data = await createSchool({ name, slug });
-      setInviteToken(data.inviteToken);
+      if (data?.inviteToken) {
+        setInviteToken(data.inviteToken);
+      }
     } catch (err: any) {
-      const msg = err?.message || "Maktab yaratishda noma’lum xatolik";
-      setError(msg);
-    } finally {
-      setLoading(false);
+      setError(err.message);
     }
+  };
+
+  const handleCopy = () => {
+    if (!inviteToken) return;
+    navigator.clipboard.writeText(
+      `http://localhost:5173/director/create/${inviteToken}`,
+    );
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500); // animatsiya 1.5s
   };
 
   return (
@@ -50,8 +59,8 @@ export default function CreateSchoolForm() {
               onChange={(e) => setSlug(e.target.value)}
               required
             />
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Yaratilyapti..." : "Maktab yaratish"}
+            <Button type="submit" className="w-full">
+              Maktab yaratish
             </Button>
           </form>
 
@@ -68,12 +77,26 @@ export default function CreateSchoolForm() {
                   {`http://localhost:5173/director/create/${inviteToken}`}
                 </span>
               </p>
+
               <Button
                 variant="secondary"
-                className="w-full"
-                onClick={() => setInviteToken(null)}
+                className="w-full flex items-center justify-center gap-2"
+                onClick={handleCopy}
               >
-                Yopish
+                {copied ? (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0 }}
+                    className="flex items-center gap-2"
+                  >
+                    <Check className="w-4 h-4" /> Nusxa olindi
+                  </motion.div>
+                ) : (
+                  <>
+                    <ClipboardCopy className="w-4 h-4" /> Nusxa olish
+                  </>
+                )}
               </Button>
             </div>
           )}

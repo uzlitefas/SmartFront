@@ -3,7 +3,7 @@ import { NewsCard } from "./NewsCard";
 import { FaFilter, FaNewspaper } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { newsData } from "@/constants";
-import Header from "@/components/shared/Header";
+import Header from "@/components/shared/main/Header";
 
 export function NewsPage() {
   const { t } = useTranslation();

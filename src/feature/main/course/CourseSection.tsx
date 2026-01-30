@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { categories, COURSES } from "@/constants";
 import { CourseList } from "./CourseList";
 import CourseHero from "./CourseHero/CourseHero";
-import Header from "@/components/shared/Header";
+import Header from "@/components/shared/main/Header";
 
 export default function CoursesSection() {
   const { t } = useTranslation();

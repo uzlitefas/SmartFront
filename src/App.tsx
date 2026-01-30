@@ -1,7 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { Home } from "./feature/main/home/Home";
-import Navbar from "./components/shared/Navbar";
-import Footer from "./components/shared/Footer";
+import Footer from "./components/shared/main/Footer";
 import CoursesSection from "./feature/main/course/CourseSection";
 import { useEffect, useState } from "react";
 import Loader from "./components/shared/Loader";
@@ -15,8 +14,10 @@ import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
 import CreateVideos from "./feature/teacher/addVideos/createVideos";
 import TeacherHome from "./feature/teacher/teacher";
 import TeacherNavbar from "./feature/teacher/Navbar/Navbar";
-import CreateSchoolForm from "./feature/admin/school/createSchoolForm";
-import DirectorCreatePage from "./feature/director/createCreate/directorCreatePage";
+import DirectorCreatePage from "./feature/director/create/directorCreatePage";
+import SchoolPage from "./feature/admin/school/schoolPage";
+import AppSidebar from "./components/shared/sidebar/app-sidebar";
+import Navbar from "./components/shared/main/Navbar";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -55,14 +56,13 @@ function App() {
             </>
           }
         >
-          <Route path="" element={"admin"} />
-          <Route path="schools/create" element={<CreateSchoolForm />} />
+          <Route path="" element={<SchoolPage />} />
         </Route>
         <Route
           path="/director"
           element={
             <>
-              "director"
+              <AppSidebar />
               <Outlet />
             </>
           }

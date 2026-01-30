@@ -33,14 +33,7 @@ api.interceptors.response.use(
 
         const { data } = await api.post("/auth/refresh");
         if (data?.accessToken) {
-          useAuth
-            .getState()
-            .login(
-              data.accessToken,
-              data.userId,
-              data.role,
-              data.mustChangePassword,
-            );
+          useAuth.getState().setAuth(data);
 
           waiters.forEach((fn) => fn());
           waiters = [];

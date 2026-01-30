@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import ToggleI18n from "./Toggle-i18n";
-import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 import { navItems } from "@/constants";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import ToggleI18n from "./Toggle-i18n";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);

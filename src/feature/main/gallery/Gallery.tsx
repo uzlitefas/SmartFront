@@ -1,4 +1,4 @@
-import Header from "@/components/shared/Header";
+import Header from "@/components/shared/main/Header";
 import GalleryList from "./GelleryList";
 
 function Gallery() {

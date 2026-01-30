@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useAuth } from "@/stores/auth.store";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "@/stores/user.store";
 
 type LoginFormValues = z.infer<typeof loginformSchema>;
 
@@ -23,8 +24,8 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
-  const { loginRequest } = useAuth();
-  const [loading, setLoading] = useState(false);
+  const { loginRequest, loading } = useAuth();
+  const { setUser } = useUser();
   const [error, setError] = useState<string | null>(null);
   const nav = useNavigate();
 
@@ -41,14 +42,18 @@ export function LoginForm({
   });
 
   const onSubmit = async (data: LoginFormValues) => {
-    setLoading(true);
     setError(null);
 
     try {
-      const res = await loginRequest(data.number, data.password);
+      const res = await loginRequest({
+        phone: data.number,
+        password: data.password,
+      });
+      setUser(res);
 
       switch (res.role) {
         case "SUPER_ADMIN":
+        case "ADMIN":
           nav("/admin");
           break;
         case "DIRECTOR":
@@ -71,8 +76,6 @@ export function LoginForm({
         err.response?.data?.message ||
           "Login muvaffaqiyatsiz, qayta urinib ko‘ring",
       );
-    } finally {
-      setLoading(false);
     }
   };
 
