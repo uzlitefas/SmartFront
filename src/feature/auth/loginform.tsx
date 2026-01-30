@@ -13,6 +13,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { loginformSchema } from "@/lib/validation";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useAuth } from "@/stores/auth.store";
+import { useNavigate } from "react-router-dom";
 
 type LoginFormValues = z.infer<typeof loginformSchema>;
 
@@ -20,6 +23,11 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const { loginRequest } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const nav = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -32,8 +40,40 @@ export function LoginForm({
     },
   });
 
-  const onSubmit = (data: LoginFormValues) => {
-    console.log(data);
+  const onSubmit = async (data: LoginFormValues) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await loginRequest(data.number, data.password);
+
+      switch (res.role) {
+        case "SUPER_ADMIN":
+          nav("/admin");
+          break;
+        case "DIRECTOR":
+          nav("/director");
+          break;
+        case "TEACHER":
+          nav("/teacher");
+          break;
+        case "STUDENT":
+          nav("/student");
+          break;
+        case "PARENT":
+          nav("/parent");
+          break;
+        default:
+          nav("/login");
+      }
+    } catch (err: any) {
+      setError(
+        err.response?.data?.message ||
+          "Login muvaffaqiyatsiz, qayta urinib ko‘ring",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -67,6 +107,7 @@ export function LoginForm({
               type="tel"
               placeholder="+998901234567"
               {...register("number")}
+              disabled={loading}
             />
             {errors.number && (
               <p className="text-sm text-destructive">
@@ -87,7 +128,12 @@ export function LoginForm({
                 Parolni unutdingizmi?
               </a>
             </div>
-            <Input id="password" type="password" {...register("password")} />
+            <Input
+              id="password"
+              type="password"
+              {...register("password")}
+              disabled={loading}
+            />
             {errors.password && (
               <p className="text-sm text-destructive">
                 {errors.password.message}
@@ -95,10 +141,14 @@ export function LoginForm({
             )}
           </Field>
 
+          {error && (
+            <p className="text-sm text-center text-destructive">{error}</p>
+          )}
+
           <Field>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Button type="submit" className="w-full">
-                Kirish
+              <Button type="submit" className="w-full" disabled={loading}>
+                {loading ? "Kirish..." : "Kirish"}
               </Button>
             </motion.div>
           </Field>

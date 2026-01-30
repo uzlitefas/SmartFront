@@ -1,21 +1,28 @@
 export type Category = "english" | "russian" | "math";
 
-export type Teacher = {
+export interface Teacher {
   id: number;
   name: string;
   subject: string;
-};
+}
 
-export type Course = {
+export interface Video {
+  url: string;
+  poster?: string;
+  duration?: string;
+}
+
+export interface Course {
   id: number;
   title: string;
   description: string;
   features: string[];
-  link: string;
+  slug: string;
   category: Category;
   teacher: Teacher;
   views: number;
-};
+  video: Video;
+}
 
 export interface NewsItem {
   id: number;

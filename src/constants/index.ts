@@ -1,32 +1,93 @@
-import type { Course,} from "@/types/main";
+import type { Course } from "@/types/main";
 
-export const banner =
+export const banner: string =
   "https://t4.ftcdn.net/jpg/15/12/04/11/360_F_1512041110_c0NFJDcHLmUJiwfDowzcKUgsPALmbjdD.jpg";
-export const video =
+
+export const video: string =
   "https://media.istockphoto.com/id/1708107733/video/teacher-providing-quality-education-to-attentive-school-children-in-classroom.mp4?s=mp4-640x640-is&k=20&c=36XIb6DXvv413u2bn3F7zVBR7z8lfITQ80WXi19TyR0=";
 
 export const categories = [
-  "all",
-  "achievements",
-  "events",
-  "announcements",
-  "general",
-]
-
+  { key: "all", label: "All" },
+  { key: "english", label: "English" },
+  { key: "math", label: "Mathematics" },
+  { key: "russian", label: "Russian" },
+];
 
 export type NewsCard = {
-  id: number
-  title: string
-  content: string
-  category_key: "events" | "achievements" | "announcements" | "general"
-  is_featured: boolean
-  published_date: string
-  image_url?: string
-  author?: string
-}
+  id: number;
+  title: string;
+  content: string;
+  category_key: "events" | "achievements" | "announcements" | "general";
+  is_featured: boolean;
+  published_date: string;
+  image_url?: string;
+  author?: string;
+};
 
+export const COURSES = [
+  {
+    id: 1,
+    title: "English for Beginners",
+    description: "Basic English speaking and grammar",
+    category: "english",
+    rank: "D",
+    students: 120,
+    level: { course: { level: "Beginner" } },
+    image: "/images/courses/english.jpg",
+  },
+  {
+    id: 2,
+    title: "Mathematics 101",
+    description: "Algebra and basic math logic",
+    category: "math",
+    rank: "B",
+    students: 95,
+    level: { course: { level: "Intermediate" } },
+    image: "/images/courses/math.jpg",
+  },
+  {
+    id: 3,
+    title: "Russian for Beginners",
+    description: "Basic Russian speaking and grammar",
+    category: "russian",
+    rank: "A",
+    students: 80,
+    level: { course: { level: "Beginner" } },
+    image: "/images/courses/russian.jpg",
+  },
+  {
+    id: 4,
+    title: "Advanced English Grammar",
+    description: "Complex grammar rules and usage",
+    category: "english",
+    rank: "C",
+    students: 60,
+    level: { course: { level: "Advanced" } },
+    image: "/images/courses/english-advanced.jpg",
+  },
+  {
+    id: 5,
+    title: "Geometry Basics",
+    description: "Shapes, theorems, and problem solving",
+    category: "math",
+    rank: "B",
+    students: 110,
+    level: { course: { level: "Beginner" } },
+    image: "/images/courses/geometry.jpg",
+  },
+  {
+    id: 6,
+    title: "Russian Conversation",
+    description: "Improve speaking and listening skills",
+    category: "russian",
+    rank: "A",
+    students: 45,
+    level: { course: { level: "Intermediate" } },
+    image: "/images/courses/russian-conversation.jpg",
+  },
+];
 
-  export const NewsCardsData: NewsCard[] = [
+export const NewsCardsData: NewsCard[] = [
   {
     id: 1,
     title: "Yangi sport zali ochildi",
@@ -127,17 +188,17 @@ export type NewsCard = {
     image_url: "/images/news/english-contest.jpg",
     author: "Admin",
   },
-]
+];
 export type News = {
-  id: number
-  title: string
-  content: string
-  category_key: string
-  is_featured: boolean
-  published_date: string
-  image_url?: string
-  author?: string
-}
+  id: number;
+  title: string;
+  content: string;
+  category_key: string;
+  is_featured: boolean;
+  published_date: string;
+  image_url?: string;
+  author?: string;
+};
 
 export const newsData: News[] = [
   {
@@ -173,7 +234,8 @@ export const newsData: News[] = [
   {
     id: 4,
     title: "IT sinfxonasi yangilandi",
-    content: "Kompyuterlar va texnikalar bilan jihozlangan yangi IT xonasi ishga tushdi.",
+    content:
+      "Kompyuterlar va texnikalar bilan jihozlangan yangi IT xonasi ishga tushdi.",
     category_key: "events",
     is_featured: false,
     published_date: "2026-01-03",
@@ -240,60 +302,66 @@ export const newsData: News[] = [
     image_url: "/images/news/english-contest.jpg",
     author: "Admin",
   },
-]
-
-
-
+];
 export const courses: Course[] = [
   {
     id: 1,
-    title: "Matematika Asoslari",
-    description: "Algebra va geometriya kursi.",
-    features: ["Algebra", "Geometriya", "Testlar"],
-    link: "/courses/math",
-    category: "math",
-    teacher: { id: 1, name: "Bahrom ustoz", subject: "Matematika" },
-    views: 1240,
+    title: "English for Beginners",
+    description: "Basic English speaking and grammar",
+    features: ["Speaking", "Grammar", "Vocabulary"],
+    slug: "english-for-beginners",
+    category: "english",
+    views: 15200,
+    teacher: {
+      id: 1,
+      name: "Anna Smith",
+      subject: "English",
+    },
+    video: {
+      url: "https://www.youtube.com/embed/_CL6n0FJZpk",
+      poster: "/images/english.jpg",
+      duration: "18:40",
+    },
   },
+
   {
     id: 2,
-    title: "English Grammar",
-    description: "Grammar va vocabulary.",
-    features: ["Beginner", "IELTS base", "Practice"],
-    link: "/courses/english",
-    category: "english",
-    teacher: { id: 2, name: "Humoyun ustoz", subject: "English" },
-    views: 980,
+    title: "Mathematics 101",
+    description: "Algebra and basic math logic",
+    features: ["Algebra", "Logic", "Practice"],
+    slug: "mathematics-101",
+    category: "math",
+    views: 9800,
+    teacher: {
+      id: 2,
+      name: "Ali Karimov",
+      subject: "Mathematics",
+    },
+    video: {
+      url: "https://www.youtube.com/embed/8H6E2sq6L9M",
+      poster: "/images/math.jpg",
+      duration: "22:10",
+    },
   },
+
   {
     id: 3,
-    title: "English Speaking",
-    description: "Speaking mashg‘ulotlari.",
-    features: ["Live speaking", "Pronunciation", "Confidence"],
-    link: "/courses/english-speaking",
-    category: "english",
-    teacher: { id: 2, name: "Humoyun ustoz", subject: "English" },
-    views: 1560,
-  },
-  {
-    id: 4,
-    title: "Russian Grammar",
-    description: "Rus tili grammatikasi asoslari.",
-    features: ["A1–B1", "Grammatika", "Mashqlar"],
-    link: "/courses/russian-grammar",
+    title: "Russian for Beginners",
+    description: "Basic Russian speaking and grammar",
+    features: ["Speaking", "Grammar", "Vocabulary"],
+    slug: "russian-for-beginners",
     category: "russian",
-    teacher: { id: 3, name: "Ozoda ustoz", subject: "Russian" },
-    views: 870,
-  },
-  {
-    id: 5,
-    title: "Russian Speaking",
-    description: "Rus tilida gapirish ko‘nikmalari.",
-    features: ["Dialoglar", "So‘zlashuv", "Listening"],
-    link: "/courses/russian-speaking",
-    category: "russian",
-    teacher: { id: 3, name: "Ozoda ustoz", subject: "Russian" },
-    views: 1120,
+    views: 15200,
+    teacher: {
+      id: 3,
+      name: "Victoriya",
+      subject: "Russian",
+    },
+    video: {
+      url: "https://www.youtube.com/embed/YhhFK55Tkbg",
+      poster: "/images/russian.jpg",
+      duration: "18:40",
+    },
   },
 ];
 
@@ -304,7 +372,6 @@ export const footerData = {
       "I'm passionate about creating beautiful, functional components that make your projects shine. Let's work together to bring your vision to life.",
     buttonText: "Schedule a call",
   },
-
   portfolio: {
     title: "PORTFOLIO",
     links: [
@@ -313,7 +380,6 @@ export const footerData = {
       { label: "About", to: "/about" },
     ],
   },
-
   social: {
     title: "SOCIAL",
     links: [
@@ -322,14 +388,12 @@ export const footerData = {
       { label: "LinkedIn", url: "https://linkedin.com" },
     ],
   },
-
   contact: {
     title: "CONTACT",
     phone: "+1 (555) 123-4567",
     email: "hello@artiststudio.com",
     location: "NYC • EST",
   },
-
   footerBottom: {
     copyright: "© 2025 YourProject. All rights reserved.",
     terms: "Terms & Conditions",
@@ -338,11 +402,11 @@ export const footerData = {
 };
 
 export const navItems = [
-  { key: "home", href: "/" },
-  { key: "new", href: "/news" },
-  { key: "courses", href: "/courses" },
-  { key: "gallery", href: "/gallery" },
-  { key: "contact", href: "/contact" },
+  { key: "nav-home", href: "/" },
+  { key: "nav-new", href: "/news" },
+  { key: "nav-courses", href: "/courses" },
+  { key: "nav-gallery", href: "/gallery" },
+  { key: "nav-contact", href: "/contact" },
 ];
 
 export const languages = [
@@ -351,46 +415,40 @@ export const languages = [
   { code: "ru", label: "Русский" },
 ];
 
-export const galleryData = [
+export const galleryData1 = [
   {
     id: 1,
-    title: "1-sinf xonasi",
-    description: "Zamonaviy jihozlangan, yorug‘ va qulay sinf xonasi.",
+    key: "class1",
     image:
       "https://storage.kun.uz/source/7/p_7t6kn_xUtvWJ4eFaIpvdMJ6TStLej1.jpg",
   },
   {
     id: 2,
-    title: "Maktab kutubxonasi",
-    description: "O‘quvchilar uchun boy adabiyotlar va tinch muhit.",
+    key: "library",
     image:
       "https://arm.navoiy-uni.uz/wp-content/uploads/2020/08/eSYwKe5vcf9-jdQDLCxP4fC4Vjhch8vA-e1598937476763.jpg",
   },
   {
     id: 3,
-    title: "Sport zali",
-    description: "Jismoniy tarbiya mashg‘ulotlari uchun katta sport zali.",
+    key: "gym",
     image:
       "https://storage.kun.uz/source/8/OkUtquyxI7fscIyox-tiMDhS9ieqKKw7.jpg",
   },
   {
     id: 4,
-    title: "Maktab tashqi ko‘rinishi",
-    description: "Zamonaviy arxitekturaga ega maktab binosi.",
+    key: "exterior",
     image:
       "https://data.daryo.uz/media/2023/17.022023/Otabek/photo_2023-03-16_23-57-59%20(2).jpg",
   },
   {
     id: 5,
-    title: "Boshlang‘ich sinf",
-    description: "Kichik yoshdagi bolalar uchun qulay va xavfsiz xona.",
+    key: "primary",
     image:
       "https://storage.kun.uz/source/9/mc9uUXdzsof1zSxGCSOkeodNbsZHhriF.jpg",
   },
   {
     id: 6,
-    title: "Tadbirlar zali",
-    description: "Bayram va tadbirlar o‘tkaziladigan katta zal.",
+    key: "hall",
     image:
       "https://avatars.mds.yandex.net/get-altay/5584339/2a0000017c8408bd9e1fa0727ec3f22c1ae9/XL",
   },
@@ -451,25 +509,78 @@ export const leadership = [
   "O‘quv ishlari bo‘yicha direktor o‘rinbosari",
   "Ma’naviy-ma’rifiy ishlar bo‘yicha direktor o‘rinbosari",
 ];
+// src/constants/index.ts
+
+export type Lang = "uz" | "ru" | "en";
+
+export const createVideoText: Record<Lang, any> = {
+  uz: {
+    title: "Video kurs qo‘shish",
+    courseTitle: "Kurs nomi",
+    description: "Qisqacha tavsif",
+    features: "Imkoniyatlar",
+    featurePlaceholder: "Masalan: Speakingni rivojlantirish",
+    main: "Asosiy",
+    repeat: "Takrorlash",
+    add: "Qo‘shish",
+    thumbnail: "Rasm (thumbnail)",
+    video: "Video fayl",
+    save: "Saqlash",
+    previewTitle: "Kurs nomi",
+    previewDescription: "Kurs tavsifi",
+  },
+
+  ru: {
+    title: "Добавить видео курс",
+    courseTitle: "Название курса",
+    description: "Краткое описание",
+    features: "Возможности",
+    featurePlaceholder: "Например: Развитие speaking",
+    main: "Основное",
+    repeat: "Повторение",
+    add: "Добавить",
+    thumbnail: "Изображение (thumbnail)",
+    video: "Видео файл",
+    save: "Сохранить",
+    previewTitle: "Название курса",
+    previewDescription: "Описание курса",
+  },
+
+  en: {
+    title: "Add Video Course",
+    courseTitle: "Course title",
+    description: "Short description",
+    features: "Features",
+    featurePlaceholder: "e.g. Improve speaking",
+    main: "Main",
+    repeat: "Repeat",
+    add: "Add",
+    thumbnail: "Thumbnail image",
+    video: "Video file",
+    save: "Save",
+    previewTitle: "Course title",
+    previewDescription: "Course description",
+  },
+};
 
 // src/constants/index.ts
 
 export interface TeacherProfile {
-  name: string
-  age: string
-  phone: string
-  email: string
-  gender: string
-  address: string
-  workExperience: string
-  qualification: string
-  university: string
-  diplomaNumber: string
-  subject: string
-  school: string
-  notes: string
-  avatar: string
-  coverImage: string
+  name: string;
+  age: string;
+  phone: string;
+  email: string;
+  gender: string;
+  address: string;
+  workExperience: string;
+  qualification: string;
+  university: string;
+  diplomaNumber: string;
+  subject: string;
+  school: string;
+  notes: string;
+  avatar: string;
+  coverImage: string;
 }
 
 export const teacherProfileData: TeacherProfile = {
@@ -485,11 +596,176 @@ export const teacherProfileData: TeacherProfile = {
   diplomaNumber: "PDU-2010-12345",
   subject: "Matematika",
   school: "45-son umumta'lim maktabi",
-  notes:
-    "Xalqaro olimpiadalarga tayyorlovchi ustoz. Tajribali pedagog.",
-  avatar:
-    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+  notes: "Xalqaro olimpiadalarga tayyorlovchi ustoz. Tajribali pedagog.",
+  avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
   coverImage:
     "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+};
+
+export interface Student {
+  id: string;
+  ismi: string;
+  familiyasi: string;
+  otasiningIsmi: string;
+  tugilganSana: string;
+  yoshi: number;
+  jinsi: "Erkak" | "Ayol";
+  telefonRaqami: string;
+  ortachaBall: number;
+  sinfi: string;
+  fan: string;
+  lastExamScore: number;
+  maxScore: number;
+  examType: "Class Exam" | "Online Exam" | "Missed Exam";
+  onlineStatus: boolean;
+  avatar: string;
 }
 
+export interface Teacher {
+  ismi: string;
+  familiyasi: string;
+  maktab: string;
+  shahar: string;
+  studentsCount: number;
+  projectsCount: number;
+  examsCount: number;
+  avatar: string;
+}
+
+export const teacherData: Teacher = {
+  ismi: "Jaspreet Kaur",
+  familiyasi: "Ahuja",
+  maktab: "Orchid International School",
+  shahar: "Nasik",
+  studentsCount: 150,
+  projectsCount: 5,
+  examsCount: 84,
+  avatar:
+    "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+};
+
+export const studentsData: Student[] = [
+  {
+    id: "1",
+    ismi: "Kajal",
+    familiyasi: "Sharma",
+    otasiningIsmi: "Rajesh Sharma",
+    tugilganSana: "2008-03-15",
+    yoshi: 16,
+    jinsi: "Ayol",
+    telefonRaqami: "+998 91 234 56 78",
+    ortachaBall: 89,
+    sinfi: "Grade 7",
+    fan: "Science",
+    lastExamScore: 85,
+    maxScore: 100,
+    examType: "Online Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "2",
+    ismi: "Neeta",
+    familiyasi: "Rathod",
+    otasiningIsmi: "Sunil Rathod",
+    tugilganSana: "2009-07-22",
+    yoshi: 15,
+    jinsi: "Ayol",
+    telefonRaqami: "+998 91 345 67 89",
+    ortachaBall: 83,
+    sinfi: "Grade 5",
+    fan: "Maths",
+    lastExamScore: 83,
+    maxScore: 100,
+    examType: "Missed Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "3",
+    ismi: "Amey",
+    familiyasi: "Gupta",
+    otasiningIsmi: "Anil Gupta",
+    tugilganSana: "2008-11-10",
+    yoshi: 16,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 456 78 90",
+    ortachaBall: 56,
+    sinfi: "Grade 9",
+    fan: "English Literature",
+    lastExamScore: 56,
+    maxScore: 100,
+    examType: "Class Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "4",
+    ismi: "Sharman",
+    familiyasi: "Doshi",
+    otasiningIsmi: "Ramesh Doshi",
+    tugilganSana: "2009-05-18",
+    yoshi: 15,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 567 89 01",
+    ortachaBall: 76,
+    sinfi: "Grade 8",
+    fan: "English Grammar",
+    lastExamScore: 76,
+    maxScore: 100,
+    examType: "Class Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "5",
+    ismi: "Amey",
+    familiyasi: "Gupta",
+    otasiningIsmi: "Anil Gupta",
+    tugilganSana: "2008-09-25",
+    yoshi: 16,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 678 90 12",
+    ortachaBall: 63,
+    sinfi: "Grade 9",
+    fan: "Environmental Studies",
+    lastExamScore: 63,
+    maxScore: 100,
+    examType: "Online Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+  {
+    id: "6",
+    ismi: "Sharman",
+    familiyasi: "Doshi",
+    otasiningIsmi: "Ramesh Doshi",
+    tugilganSana: "2009-01-30",
+    yoshi: 15,
+    jinsi: "Erkak",
+    telefonRaqami: "+998 91 789 01 23",
+    ortachaBall: 100,
+    sinfi: "Grade 8",
+    fan: "Hindi",
+    lastExamScore: 54,
+    maxScore: 100,
+    examType: "Class Exam",
+    onlineStatus: true,
+    avatar:
+      "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&dpr=2",
+  },
+];
+
+export type ExamFilter = "All" | "Class Exam" | "Online Exam" | "Missed Exam";
+export type RankType = "A" | "B" | "C" | "D";
+export const COURSE_SUMMARY = {
+  courseName: "Grade 9",
+  subject: "English",
+  totalScore: 365,
+  rank: "B" as "A" | "B" | "C" | "D",
+};
