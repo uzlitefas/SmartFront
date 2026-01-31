@@ -16,7 +16,7 @@ function SchoolInfo() {
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
       <div className="text-center mb-12 md:mb-16">
-        <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-4 md:mb-6 shadow-lg">
+        <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary to-blue-600 rounded-2xl mb-4 md:mb-6 shadow-lg">
           <GraduationCap className="w-8 h-8 md:w-10 md:h-10 text-white" />
         </div>
         <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-2 md:mb-4">
@@ -245,7 +245,7 @@ function SchoolInfo() {
         </div>
       </InfoSection>
 
-      <div className="bg-ring rounded-2xl p-6 md:p-10 text-center text-white shadow-xl mt-8 md:mt-12">
+      <div className="bg-primary rounded-2xl p-6 md:p-10 text-center text-white shadow-xl mt-8 md:mt-12">
         <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4">
           Bizning maqsadimiz - Kelajak avlodni tarbiyalash
         </h2>

@@ -12,7 +12,7 @@ export function VideoModal({ videoUrl }: VideoModalProps) {
 
   return (
     <Dialog>
-      <DialogTrigger asChild className="size-10 rounded-full">
+      <DialogTrigger asChild className="size-10 rounded-full text-primary">
         <MdPlayArrow />
       </DialogTrigger>
       <DialogContent

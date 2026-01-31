@@ -138,5 +138,27 @@
         "desc": "A large hall for celebrations and events."
       }
     }
-  }
+  },
+  "newsPage": {
+    "title": "News",
+    "subtitle": "Latest news from our school",
+    "categoriesTitle": "Categories",
+    "all": "All",
+    "events": "Events",
+    "achievements": "Achievements",
+    "announcements": "Announcements",
+    "general": "General",
+    "featured": "Featured",
+    "allNews": "All News",
+    "empty": "No news available"
+  },
+
+  "new_sport_hall_title": "New Sports Hall Opened",
+  "new_sport_hall_content": "A modern sports hall has been opened at our school.",
+
+  "olympiad_win_title": "Olympiad Victory",
+  "olympiad_win_content": "Our students won first place at the regional level.",
+
+  "new_it_courses_title": "New IT Courses",
+  "new_it_courses_content": "New IT courses have been launched for 2026."
 }

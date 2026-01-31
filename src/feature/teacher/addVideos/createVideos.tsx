@@ -1,4 +1,3 @@
-import { createVideoText, type Lang } from "@/constants";
 import { useState } from "react";
 
 type FeatureType = "main" | "repeat";
@@ -10,9 +9,6 @@ interface Feature {
 }
 
 export default function CreateVideo() {
-  const [lang, setLang] = useState<Lang>("uz");
-  const t = createVideoText[lang];
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -39,12 +35,6 @@ export default function CreateVideo() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12 space-y-10 bg-background text-foreground">
-      <div className="flex gap-2">
-        <button className="px-3 py-1 rounded-md border" onClick={() => setLang("uz")}>UZ</button>
-        <button className="px-3 py-1 rounded-md border" onClick={() => setLang("ru")}>RU</button>
-        <button className="px-3 py-1 rounded-md border" onClick={() => setLang("en")}>EN</button>
-      </div>
-
       <h1 className="text-3xl font-bold">{t.title}</h1>
 
       <div className="grid md:grid-cols-2 gap-8">
@@ -117,7 +107,7 @@ export default function CreateVideo() {
               setThumbnailPreview(
                 e.target.files?.[0]
                   ? URL.createObjectURL(e.target.files[0])
-                  : null
+                  : null,
               )
             }
           />
@@ -130,7 +120,7 @@ export default function CreateVideo() {
               setVideoPreview(
                 e.target.files?.[0]
                   ? URL.createObjectURL(e.target.files[0])
-                  : null
+                  : null,
               )
             }
           />
@@ -148,9 +138,7 @@ export default function CreateVideo() {
             </div>
           )}
 
-          <h2 className="text-xl font-bold">
-            {title || t.previewTitle}
-          </h2>
+          <h2 className="text-xl font-bold">{title || t.previewTitle}</h2>
 
           <p className="text-sm text-muted-foreground">
             {description || t.previewDescription}

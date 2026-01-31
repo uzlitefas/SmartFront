@@ -1,28 +1,28 @@
-import { FaCalendar, FaUser } from "react-icons/fa"
-import { useTranslation } from "react-i18next"
-import type {NewsCard } from "@/constants"
+import { FaCalendar, FaUser } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import type { NewsCard as NewsType } from "@/constants";
 
 interface NewsCardProps {
-  news: NewsCard
-  featured?: boolean
+  news: NewsType;
+  featured?: boolean;
 }
 
 export function NewsCard({ news, featured = false }: NewsCardProps) {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
 
-  const date = new Date(news.published_date)
+  const date = new Date(news.published_date);
   const formattedDate = date.toLocaleDateString(
     i18n.language === "ru"
       ? "ru-RU"
       : i18n.language === "en"
-      ? "en-US"
-      : "uz-UZ",
+        ? "en-US"
+        : "uz-UZ",
     {
       year: "numeric",
       month: "long",
       day: "numeric",
-    }
-  )
+    },
+  );
 
   return (
     <article
@@ -41,12 +41,11 @@ export function NewsCard({ news, featured = false }: NewsCardProps) {
           >
             <img
               src={news.image_url}
-              alt={news.title}
+              alt={t(news.title)}
               className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
                 featured ? "h-full min-h-[300px]" : "h-48"
               }`}
             />
-           
           </div>
         )}
 
@@ -60,7 +59,7 @@ export function NewsCard({ news, featured = false }: NewsCardProps) {
               featured ? "text-2xl md:text-3xl" : "text-xl"
             }`}
           >
-            {news.title}
+            {t(news.title)}
           </h3>
 
           <p
@@ -68,7 +67,7 @@ export function NewsCard({ news, featured = false }: NewsCardProps) {
               featured ? "text-base line-clamp-4" : "text-sm line-clamp-3"
             }`}
           >
-            {news.content}
+            {t(news.content)}
           </p>
 
           <div className="flex items-center gap-4 text-sm text-[var(--muted-foreground)]">
@@ -87,5 +86,5 @@ export function NewsCard({ news, featured = false }: NewsCardProps) {
         </div>
       </div>
     </article>
-  )
+  );
 }

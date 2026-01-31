@@ -99,7 +99,7 @@ export function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold flex items-center justify-center space-x-1 sm:space-x-2 bg-white text-gray-900 border-2 border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-all duration-200"
+                  className="px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold flex items-center justify-center space-x-1 sm:space-x-2 bg-white text-foreground border-2 border-foreground/20 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200"
                 >
                   <span>{t("hero.learnMore")}</span>
                 </motion.button>
@@ -141,7 +141,7 @@ export function Home() {
                 >
                   <div
                     onClick={() => setIsPlaying(!isPlaying)}
-                    className="bg-card absolute text-blue-600 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-xl"
+                    className="bg-card absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-xl"
                   >
                     <VideoModal videoUrl={video} />
                   </div>

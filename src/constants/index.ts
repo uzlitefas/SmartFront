@@ -1,4 +1,3 @@
-import type { Course } from "@/types/main";
 import { Home, Users, Book, BookOpen } from "lucide-react";
 
 export const DirectorNav = [
@@ -18,400 +17,200 @@ export const banner: string =
 export const video: string =
   "https://media.istockphoto.com/id/1708107733/video/teacher-providing-quality-education-to-attentive-school-children-in-classroom.mp4?s=mp4-640x640-is&k=20&c=36XIb6DXvv413u2bn3F7zVBR7z8lfITQ80WXi19TyR0=";
 
-export const categories = [
-  { key: "all", label: "All" },
-  { key: "english", label: "English" },
-  { key: "math", label: "Mathematics" },
-  { key: "russian", label: "Russian" },
-];
-
-export type NewsCard = {
+// news
+export interface News {
   id: number;
   title: string;
   content: string;
   category_key: "events" | "achievements" | "announcements" | "general";
   is_featured: boolean;
   published_date: string;
-  image_url?: string;
+  image_url: string;
   author?: string;
-};
-
-export const COURSES = [
-  {
-    id: 1,
-    title: "English for Beginners",
-    description: "Basic English speaking and grammar",
-    category: "english",
-    rank: "D",
-    students: 120,
-    level: { course: { level: "Beginner" } },
-    image: "/images/courses/english.jpg",
-  },
-  {
-    id: 2,
-    title: "Mathematics 101",
-    description: "Algebra and basic math logic",
-    category: "math",
-    rank: "B",
-    students: 95,
-    level: { course: { level: "Intermediate" } },
-    image: "/images/courses/math.jpg",
-  },
-  {
-    id: 3,
-    title: "Russian for Beginners",
-    description: "Basic Russian speaking and grammar",
-    category: "russian",
-    rank: "A",
-    students: 80,
-    level: { course: { level: "Beginner" } },
-    image: "/images/courses/russian.jpg",
-  },
-  {
-    id: 4,
-    title: "Advanced English Grammar",
-    description: "Complex grammar rules and usage",
-    category: "english",
-    rank: "C",
-    students: 60,
-    level: { course: { level: "Advanced" } },
-    image: "/images/courses/english-advanced.jpg",
-  },
-  {
-    id: 5,
-    title: "Geometry Basics",
-    description: "Shapes, theorems, and problem solving",
-    category: "math",
-    rank: "B",
-    students: 110,
-    level: { course: { level: "Beginner" } },
-    image: "/images/courses/geometry.jpg",
-  },
-  {
-    id: 6,
-    title: "Russian Conversation",
-    description: "Improve speaking and listening skills",
-    category: "russian",
-    rank: "A",
-    students: 45,
-    level: { course: { level: "Intermediate" } },
-    image: "/images/courses/russian-conversation.jpg",
-  },
-];
-
-export const NewsCardsData: NewsCard[] = [
-  {
-    id: 1,
-    title: "Yangi sport zali ochildi",
-    content: "Maktabimizda zamonaviy sport zali foydalanishga topshirildi.",
-    category_key: "events",
-    is_featured: true,
-    published_date: "2026-01-15",
-    image_url: "/images/news/sport-hall.jpg",
-    author: "Admin",
-  },
-  {
-    id: 2,
-    title: "Olimpiada g‘alabasi",
-    content: "O‘quvchilarimiz viloyat bosqichida 1-o‘rinni egalladi.",
-    category_key: "achievements",
-    is_featured: false,
-    published_date: "2026-01-10",
-    image_url: "/images/news/olympiad-win.jpg",
-    author: "Admin",
-  },
-  {
-    id: 3,
-    title: "Yangi IT sinfxona ishga tushdi",
-    content: "Kompyuterlar bilan jihozlangan zamonaviy IT xonasi ochildi.",
-    category_key: "events",
-    is_featured: false,
-    published_date: "2026-01-08",
-    image_url: "/images/news/it-classroom.jpg",
-    author: "Admin",
-  },
-  {
-    id: 4,
-    title: "Fan haftaligi boshlandi",
-    content: "Maktabda matematika va fizika fan haftaligi o‘tkazilmoqda.",
-    category_key: "events",
-    is_featured: false,
-    published_date: "2026-01-06",
-    image_url: "/images/news/science-week.jpg",
-    author: "Admin",
-  },
-  {
-    id: 5,
-    title: "Yangi kurslar e’lon qilindi",
-    content: "2026-yil uchun yangi IT va dizayn kurslari ochildi.",
-    category_key: "announcements",
-    is_featured: false,
-    published_date: "2026-01-05",
-    image_url: "/images/news/it-courses.jpg",
-    author: "Admin",
-  },
-  {
-    id: 6,
-    title: "O‘quvchilar shahmat musobaqasida g‘olib bo‘ldi",
-    content: "Maktab jamoasi tuman bosqichida 1-o‘rinni oldi.",
-    category_key: "achievements",
-    is_featured: false,
-    published_date: "2026-01-03",
-    image_url: "/images/news/chess-win.jpg",
-    author: "Admin",
-  },
-  {
-    id: 7,
-    title: "Ota-onalar yig‘ilishi bo‘lib o‘tdi",
-    content: "Yangi o‘quv rejalar muhokama qilindi.",
-    category_key: "events",
-    is_featured: false,
-    published_date: "2026-01-02",
-    image_url: "/images/news/parents-meeting.jpg",
-    author: "Admin",
-  },
-  {
-    id: 8,
-    title: "Kutubxona yangilandi",
-    content: "Maktab kutubxonasi yangi kitoblar bilan boyitildi.",
-    category_key: "general",
-    is_featured: false,
-    published_date: "2025-12-30",
-    image_url: "/images/news/library.jpg",
-    author: "Admin",
-  },
-  {
-    id: 9,
-    title: "Yangi yil bayrami tashkil etildi",
-    content: "O‘quvchilar uchun bayramona tadbir o‘tkazildi.",
-    category_key: "events",
-    is_featured: false,
-    published_date: "2025-12-28",
-    image_url: "/images/news/new-year.jpg",
-    author: "Admin",
-  },
-  {
-    id: 10,
-    title: "Ingliz tili tanlovi yakunlandi",
-    content: "Eng faol o‘quvchilar diplom bilan taqdirlandi.",
-    category_key: "achievements",
-    is_featured: false,
-    published_date: "2025-12-25",
-    image_url: "/images/news/english-contest.jpg",
-    author: "Admin",
-  },
-];
-export type News = {
-  id: number;
-  title: string;
-  content: string;
-  category_key: string;
-  is_featured: boolean;
-  published_date: string;
-  image_url?: string;
-  author?: string;
-};
+}
 
 export const newsData: News[] = [
   {
     id: 1,
-    title: "Yangi sport zali ochildi",
-    content: "Maktabimizda zamonaviy sport zali foydalanishga topshirildi.",
+    title: "new_sport_hall_title",
+    content: "new_sport_hall_content",
     category_key: "events",
     is_featured: true,
     published_date: "2026-01-15",
-    image_url: "/images/news/sport-hall.jpg",
+    image_url: "https://images.unsplash.com/photo-1599058917212-d750089bc07e",
     author: "Admin",
   },
   {
     id: 2,
-    title: "Olimpiada g‘alabasi",
-    content: "O‘quvchilarimiz viloyat bosqichida 1-o‘rinni egalladi.",
+    title: "olympiad_win_title",
+    content: "olympiad_win_content",
     category_key: "achievements",
     is_featured: false,
     published_date: "2026-01-10",
-    image_url: "/images/news/olympiad-win.jpg",
+    image_url: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b",
     author: "Admin",
   },
   {
     id: 3,
-    title: "Yangi kurslar e’lon qilindi",
-    content: "2026-yil uchun yangi IT kurslar ochildi.",
+    title: "new_it_courses_title",
+    content: "new_it_courses_content",
     category_key: "announcements",
     is_featured: false,
     published_date: "2026-01-05",
-    image_url: "/images/news/it-courses.jpg",
+    image_url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     author: "Admin",
+  },
+];
+
+//course
+export type CourseRank = "A" | "B" | "C" | "D";
+
+export type CourseCategory = "IT" | "tillar" | "Assosiy Fan" | "mashhur";
+
+export interface Course {
+  id: number;
+  name: string;
+  description: string;
+  rank: CourseRank;
+  banner: string;
+  images: string[];
+  teacherName: string;
+  teacherAvatar: string;
+  direction: string;
+  students: number;
+  lessons: number;
+  category: CourseCategory;
+}
+
+export const COURSES: Course[] = [
+  {
+    id: 1,
+    name: "Matematika",
+    description:
+      "Algebra, geometrik tushunchalar va tenglamalar asoslarini o‘rganing.",
+    rank: "A",
+    banner: "https://source.unsplash.com/800x400/?mathematics,math",
+    images: ["https://source.unsplash.com/600x400/?math,algebra"],
+    teacherName: "Azizbek Karimov",
+    teacherAvatar: "https://randomuser.me/api/portraits/men/10.jpg",
+    direction: "Maktab fanlari",
+    students: 1500,
+    lessons: 30,
+    category: "mashhur",
+  },
+  {
+    id: 2,
+    name: "Fizika",
+    description: "Klassik mexanika, energiya tushunchalari va amaliy misollar.",
+    rank: "A",
+    banner: "https://source.unsplash.com/800x400/?physics,science",
+    images: ["https://source.unsplash.com/600x400/?physics,experiment"],
+    teacherName: "Dilshod Islomov",
+    teacherAvatar: "https://randomuser.me/api/portraits/men/11.jpg",
+    direction: "Maktab fanlari",
+    students: 1200,
+    lessons: 28,
+    category: "mashhur",
+  },
+  {
+    id: 3,
+    name: "Biologiya",
+    description: "Hayot shakllari, organizmlar va ekologiya asoslari.",
+    rank: "B",
+    banner: "https://source.unsplash.com/800x400/?biology,nature",
+    images: ["https://source.unsplash.com/600x400/?biology,living"],
+    teacherName: "Nilufar Eshmatova",
+    teacherAvatar: "https://randomuser.me/api/portraits/women/21.jpg",
+    direction: "Maktab fanlari",
+    students: 1100,
+    lessons: 25,
+    category: "mashhur",
   },
   {
     id: 4,
-    title: "IT sinfxonasi yangilandi",
-    content:
-      "Kompyuterlar va texnikalar bilan jihozlangan yangi IT xonasi ishga tushdi.",
-    category_key: "events",
-    is_featured: false,
-    published_date: "2026-01-03",
-    image_url: "/images/news/it-classroom.jpg",
-    author: "Admin",
+    name: "Kimyo",
+    description: "Atomlar, reaktiv moddalar va kimyoviy jarayonlar.",
+    rank: "B",
+    banner: "https://source.unsplash.com/800x400/?chemistry,laboratory",
+    images: ["https://source.unsplash.com/600x400/?chemistry,bottle"],
+    teacherName: "Sardor Tursunov",
+    teacherAvatar: "https://randomuser.me/api/portraits/men/22.jpg",
+    direction: "Maktab fanlari",
+    students: 950,
+    lessons: 24,
+    category: "IT",
   },
   {
     id: 5,
-    title: "Fan olimpiadasiga tayyorgarlik boshlandi",
-    content: "Iqtidorli o‘quvchilar bilan maxsus mashg‘ulotlar o‘tkazilmoqda.",
-    category_key: "general",
-    is_featured: false,
-    published_date: "2026-01-01",
-    image_url: "/images/news/preparation.jpg",
-    author: "Admin",
+    name: "Tarix",
+    description: "Dunyo va O‘zbekiston tarixi asoslarini chuqur o‘rganing.",
+    rank: "C",
+    banner: "https://source.unsplash.com/800x400/?history,books",
+    images: ["https://source.unsplash.com/600x400/?ancient,history"],
+    teacherName: "Gulchehra Matkarimova",
+    teacherAvatar: "https://randomuser.me/api/portraits/women/32.jpg",
+    direction: "Maktab fanlari",
+    students: 900,
+    lessons: 26,
+    category: "Assosiy Fan",
   },
   {
     id: 6,
-    title: "Shahmat musobaqasida g‘alaba",
-    content: "Maktab jamoasi tuman bosqichida faxrli 1-o‘rinni qo‘lga kiritdi.",
-    category_key: "achievements",
-    is_featured: false,
-    published_date: "2025-12-30",
-    image_url: "/images/news/chess-win.jpg",
-    author: "Admin",
+    name: "Ingliz tili",
+    description: "Ingliz tili lug‘at, grammatika va amaliy mashqlar.",
+    rank: "A",
+    banner: "https://source.unsplash.com/800x400/?english,language",
+    images: ["https://source.unsplash.com/600x400/?learn,english"],
+    teacherName: "John Smith",
+    teacherAvatar: "https://randomuser.me/api/portraits/men/33.jpg",
+    direction: "Maktab fanlari",
+    students: 1300,
+    lessons: 32,
+    category: "tillar",
   },
   {
     id: 7,
-    title: "Ota-onalar yig‘ilishi bo‘lib o‘tdi",
-    content: "Ta’lim sifati va yangi rejalar muhokama qilindi.",
-    category_key: "events",
-    is_featured: false,
-    published_date: "2025-12-28",
-    image_url: "/images/news/parents-meeting.jpg",
-    author: "Admin",
+    name: "Ona tili va adabiyot",
+    description: "O‘zbek tili, adabiyot va nutq sanʼati darslari.",
+    rank: "B",
+    banner: "https://source.unsplash.com/800x400/?literature,books",
+    images: ["https://source.unsplash.com/600x400/?reading,books"],
+    teacherName: "Mohira Xudoyberdiyeva",
+    teacherAvatar: "https://randomuser.me/api/portraits/women/42.jpg",
+    direction: "Maktab fanlari",
+    students: 1000,
+    lessons: 28,
+    category: "Assosiy Fan",
   },
   {
     id: 8,
-    title: "Kutubxona fondi kengaytirildi",
-    content: "Yangi darsliklar va badiiy kitoblar olib kelindi.",
-    category_key: "general",
-    is_featured: false,
-    published_date: "2025-12-26",
-    image_url: "/images/news/library.jpg",
-    author: "Admin",
+    name: "Geografiya",
+    description: "Yer yuzasi, geografik mintaqalar va tabiat bilan tanishing.",
+    rank: "C",
+    banner: "https://source.unsplash.com/800x400/?geography,map",
+    images: ["https://source.unsplash.com/600x400/?globe,geography"],
+    teacherName: "Jahonbek Qo‘ziyev",
+    teacherAvatar: "https://randomuser.me/api/portraits/men/43.jpg",
+    direction: "Maktab fanlari",
+    students: 850,
+    lessons: 23,
+    category: "Assosiy Fan",
   },
   {
     id: 9,
-    title: "Yangi yil bayram tadbiri o‘tkazildi",
-    content: "O‘quvchilar uchun bayramona dastur tashkil etildi.",
-    category_key: "events",
-    is_featured: false,
-    published_date: "2025-12-25",
-    image_url: "/images/news/new-year.jpg",
-    author: "Admin",
-  },
-  {
-    id: 10,
-    title: "Ingliz tili tanlovi yakunlandi",
-    content: "Eng faol ishtirokchilar diplom va sovg‘alar bilan taqdirlandi.",
-    category_key: "achievements",
-    is_featured: false,
-    published_date: "2025-12-23",
-    image_url: "/images/news/english-contest.jpg",
-    author: "Admin",
+    name: "Informatika",
+    description: "Kompyuter asoslari, algoritmlar va dasturlash kirish.",
+    rank: "B",
+    banner: "https://source.unsplash.com/800x400/?computer,programming",
+    images: ["https://source.unsplash.com/600x400/?coding,computer"],
+    teacherName: "Rustam Akhmedov",
+    teacherAvatar: "https://randomuser.me/api/portraits/men/44.jpg",
+    direction: "Maktab fanlari",
+    students: 1250,
+    lessons: 30,
+    category: "IT",
   },
 ];
-export const courses: Course[] = [
-  {
-    id: 1,
-    title: "English for Beginners",
-    description: "Basic English speaking and grammar",
-    features: ["Speaking", "Grammar", "Vocabulary"],
-    slug: "english-for-beginners",
-    category: "english",
-    views: 15200,
-    teacher: {
-      id: 1,
-      name: "Anna Smith",
-      subject: "English",
-    },
-    video: {
-      url: "https://www.youtube.com/embed/_CL6n0FJZpk",
-      poster: "/images/english.jpg",
-      duration: "18:40",
-    },
-  },
-
-  {
-    id: 2,
-    title: "Mathematics 101",
-    description: "Algebra and basic math logic",
-    features: ["Algebra", "Logic", "Practice"],
-    slug: "mathematics-101",
-    category: "math",
-    views: 9800,
-    teacher: {
-      id: 2,
-      name: "Ali Karimov",
-      subject: "Mathematics",
-    },
-    video: {
-      url: "https://www.youtube.com/embed/8H6E2sq6L9M",
-      poster: "/images/math.jpg",
-      duration: "22:10",
-    },
-  },
-
-  {
-    id: 3,
-    title: "Russian for Beginners",
-    description: "Basic Russian speaking and grammar",
-    features: ["Speaking", "Grammar", "Vocabulary"],
-    slug: "russian-for-beginners",
-    category: "russian",
-    views: 15200,
-    teacher: {
-      id: 3,
-      name: "Victoriya",
-      subject: "Russian",
-    },
-    video: {
-      url: "https://www.youtube.com/embed/YhhFK55Tkbg",
-      poster: "/images/russian.jpg",
-      duration: "18:40",
-    },
-  },
-];
-
-export const footerData = {
-  about: {
-    title: "Let's Chat",
-    description:
-      "I'm passionate about creating beautiful, functional components that make your projects shine. Let's work together to bring your vision to life.",
-    buttonText: "Schedule a call",
-  },
-  portfolio: {
-    title: "PORTFOLIO",
-    links: [
-      { label: "Projects", to: "/projects" },
-      { label: "Pricing", to: "/pricing" },
-      { label: "About", to: "/about" },
-    ],
-  },
-  social: {
-    title: "SOCIAL",
-    links: [
-      { label: "Twitter", url: "https://twitter.com" },
-      { label: "Instagram", url: "https://instagram.com" },
-      { label: "LinkedIn", url: "https://linkedin.com" },
-    ],
-  },
-  contact: {
-    title: "CONTACT",
-    phone: "+1 (555) 123-4567",
-    email: "hello@artiststudio.com",
-    location: "NYC • EST",
-  },
-  footerBottom: {
-    copyright: "© 2025 YourProject. All rights reserved.",
-    terms: "Terms & Conditions",
-    privacy: "Privacy Policy",
-  },
-};
 
 export const navItems = [
   { key: "nav-home", href: "/" },
@@ -481,34 +280,6 @@ export const feature5 = [
   },
 ];
 
-export const slides = [
-  {
-    title: "Maktab binosi",
-    desc: "Zamonaviy va qulay maktab binosi",
-    img: "https://aniq.uz/photos/603359e94b5b0.jpg",
-  },
-  {
-    title: "O‘quv jarayoni",
-    desc: "Dars mashg‘ulotlaridan lavhalar",
-    img: "https://xalqtaliminfo.uz/storage/posts/1724666379photo_2024-08-26_14-661.jpg",
-  },
-  {
-    title: "Kutubxona",
-    desc: "Boy va zamonaviy kutubxona",
-    img: "https://www.gazeta.uz/media/img/2021/02/efDUyO16140765617821_l.jpg",
-  },
-  {
-    title: "Sport maydoni",
-    desc: "Sport bilan shug‘ullanish uchun qulay sharoit",
-    img: "https://storage.kun.uz/source/8/OkUtquyxI7fscIyox-tiMDhS9ieqKKw7.jpg",
-  },
-  {
-    title: "Tadbirlar",
-    desc: "Bayram va muhim tadbirlardan lavhalar",
-    img: "https://storage.kun.uz/source/archive_15_05/RASMLAR/RASMLAR/RASMLAR/Rasmlar/Rasmlar/nav6.jpg",
-  },
-];
-
 export const stats = [
   { value: "1200+", label: "O‘quvchilar" },
   { value: "85+", label: "O‘qituvchilar" },
@@ -521,61 +292,6 @@ export const leadership = [
   "O‘quv ishlari bo‘yicha direktor o‘rinbosari",
   "Ma’naviy-ma’rifiy ishlar bo‘yicha direktor o‘rinbosari",
 ];
-// src/constants/index.ts
-
-export type Lang = "uz" | "ru" | "en";
-
-export const createVideoText: Record<Lang, any> = {
-  uz: {
-    title: "Video kurs qo‘shish",
-    courseTitle: "Kurs nomi",
-    description: "Qisqacha tavsif",
-    features: "Imkoniyatlar",
-    featurePlaceholder: "Masalan: Speakingni rivojlantirish",
-    main: "Asosiy",
-    repeat: "Takrorlash",
-    add: "Qo‘shish",
-    thumbnail: "Rasm (thumbnail)",
-    video: "Video fayl",
-    save: "Saqlash",
-    previewTitle: "Kurs nomi",
-    previewDescription: "Kurs tavsifi",
-  },
-
-  ru: {
-    title: "Добавить видео курс",
-    courseTitle: "Название курса",
-    description: "Краткое описание",
-    features: "Возможности",
-    featurePlaceholder: "Например: Развитие speaking",
-    main: "Основное",
-    repeat: "Повторение",
-    add: "Добавить",
-    thumbnail: "Изображение (thumbnail)",
-    video: "Видео файл",
-    save: "Сохранить",
-    previewTitle: "Название курса",
-    previewDescription: "Описание курса",
-  },
-
-  en: {
-    title: "Add Video Course",
-    courseTitle: "Course title",
-    description: "Short description",
-    features: "Features",
-    featurePlaceholder: "e.g. Improve speaking",
-    main: "Main",
-    repeat: "Repeat",
-    add: "Add",
-    thumbnail: "Thumbnail image",
-    video: "Video file",
-    save: "Save",
-    previewTitle: "Course title",
-    previewDescription: "Course description",
-  },
-};
-
-// src/constants/index.ts
 
 export interface TeacherProfile {
   name: string;

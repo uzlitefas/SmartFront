@@ -30,7 +30,7 @@ export function NewsPage() {
       {" "}
       <Header type={"news"} />
       <div className="min-h-screen bg-[var(--background)]">
-        <header className="bg-[var(--card)] border-b border-[var(--border)] sticky top-0 mt-15 z-10 backdrop-blur-sm bg-opacity-90">
+        <header className="bg-[var(--card)] border-b border-[var(--border)] sticky top-0 z-10 backdrop-blur-sm bg-opacity-90">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex items-center gap-3">
               <div className="p-3 rounded-[var(--radius)] bg-[var(--primary)]">
@@ -110,14 +110,6 @@ export function NewsPage() {
             </>
           )}
         </main>
-
-        <footer className="bg-[var(--card)] border-t border-[var(--border)] mt-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-            <p className="text-[var(--muted-foreground)]">
-              © 2026 Maktab. Barcha huquqlar himoyalangan.
-            </p>
-          </div>
-        </footer>
       </div>
     </>
   );

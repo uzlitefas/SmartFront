@@ -1,7 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { Home } from "./feature/main/home/Home";
 import Footer from "./components/shared/main/Footer";
-import CoursesSection from "./feature/main/course/CourseSection";
+import CoursesSection from "./feature/main/course/CoursePage";
 import { useEffect, useState } from "react";
 import Loader from "./components/shared/Loader";
 import Gallery from "./feature/main/gallery/Gallery";
@@ -11,7 +11,6 @@ import TeacherProfileEditPage from "./feature/teacher/teacherProfile";
 import TeacherStudents from "./feature/teacher/teacherStudents";
 import { NewsPage } from "./feature/main/news/NewsPage";
 import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
-import CreateVideos from "./feature/teacher/addVideos/createVideos";
 import TeacherHome from "./feature/teacher/teacher";
 import TeacherNavbar from "./feature/teacher/Navbar/Navbar";
 import DirectorCreatePage from "./feature/director/create/directorCreatePage";
@@ -88,7 +87,7 @@ function App() {
           <Route path="profile" element={<TeacherProfileEditPage />} />
           <Route path="students" element={<TeacherStudents />} />
           <Route path="createTasks" element={<CreateTasks />} />
-          <Route path="createVideos" element={<CreateVideos />} />
+          <Route path="createVideos" element={"create video"} />
         </Route>
       </Routes>
     </div>

@@ -139,5 +139,27 @@
         "desc": "Bayram va tadbirlar o‘tkaziladigan katta zal."
       }
     }
-  }
+  },
+  "newsPage": {
+    "title": "Yangiliklar",
+    "subtitle": "Maktabimizdagi so‘nggi yangiliklar",
+    "categoriesTitle": "Kategoriyalar",
+    "all": "Barchasi",
+    "events": "Tadbirlar",
+    "achievements": "Yutuqlar",
+    "announcements": "E’lonlar",
+    "general": "Umumiy",
+    "featured": "Asosiy yangilik",
+    "allNews": "Barcha yangiliklar",
+    "empty": "Hozircha yangiliklar yo‘q"
+  },
+
+  "new_sport_hall_title": "Yangi sport zali ochildi",
+  "new_sport_hall_content": "Maktabimizda zamonaviy sport zali foydalanishga topshirildi.",
+
+  "olympiad_win_title": "Olimpiada g‘alabasi",
+  "olympiad_win_content": "O‘quvchilarimiz viloyat bosqichida 1-o‘rinni egalladi.",
+
+  "new_it_courses_title": "Yangi IT kurslar",
+  "new_it_courses_content": "2026-yil uchun yangi IT kurslar ochildi."
 }
