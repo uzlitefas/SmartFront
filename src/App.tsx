@@ -1,6 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { Home } from "./feature/main/home/Home";
-import Footer from "./components/shared/main/Footer";
 import CoursesSection from "./feature/main/course/CoursePage";
 import { useEffect, useState } from "react";
 import Loader from "./components/shared/Loader";
@@ -17,6 +16,7 @@ import DirectorCreatePage from "./feature/director/create/directorCreatePage";
 import SchoolPage from "./feature/admin/school/schoolPage";
 import AppSidebar from "./components/shared/sidebar/app-sidebar";
 import Navbar from "./components/shared/main/Navbar";
+import CreateTeacher from "./feature/director/create/CreateTeacher";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ function App() {
             <>
               <Navbar />
               <Outlet />
-              <Footer />
+              <CreateTeacher />
             </>
           }
         >
