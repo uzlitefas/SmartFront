@@ -8,11 +8,9 @@ import Gallery from "./feature/main/gallery/Gallery";
 import Contact from "./feature/main/contact/Contact";
 import LoginPage from "./feature/auth/login";
 import TeacherProfileEditPage from "./feature/teacher/teacherProfile";
-import TeacherStudents from "./feature/teacher/teacherStudents";
+import TeacherStudents from "./feature/teacher/teacherStudets/teacherStudents";
 import { NewsPage } from "./feature/main/news/NewsPage";
-import CreateTasks from "./feature/teacher/Tasks/CreateTasks";
-import TeacherHome from "./feature/teacher/teacher";
-import TeacherNavbar from "./feature/teacher/Navbar/Navbar";
+import TeacherHome from "./feature/teacher/home/teacher";
 import DirectorCreatePage from "./feature/director/create/directorCreatePage";
 import SchoolPage from "./feature/admin/school/schoolPage";
 import AppSidebar from "./components/shared/sidebar/app-sidebar";
@@ -75,10 +73,7 @@ function App() {
           element={
             <>
               <div className="flex w-full">
-                <TeacherNavbar />
-                <div className="m-3 p-8 rounded-md bg-accent w-full">
-                  <Outlet />
-                </div>
+                <AppSidebar />
               </div>
             </>
           }
@@ -86,8 +81,7 @@ function App() {
           <Route path="" element={<TeacherHome />} />
           <Route path="profile" element={<TeacherProfileEditPage />} />
           <Route path="students" element={<TeacherStudents />} />
-          <Route path="createTasks" element={<CreateTasks />} />
-          <Route path="createVideos" element={"create video"} />
+          <Route path="tasks" element={"tasks"} />
         </Route>
       </Routes>
     </div>

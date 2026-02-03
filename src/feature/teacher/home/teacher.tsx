@@ -5,10 +5,10 @@ import {
   RECENT_TASKS,
 } from "@/constants/teacher";
 
-import CourseCard from "./home/courseCard";
-import RecentActivity from "./home/recentActivity";
-import TeacherProfileCard from "./home/techerCard";
-import TeacherSkills from "./home/teacherSkills";
+import CourseCard from "./courseCard";
+import RecentActivity from "./recentActivity";
+import TeacherProfileCard from "./techerCard";
+import TeacherSkills from "./teacherSkills";
 
 export default function TeacherHome() {
   return (

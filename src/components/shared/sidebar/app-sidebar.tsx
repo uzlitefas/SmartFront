@@ -21,21 +21,26 @@ import {
 } from "@/components/ui/sidebar";
 import { DirectorNav, TeacherNav } from "@/constants";
 import { NavUser } from "./nav-user";
-import { Outlet } from "react-router-dom";
 import NavIcon from "./nav-icon";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import ChangePassword from "../change-password";
 import { useAuth } from "@/stores/auth.store";
+import { AnimatedThemeToggler } from "../../ui/animated-theme-toggler";
+import { Outlet, Link, useLocation } from "react-router-dom";
 
 export default function AppSidebar() {
   const role = useAuth().role;
 
-  let Roledata: any = {};
+  const location = useLocation();
+
+  let Roledata: any = [];
+  let route: string = "";
 
   if (role === "DIRECTOR") {
     Roledata = DirectorNav;
-  } else if (role === "TEACHER") {
+    route = "director";
+  } else if (role !== "TEACHER") {
     Roledata = TeacherNav;
+    route = "teacher";
   }
 
   return (
@@ -51,9 +56,32 @@ export default function AppSidebar() {
         <SidebarHeader>
           <NavIcon />
         </SidebarHeader>
-        <SidebarContent>
-          <div>navs</div>
+        <SidebarContent className="px-2">
+          {Roledata.map((item: any) => {
+            const Icon = item.icon;
+            const isActive = location.pathname === `/${item.route}`;
+
+            return (
+              <Link
+                key={item.label}
+                to={`/${route}/${item.route}`}
+                className={`
+          flex items-center gap-3 px-3 py-2 rounded-md text-sm
+          transition-colors
+          ${
+            isActive
+              ? "bg-[color:var(--sidebar-primary)] text-[color:var(--sidebar-primary-foreground)]"
+              : "text-[color:var(--sidebar-foreground)] hover:bg-[color:var(--sidebar-accent)] hover:text-[color:var(--sidebar-accent-foreground)]"
+          }
+        `}
+              >
+                <Icon className="h-4 w-4 shrink-0" />
+                <span className="truncate">{item.label}</span>
+              </Link>
+            );
+          })}
         </SidebarContent>
+
         <SidebarFooter>
           <NavUser />
         </SidebarFooter>

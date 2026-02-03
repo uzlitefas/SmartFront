@@ -1,14 +1,14 @@
 import { Home, Users, Book, BookOpen } from "lucide-react";
 
 export const DirectorNav = [
-  { icon: Home, label: "Home", route: "/" },
-  { icon: Users, label: "Teachers", route: "/teachers" },
-  { icon: Book, label: "MySchool", route: "/my-school" },
+  { icon: Home, label: "Home", route: "" },
+  { icon: Users, label: "Teachers", route: "teachers" },
+  { icon: Book, label: "MySchool", route: "my-school" },
 ];
 export const TeacherNav = [
-  { icon: Home, label: "Home", route: "/" },
-  { icon: Users, label: "Students", route: "/students" },
-  { icon: BookOpen, label: "Courses", route: "/courses" },
+  { icon: Home, label: "Home", route: "" },
+  { icon: BookOpen, label: "Tasks", route: "tasks" },
+  { icon: Users, label: "Students", route: "students" },
 ];
 
 export const banner: string =

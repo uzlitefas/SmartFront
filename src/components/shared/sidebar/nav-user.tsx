@@ -41,6 +41,10 @@ export function NavUser() {
     nav("/");
   };
 
+  const handleAccount = async () => {
+    nav(`profile`);
+  };
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -53,11 +57,7 @@ export function NavUser() {
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage
                   className="bg-white/90"
-                  src={
-                    user?.role === "ADMIN"
-                      ? "./admin.png"
-                      : user?.avatarUrl || ""
-                  }
+                  src={user?.avatarUrl || ""}
                   alt={user?.role}
                 />
                 <AvatarFallback className="rounded-lg">CN</AvatarFallback>
@@ -111,7 +111,7 @@ export function NavUser() {
 
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={handleAccount}>
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>

@@ -1,6 +1,6 @@
 import { teacherData } from "@/constants";
-import TeacherStudentsFeature from "./teacherStudets/teacher-studetsfeature";
-import TeacherStudentsList from "./teacherStudets/teacher-studetsList";
+import TeacherStudentsFeature from "./teacher-studetsfeature";
+import TeacherStudentsList from "./teacher-studetsList";
 
 export default function TeacherStudents() {
   return (
