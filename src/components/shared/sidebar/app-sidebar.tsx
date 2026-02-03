@@ -38,7 +38,7 @@ export default function AppSidebar() {
   if (role === "DIRECTOR") {
     Roledata = DirectorNav;
     route = "director";
-  } else if (role !== "TEACHER") {
+  } else if (role === "TEACHER") {
     Roledata = TeacherNav;
     route = "teacher";
   }

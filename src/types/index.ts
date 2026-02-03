@@ -55,3 +55,11 @@ export interface Task {
   progress?: number;
   priority?: Priority;
 }
+export interface  TeacherTable {
+  id: number
+  fullName: string
+  subject: string
+  phone: string
+  experience: string
+  status: "Active" | "Inactive"
+}

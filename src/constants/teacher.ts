@@ -1,4 +1,4 @@
-import type { Teacher, Course, Task } from "@/types";
+import type { Teacher, Course, Task, TeacherTable } from "@/types";
 
 export const TEACHER: Teacher = {
   id: "teacher-1",
@@ -68,3 +68,22 @@ export const RECENT_TASKS: Task[] = [
     priority: "past",
   },
 ];
+
+export const teachersData: TeacherTable[] = [
+  {
+    id: 1,
+    fullName: "Alisher Karimov",
+    subject: "Matematika",
+    phone: "+998 90 123 45 67",
+    experience: "12 yil",
+    status: "Active",
+  },
+  {
+    id: 2,
+    fullName: "Dilnoza Rasulova",
+    subject: "Ingliz tili",
+    phone: "+998 91 555 44 33",
+    experience: "8 yil",
+    status: "Active",
+  },
+]
