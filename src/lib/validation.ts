@@ -10,3 +10,17 @@ export const loginformSchema = z.object({
 
   password: z.string().min(8, "Parol kamida 8 ta belgidan iborat bo‘lsin"),
 });
+
+export const teacherAddSchema = z.object({
+  phone: z
+    .string()
+    .nonempty("Telefon raqam majburiy")
+    .regex(
+      /^\+998\d{9}$/,
+      "Telefon raqam +998 bilan boshlanishi va 12 raqam bo‘lishi kerak",
+    ),
+  password: z
+    .string()
+    .nonempty("Parol majburiy")
+    .min(8, "Parol kamida 8 ta belgidan iborat bo‘lishi kerak"),
+});

@@ -59,18 +59,18 @@ export default function AppSidebar() {
         <SidebarContent className="px-2">
           {Roledata.map((item: any) => {
             const Icon = item.icon;
-            const isActive = location.pathname === `/${item.route}`;
+            const isActive = location.pathname === `/${route}/${item.route}`;
 
             return (
               <Link
                 key={item.label}
                 to={`/${route}/${item.route}`}
                 className={`
-          flex items-center gap-3 px-3 py-2 rounded-md text-sm
+          flex items-center gap-3 px-2 py-[6px] rounded-md text-sm
           transition-colors
           ${
             isActive
-              ? "bg-[color:var(--sidebar-primary)] text-[color:var(--sidebar-primary-foreground)]"
+              ? "bg-[color:var(--primary)] text-[color:var(--sidebar-primary-foreground)]"
               : "text-[color:var(--sidebar-foreground)] hover:bg-[color:var(--sidebar-accent)] hover:text-[color:var(--sidebar-accent-foreground)]"
           }
         `}

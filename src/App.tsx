@@ -14,7 +14,8 @@ import DirectorCreatePage from "./feature/director/create/directorCreatePage";
 import SchoolPage from "./feature/admin/school/schoolPage";
 import AppSidebar from "./components/shared/sidebar/app-sidebar";
 import Navbar from "./components/shared/main/Navbar";
-import CreateTeacher from "./feature/director/create/CreateTeacher";
+import Footer from "./components/shared/main/Footer";
+import DirectorCreateTeacher from "./feature/director/create/directorCreateTeacher";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -35,7 +36,7 @@ function App() {
             <>
               <Navbar />
               <Outlet />
-              <CreateTeacher />
+              <Footer />
             </>
           }
         >
@@ -65,7 +66,7 @@ function App() {
           }
         >
           <Route path="create/:invite-token" element={<DirectorCreatePage />} />
-          <Route path="" element={"director"} />
+          <Route path="" element={<DirectorCreateTeacher />} />
         </Route>
 
         <Route
