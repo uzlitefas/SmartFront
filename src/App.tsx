@@ -15,8 +15,6 @@ import SchoolPage from "./feature/admin/school/schoolPage";
 import AppSidebar from "./components/shared/sidebar/app-sidebar";
 import Navbar from "./components/shared/main/Navbar";
 import Footer from "./components/shared/main/Footer";
-import DirectorCreateTeacher from "./feature/director/teacherTable/directorCreateTeacher";
-import { TeacherTable } from "./feature/director/teacherTable/TeacherTable";
 import TeachersTablePage from "./feature/director/teacherTable/teachers";
 
 function App() {
