@@ -55,11 +55,19 @@ export interface Task {
   progress?: number;
   priority?: Priority;
 }
-export interface  TeacherTable {
-  id: number
+export type TeacherTable = {
+  id: string
   fullName: string
-  subject: string
+  age: number
   phone: string
-  experience: string
-  status: "Active" | "Inactive"
+  email: string
+  gender: "Erkak" | "Ayol"
+  address: string
+  workExperience: number
+  qualification: "Oliy toifa" | "1-toifa" | "2-toifa" | "Toifasiz"
+  university: string
+  diplomaNumber: string
+  subject: string
+  school: string
+  notes: string
 }

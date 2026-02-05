@@ -1,4 +1,4 @@
-import type { Teacher, Course, Task, TeacherTable } from "@/types";
+import type { Teacher, Course, Task,  TeacherTable, } from "@/types";
 
 export const TEACHER: Teacher = {
   id: "teacher-1",
@@ -69,21 +69,40 @@ export const RECENT_TASKS: Task[] = [
   },
 ];
 
+
 export const teachersData: TeacherTable[] = [
   {
-    id: 1,
+    id: "t-1",
     fullName: "Alisher Karimov",
-    subject: "Matematika",
+    age: 35,
     phone: "+998 90 123 45 67",
-    experience: "12 yil",
-    status: "Active",
+    email: "alisher.karimov@maktab.uz",
+    gender: "Erkak",
+    address: "Toshkent shahar, Mirzo Ulug'bek tumani",
+    workExperience: 12,
+    qualification: "Oliy toifa",
+    university: "Toshkent Davlat Pedagogika Universiteti",
+    diplomaNumber: "PDU-2010-12345",
+    subject: "Matematika",
+    school: "45-son umumta'lim maktabi",
+    notes: "Olimpiadalarga tayyorlovchi ustoz.",
   },
   {
-    id: 2,
-    fullName: "Dilnoza Rasulova",
+    id: "t-2",
+    fullName: "Madina Ismoilova",
+    age: 29,
+    phone: "+998 93 222 11 00",
+    email: "madina.ismoilova@maktab.uz",
+    gender: "Ayol",
+    address: "Jizzax viloyati, Zarbdor tumani",
+    workExperience: 6,
+    qualification: "1-toifa",
+    university: "Jizzax Davlat Pedagogika Instituti",
+    diplomaNumber: "JDPI-2018-55881",
     subject: "Ingliz tili",
-    phone: "+998 91 555 44 33",
-    experience: "8 yil",
-    status: "Active",
+    school: "12-son maktab",
+    notes: "IELTS va speaking bo‘yicha kuchli.",
   },
 ]
+
+
